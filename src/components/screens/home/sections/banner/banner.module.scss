@@ -76,14 +76,15 @@
   }
 
   @include respond-below(md) {
-    height: 100vh;
+    height: fit-content;
+    padding-bottom: 50px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 40px;
     .topWrap {
-      height: fit-content;
+      height: 100vh;
       h1 {
         font-size: 40px;
         br {

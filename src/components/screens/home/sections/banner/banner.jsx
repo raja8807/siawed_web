@@ -26,7 +26,7 @@ const BannerSection = () => {
                   );
                 })}
               </div>
-              Driving Positive Change Worldwide
+              Southern Industrial Academy for Women Entrepreneurs Development
             </div>
             <h1>
               Empowering
