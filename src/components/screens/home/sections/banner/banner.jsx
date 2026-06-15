@@ -3,6 +3,7 @@ import styles from "./banner.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import { Image } from "react-bootstrap";
 import CustomButton from "@/components/ui/custom_button/custom_button";
+import { PeopleFill } from "react-bootstrap-icons";
 
 const BannerSection = () => {
   const images = ["avtr1.jpg", "avtr1.jpg", "avtr1.jpg", "avtr1.jpg"];
@@ -37,7 +38,7 @@ const BannerSection = () => {
               Responsible Procurement.
             </h1>
             <div className={styles.btns}>
-              <CustomButton>Join Siawed</CustomButton>
+              <CustomButton>Join Siawed <PeopleFill/></CustomButton>
               
               <CustomButton variant={2}>Become a CSR Partner</CustomButton>
             </div>

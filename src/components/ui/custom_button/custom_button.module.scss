@@ -1,26 +1,36 @@
 .CustomButton {
   border: none;
-  padding: 12px 22px;
-  border-radius: 6px;
+  padding: 10px 20px;
+  border-radius: 5px;
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 1px;
 
+  svg {
+    margin-bottom: 2px;
+    margin-left: 4px;
+  }
+
   &.v1 {
     background-color: $color_2;
-    color: $color_1;
+    color: white;
+    border: 1px solid $color_1;
 
     &:hover {
       background-color: white;
+      color: $color_2;
+      border-color: $color_2;
     }
   }
 
   &.v2 {
     background-color: white;
     color: $color_1;
+    border: 1px solid $color_1;
 
     &:hover {
       background-color: $color_2;
+      color: white;
     }
   }
 }
