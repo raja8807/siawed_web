@@ -1,0 +1,59 @@
+export const CONTACT_DETAILS = {
+  phone1: {
+    number: "9444175678",
+    text: "+91 99622 83299",
+  },
+  whatsapp1: {
+    number: "919444175678",
+    text: "+91 94441 75678",
+    message:
+      "Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20tour%20packages%20and%20destinations.",
+  },
+  emails: [
+    "support@amigosbs.com",
+    "chennai@amigosbs.com",
+    "christy@amigosbs.com",
+  ],
+
+  address: [
+    "Amigos Business Solutions",
+    "168, Thirugnana Sambandar Street, ",
+    "Thiruvalleeswarar Nagar, ",
+    "Anna Nagar, Chennai -600040.",
+  ],
+};
+
+export const BRANCHES = [
+  {
+    title: "CHENNAI Location",
+    address: [
+      "Amigos Business Solutions",
+      "168, Thirugnana Sambandar Street, ",
+      "Thiruvalleeswarar Nagar, ",
+      "Anna Nagar, Chennai -600040.",
+    ],
+    emails: [
+      "chennai@amigosbs.com",
+      "marshall@amigosbs.com",
+      "christy@amigosbs.com",
+    ],
+    phones: [
+      "Office: +91 44 2648 2600 / +9196778 60678",
+      "Mobile: +91 94441 75678 / +91 94454 75692",
+    ],
+  },
+  {
+    title: "TRICHY Location",
+    address: [
+      "Amigos Business Solutions",
+      "No.14/1, St. Ann’s Complex, ",
+      "Convent Rd, Melapudur, ",
+      "Trichy- 620 001.",
+    ],
+    emails: ["trichy@amigosbs.com", "pathinathan@amigosbs.com"],
+    phones: [
+      "+91 431 241 0505 / +91 81240 81679",
+      "+91 94431 26261 / +91 86950 39389",
+    ],
+  },
+];

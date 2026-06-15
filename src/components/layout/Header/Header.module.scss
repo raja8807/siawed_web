@@ -1,0 +1,226 @@
+.Header {
+  width: 100vw;
+  z-index: 1000;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.135);
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 100px;
+
+      .navLg {
+        ul {
+          display: flex;
+          gap: 30px;
+          padding: 0;
+          margin: 0;
+
+          li {
+            list-style: none;
+            position: relative;
+
+            a,
+            p {
+              color: white;
+              // font-size: 18px;
+              font-size: 15px;
+              font-weight: 600;
+              cursor: pointer;
+
+              &:hover {
+                color: $color_1;
+              }
+            }
+
+            .dropdownWrap {
+              position: absolute;
+              top: 0px;
+              padding-top: 30px;
+
+              .dropdown {
+                background-color: $color_b1;
+
+                padding: 20px 10px;
+                min-width: 220px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                // gap: 16px;
+                // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                animation: openDropDown 0.25s;
+                transform-origin: top;
+
+                .subDropdown {
+                  position: relative;
+
+                  a,
+                  p {
+                    color: white;
+                    display: none;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 10px;
+                    cursor: pointer;
+                  }
+
+                  .subDropdownWrap {
+                    position: absolute;
+                    top: -30px;
+                    left: 100%;
+                    padding-top: 30px;
+
+                    .subDropdown {
+                      background-color: $color_b1;
+                      padding: 10px;
+                      min-width: 250px;
+                      border-radius: 10px;
+                      display: flex;
+                      flex-direction: column;
+                      // gap: 16px;
+                      // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                      animation: openDropDown 0.25s;
+                      transform-origin: top;
+                    }
+                  }
+                }
+
+                a,
+                p {
+                  color: white;
+                  font-size: 16px;
+                  font-weight: normal;
+                  display: block;
+                  cursor: pointer;
+                  // border: 1px solid red;
+                  padding: 8px 0;
+
+                  // margin-bottom: 10px;
+
+                  &:hover {
+                    color: $color_1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .wrap {
+      align-items: flex-start;
+
+      .navLg {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes openDropDown {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+// .show {
+//   transform: translateY(0);
+// }
+
+// .hide {
+//   transform: translateY(-100%);
+// }
+
+.scrolled {
+  animation: fade forwards ease-in 0.3s;
+  overflow: hidden;
+}
+
+@keyframes fade {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0px;
+  }
+}
+
+/* InfiniteHorizontalScroll.module.scss */
+
+.wrapper {
+  width: 400px;
+  overflow: hidden;
+  @include respond-below(md) {
+    width: 100%;
+  }
+}
+
+.marquee {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: marquee 72s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $color_1;
+
+    .separator {
+      color: #fff;
+    }
+  }
+}
+
+.separator {
+  margin-left: 12px;
+  // color: #666;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

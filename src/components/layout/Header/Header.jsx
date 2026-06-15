@@ -1,0 +1,207 @@
+import { useEffect, useState } from "react";
+import CustomContainer from "@/components/ui/custom_container/custom_container";
+import styles from "./Header.module.scss";
+
+import Link from "next/link";
+import {
+  BellFill,
+  ChevronDown,
+  ChevronRight,
+  EnvelopeAt,
+  EnvelopeAtFill,
+  TelephoneFill,
+} from "react-bootstrap-icons";
+import RightMenu from "./menu_button/menu_button";
+import { PAGES } from "@/constants/constants";
+import Logo from "@/components/common/logo/logo";
+import FONTS from "@/styles/fonts";
+import { CONTACT_DETAILS } from "@/constants/conatct";
+
+// InfiniteHorizontalScroll.jsx
+
+const items = [
+  "CHENNAI",
+  "BENGALURU",
+  "HYDERABAD",
+  "MUMBAI",
+  "PUNE",
+  "DELHI",
+  "COIMBATORE",
+];
+
+function InfiniteHorizontalScroll() {
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.marquee}>
+        {[
+          ...items,
+          ...items,
+          ...items,
+          ...items,
+          ...items,
+          ...items,
+          ,
+          ...items,
+          ...items,
+        ].map((item, index) => (
+          <div key={index} className={styles.item}>
+            <span>{item}</span>
+            <span className={styles.separator}>|</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const DropDownItem = ({ item, setParentDropdown }) => {
+  const [showSubDropDown, setShowSubDropDown] = useState(false);
+
+  if (item.dropdown) {
+    return (
+      <div
+        className={styles.subDropdown}
+        onMouseEnter={() => {
+          setShowSubDropDown(true);
+        }}
+        onMouseLeave={() => {
+          setShowSubDropDown(false);
+        }}
+      >
+        <p href={item.href || "#"}>
+          {item.title}
+          <ChevronRight />
+        </p>
+        {showSubDropDown && (
+          <div className={styles.subDropdownWrap}>
+            <div className={`${styles.subDropdown}`}>
+              {item.dropdown.map((dd) => {
+                return (
+                  <DropDownItem
+                    item={dd}
+                    key={dd.title}
+                    setParentDropdown={setParentDropdown}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <Link
+      href={item.href || "#"}
+      onClick={() => {
+        setParentDropdown(false);
+      }}
+    >
+      {item.title}
+    </Link>
+  );
+};
+
+const NavItem = ({ item }) => {
+  const [showDropDown, setShowDropDown] = useState(false);
+
+  if (item.dropdown) {
+    return (
+      <li
+        onMouseEnter={() => {
+          setShowDropDown(true);
+        }}
+        onMouseLeave={() => {
+          setShowDropDown(false);
+        }}
+      >
+        <p>
+          {item.title}
+          &nbsp;
+          <ChevronDown />
+        </p>
+        {showDropDown && (
+          <div className={styles.dropdownWrap}>
+            <div className={`${styles.dropdown}`}>
+              {item.dropdown.map((dd) => {
+                return (
+                  <DropDownItem
+                    item={dd}
+                    key={dd.title}
+                    setParentDropdown={setShowDropDown}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </li>
+    );
+  }
+
+  return (
+    <li>
+      <Link href={item.href || "#"}>{item.title}</Link>
+    </li>
+  );
+};
+
+const Header = ({ noSubheader }) => {
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+      // if (window.scrollY < 100) {
+
+      //   setShowHeader(true)
+      // } else {
+      //   if (window.scrollY > lastScrollY) {
+      //     // scrolling down
+      //     setShowHeader(false);
+      //   } else {
+      //     // scrolling up
+      //     setShowHeader(true);
+      //   }
+      // }
+
+      // setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
+  return (
+    <header
+      className={`${styles.Header} ${showHeader ? styles.show : styles.hide}
+      ${isScrolled ? styles.scrolled : ""}
+      ${FONTS.font1}
+      `}
+    >
+      
+      <CustomContainer>
+        <div className={styles.wrap}>
+          <Logo />
+          <div className={styles.left}>
+            <nav className={styles.navLg}>
+              <ul>
+                {PAGES.map((page) => {
+                  return <NavItem key={page.title} item={page} />;
+                })}
+              </ul>
+            </nav>
+          </div>
+
+          <RightMenu pages={PAGES} />
+        </div>
+      </CustomContainer>
+    </header>
+  );
+};
+
+export default Header;

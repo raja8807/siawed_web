@@ -1,0 +1,59 @@
+.AboutSection {
+  padding: 100px 0;
+  .wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .left {
+      img {
+        border-radius: 100px;
+        border: 5px solid white;
+      }
+
+      .main {
+        min-height: 500px;
+        position: relative;
+        width: fit-content;
+        margin-left: 100px;
+        // margin-left: -0px;
+      }
+
+      .sub {
+        position: absolute;
+        min-height: 500px;
+        top: 100px;
+        right: -100px;
+      }
+    }
+
+    .right {
+      p {
+        color: rgb(50, 50, 50);
+
+        letter-spacing: 0.8px;
+        font-size: 17px;
+        line-height: 1.5;
+        span {
+          color: $color_1;
+          //   font-weight: 600;
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    .wrap {
+      grid-template-columns: 1fr;
+      gap: 80px;
+      margin: auto;
+
+      .left {
+        margin-bottom: 80px;
+      }
+
+      .main {
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
