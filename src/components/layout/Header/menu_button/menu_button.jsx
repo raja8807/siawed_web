@@ -123,13 +123,7 @@ const RightMenu = ({ pages }) => {
             <div className={FONTS.font1}>
               <div className={styles.row}>
                 <b>Our Services</b>
-                {PAGES[1].dropdown.map((ser) => {
-                  return (
-                    <Link href={"/"} key={ser.title}>
-                      <p>{ser.title}</p>
-                    </Link>
-                  );
-                })}
+                
               </div>
 
               <div className={styles.row}>

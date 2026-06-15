@@ -20,39 +20,10 @@
 
 export const PAGES = [
   { title: "About Us", href: "/about" },
-  {
-    title: "Services",
-    href: "/services",
+  { title: "Memebership", href: "/about" },
+  { title: "Corporate Solutions", href: "/about" },
 
-    dropdown: [
-      {
-        title: "Car Rental",
-        href: "/services/car-rental",
-      },
-      {
-        title: "Employee Transportation",
-        href: "/services/employee-transportation",
-      },
-      {
-        title: "Event Management",
-        href: "/services/event-management",
-      },
-      {
-        title: "Inbound and Outbound Tours",
-        href: "/services/inbound-and-outbound-tours",
-      },
-      {
-        title: "Wedding Planner",
-        href: "/services/wedding-planner",
-      },
-    ],
-  },
-  {
-    title: "Clients",
-    href: "/clients",
-  },
-
-  { title: "Careers", href: "/careers" },
+  { title: "Events", href: "/careers" },
   { title: "Contact", href: "/contact" },
 ];
 
