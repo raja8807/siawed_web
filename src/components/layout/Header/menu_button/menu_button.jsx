@@ -79,7 +79,7 @@ const RightMenu = ({ pages }) => {
         href={`tel:+${CONTACT_DETAILS.phone1.number}`}
         className={styles.callBtn}
       >
-        <span>Donate Now</span>
+        <span>Donate Us</span>
         <ArrowRight />
       </Link>
 

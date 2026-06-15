@@ -1,8 +1,12 @@
 .Header {
   width: 100vw;
   z-index: 1000;
-  background-color: transparent;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.135);
+  background-color: #ffffff25;
 
   .wrap {
     display: flex;
@@ -28,7 +32,7 @@
 
             a,
             p {
-              color: white;
+              color: $color_1;
               // font-size: 18px;
               font-size: 15px;
               font-weight: 600;
@@ -163,7 +167,7 @@
 
 @keyframes fade {
   from {
-    height: 100%;
+    height: fit-content;
   }
 
   to {

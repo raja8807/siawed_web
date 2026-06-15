@@ -1,18 +1,10 @@
 .BannerSection {
-  background-image: url("/hero-bg.jpg");
+  background-image: url("/women Entrepreneur-1.png");
   height: 150vh;
   background-size: cover;
   position: relative;
   background-position: center;
-  &::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to right, $color_1, transparent);
-  }
+
   .topWrap {
     height: 100vh;
     position: relative;
@@ -25,14 +17,16 @@
     gap: 20px;
 
     .bar {
-      background-color: #ffffff1a;
-      color: white;
+      background-color: #ffffff63;
+      color: $color_1;
       width: fit-content;
 
       border-radius: 20px;
       display: flex;
       gap: 10px;
       padding: 4px 20px 4px 4px;
+
+      border: 1px solid rgba($color_2, 0.4);
 
       .images {
         display: flex;
@@ -50,9 +44,20 @@
     }
 
     h1 {
-      color: white;
-      font-size: 60px;
+      font-size: 50px;
       font-weight: 800;
+      // text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+      color: $color_2;
+
+      span {
+        color: $color_1;
+        font-size: 55px;
+      }
+    }
+
+    .btns {
+      display: flex;
+      gap: 16px;
     }
   }
 
@@ -67,9 +72,10 @@
 
       .btmLft {
         p {
-          color: white;
+          color: rgb(113, 113, 113);
+
           max-width: 600px;
-          font-size: 20px;
+          font-size: 18px;
         }
       }
     }
@@ -81,14 +87,54 @@
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
     gap: 40px;
+
+    background-image: url("/women Entrepreneur-sm.png");
+    position: relative;
+    background-position: right;
+
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+    }
+
     .topWrap {
-      height: 100vh;
+      // height: 100vh;
+
+      .bar {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 120px;
+        font-size: 14px;
+
+        .images {
+          display: none;
+        }
+      }
+
+      .btns {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+      }
       h1 {
         font-size: 40px;
-        br {
-          display: none;
+        // text-align: center;
+
+        span {
+          font-size: 40px;
         }
       }
     }
@@ -100,6 +146,9 @@
         .btmLft {
           p {
             font-size: 16px;
+            color: white;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 4px;
           }
         }
       }

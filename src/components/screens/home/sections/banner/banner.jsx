@@ -29,16 +29,16 @@ const BannerSection = () => {
               Southern Industrial Academy for Women Entrepreneurs Development
             </div>
             <h1>
-              Empowering
+              <span>Empowering</span>
               <br />
               Women Entrepreneurs. <br />
-              Enabling
+              <span>Enabling</span>
               <br />
               Responsible Procurement.
             </h1>
             <div className={styles.btns}>
               <CustomButton>Join Siawed</CustomButton>
-              &nbsp; &nbsp;
+              
               <CustomButton variant={2}>Become a CSR Partner</CustomButton>
             </div>
           </div>
