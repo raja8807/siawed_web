@@ -32,14 +32,8 @@ const QUICK_LINKS = [
   { title: "Our Services", href: "/services" },
   { title: "Blogs", href: "/blogs" },
   { title: "Contact Us", href: "/contact" },
-];
-
-const OUR_PROGRAMS = [
-  { title: "Health & Wellness Outreach" },
-  { title: "Human Rights Advocacy" },
-  { title: "Disaster Relief & Recovery" },
-  { title: "Clean Water & Sanitation" },
-  { title: "Environmental Awareness" },
+  { title: "WENBA - Register your product", href: "https://www.wenba.in/register" },
+  { title: "WENBA - Corporate solutions", href: "https://www.wenba.in/corporate" },
 ];
 
 const Footer = () => {
@@ -50,7 +44,7 @@ const Footer = () => {
         <Container>
           <Row className={styles.footerRow}>
             {/* Column 1: Logo & Description */}
-            <Col lg={3} md={6} sm={12} className={styles.footerCol}>
+            <Col lg={4} md={6} sm={12} className={styles.footerCol}>
               <div className={styles.logoSection}>
                 <div className={styles.brandMark}>
                   <Image
@@ -63,11 +57,29 @@ const Footer = () => {
                   We&apos;ve gathered answers to the questions we hear most, making it
                   easy for you to learn about our work, values, and the impact.
                 </p>
+                <div style={{ marginTop: "20px" }}>
+                  <button 
+                    style={{ 
+                      backgroundColor: "transparent", 
+                      border: "1px solid rgba(255,255,255,0.3)", 
+                      color: "#fff", 
+                      padding: "10px 20px", 
+                      borderRadius: "8px", 
+                      fontSize: "14px",
+                      cursor: "pointer",
+                      transition: "all 0.3s ease"
+                    }}
+                    onMouseEnter={(e) => e.target.style.backgroundColor = "rgba(255,255,255,0.1)"}
+                    onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
+                  >
+                    Request Corporate Catalogue
+                  </button>
+                </div>
               </div>
             </Col>
 
             {/* Column 2: Quick Links */}
-            <Col lg={2} md={6} sm={12} className={styles.footerCol}>
+            <Col lg={3} md={6} sm={12} className={styles.footerCol}>
               <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
                 Quick Links
               </h4>
@@ -82,24 +94,8 @@ const Footer = () => {
               </ul>
             </Col>
 
-            {/* Column 3: Our Programs */}
-            <Col lg={3} md={6} sm={12} className={styles.footerCol}>
-              <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
-                Our Programs
-              </h4>
-              <ul className={styles.linkList}>
-                {OUR_PROGRAMS.map((program) => (
-                  <li key={program.title}>
-                    <span className={styles.programItem}>
-                      <span className={styles.bullet}>•</span> {program.title}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </Col>
-
-            {/* Column 4: Location & Socials */}
-            <Col lg={4} md={6} sm={12} className={styles.footerCol}>
+            {/* Column 3: Location & Socials */}
+            <Col lg={5} md={6} sm={12} className={styles.footerCol}>
               <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
                 Our Location
               </h4>

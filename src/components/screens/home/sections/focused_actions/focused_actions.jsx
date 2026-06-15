@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import styles from "./focused_actions.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { Cpu, Gear, People, Grid, TelephoneFill, ArrowUpRight } from "react-bootstrap-icons";
+import { BagHeartFill, BasketFill, Gem, Grid, TelephoneFill, ArrowUpRight } from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
 import FONTS from "@/styles/fonts";
 
 const FocusedActionsSection = () => {
-  const [activeTab, setActiveTab] = useState("awareness");
+  const [activeTab, setActiveTab] = useState("handicrafts");
 
   const tabsContent = {
-    awareness: {
-      title: "Empowering Communities",
-      description: "We design and implement programs that address real community needs–ranging from education and healthcare to women & youth.",
-      icon: <Cpu className={styles.icon} />,
+    handicrafts: {
+      title: "Authentic Handicrafts",
+      description: "Support rural artisans by purchasing unique, handcrafted products made with traditional techniques and cultural heritage.",
+      icon: <BagHeartFill className={styles.icon} />,
     },
-    capacity: {
-      title: "Capacity Building & Training",
-      description: "Providing courses on Entrepreneurship Development (EDP) and grouping women with similar skills to prepare them for market demands.",
-      icon: <Gear className={styles.icon} />,
+    organic: {
+      title: "Organic Foods",
+      description: "Sourced directly from women farmers, offering high-quality, chemical-free produce and nutritious packaged goods.",
+      icon: <BasketFill className={styles.icon} />,
     },
-    collaboration: {
-      title: "Strategic Collaboration",
-      description: "Fostering partnerships between local women groups, vendor networks, corporate institutions, and public organizations for scalable growth.",
-      icon: <People className={styles.icon} />,
+    jewelry: {
+      title: "Exquisite Jewelry",
+      description: "Discover beautiful, handcrafted jewelry pieces that empower the talented women who design and create them.",
+      icon: <Gem className={styles.icon} />,
     },
   };
 
@@ -35,28 +35,28 @@ const FocusedActionsSection = () => {
             <div className={styles.collageContainer}>
               {/* Top-Left Card */}
               <div className={styles.cardVolunteers}>
-                <h4 className={styles.cardTitle}>3,500+ Active Volunteers</h4>
+                <h4 className={styles.cardTitle}>500+ Women Artisans</h4>
                 <div className={styles.avatarsRow}>
-                  <Image src="/avtr1.jpg" alt="Volunteer 1" className={styles.avatar} />
-                  <Image src="/avtr1.jpg" alt="Volunteer 2" className={styles.avatar} />
-                  <Image src="/avtr1.jpg" alt="Volunteer 3" className={styles.avatar} />
-                  <Image src="/avtr1.jpg" alt="Volunteer 4" className={styles.avatar} />
+                  <Image src="/avtr1.jpg" alt="Artisan 1" className={styles.avatar} />
+                  <Image src="/avtr1.jpg" alt="Artisan 2" className={styles.avatar} />
+                  <Image src="/avtr1.jpg" alt="Artisan 3" className={styles.avatar} />
+                  <Image src="/avtr1.jpg" alt="Artisan 4" className={styles.avatar} />
                 </div>
               </div>
 
               {/* Top-Right Image (Behind) */}
               <div className={styles.imgTopRight}>
-                <Image src="/about-us-image-1.jpg" alt="Impact Action behind" />
+                <Image src="/about-us-image-1.jpg" alt="WENBA Products" />
               </div>
 
               {/* Middle-Left Image */}
               <div className={styles.imgMiddleLeft}>
-                <Image src="/about-us-image-2.jpg" alt="Rally Walk" />
+                <Image src="/about-us-image-2.jpg" alt="Women Entrepreneurs" />
               </div>
 
               {/* Middle-Right Image (Main) */}
               <div className={styles.imgMain}>
-                <Image src="/impact-rally-1.png" alt="Main Action Rally" />
+                <Image src="/logo/wenba_logo.png" alt="WENBA Marketplace" />
               </div>
 
               {/* Bottom-Left Card */}
@@ -65,46 +65,50 @@ const FocusedActionsSection = () => {
                   <Grid className={styles.gridIcon} />
                 </div>
                 <div className={styles.projectsInfo}>
-                  <h4>250+</h4>
-                  <p>Projects Completed</p>
+                  <h4>1,000+</h4>
+                  <p>Products Listed</p>
                 </div>
               </div>
+
+              {/* Floating WENBA Logo on Left */}
+       
             </div>
           </div>
 
           {/* Right Column: Tab switcher and details */}
           <div className={styles.right}>
             <div className={styles.badge} data-aos="fade-down">
-              <span className={styles.dot} /> What We Do
+              <span className={styles.dot} /> Discover WENBA
             </div>
+
             <h2 className={`${styles.title} ${FONTS.font1}`} data-aos="fade-up">
-              Focused Actions That Deliver Impacts
+              Empowering Native Business Artisans
             </h2>
             <p className={styles.description} data-aos="fade-up" data-aos-delay="100">
-              Through thoughtfully planned programs and community-led action, we
-              empower individuals, strengthen neighborhoods, and foster lasting
-              positive change one initiative at a time.
+              WENBA is SIAWED&apos;s dedicated marketplace designed to connect women
+              entrepreneurs, rural artisans, and self-help groups directly with
+              consumers and corporate buyers.
             </p>
 
             {/* Tabs Row */}
             <div className={styles.tabsRow} data-aos="fade-up" data-aos-delay="150">
               <button
-                className={`${styles.tabBtn} ${activeTab === "awareness" ? styles.active : ""}`}
-                onClick={() => setActiveTab("awareness")}
+                className={`${styles.tabBtn} ${activeTab === "handicrafts" ? styles.active : ""}`}
+                onClick={() => setActiveTab("handicrafts")}
               >
-                Awareness
+                Handicrafts
               </button>
               <button
-                className={`${styles.tabBtn} ${activeTab === "capacity" ? styles.active : ""}`}
-                onClick={() => setActiveTab("capacity")}
+                className={`${styles.tabBtn} ${activeTab === "organic" ? styles.active : ""}`}
+                onClick={() => setActiveTab("organic")}
               >
-                Capacity Building
+                Organic Foods
               </button>
               <button
-                className={`${styles.tabBtn} ${activeTab === "collaboration" ? styles.active : ""}`}
-                onClick={() => setActiveTab("collaboration")}
+                className={`${styles.tabBtn} ${activeTab === "jewelry" ? styles.active : ""}`}
+                onClick={() => setActiveTab("jewelry")}
               >
-                Collaboration
+                Jewelry
               </button>
             </div>
 
@@ -126,8 +130,11 @@ const FocusedActionsSection = () => {
 
             {/* Action Button */}
             <div className={styles.buttonWrapper} data-aos="fade-up" data-aos-delay="250">
-              <button className={styles.contactBtn}>
-                Contact Us <ArrowUpRight className={styles.arrow} />
+              <button 
+                className={styles.contactBtn}
+                onClick={() => window.open("https://www.wenba.in", "_blank")}
+              >
+                Explore WENBA <ArrowUpRight className={styles.arrow} />
               </button>
             </div>
           </div>
@@ -142,7 +149,7 @@ const FocusedActionsSection = () => {
             </div>
           </div>
           <p className={styles.noteText}>
-            Let&apos;s make something great work together. <a href="/contact">Get Free Quote</a>
+            Are you a woman entrepreneur? <a href="https://www.wenba.in/register" target="_blank" rel="noopener noreferrer">Register your products on WENBA today.</a>
           </p>
         </div>
       </CustomContainer>

@@ -20,10 +20,31 @@
 
 export const PAGES = [
   { title: "About Us", href: "/about" },
-  { title: "Memebership", href: "/about" },
-  { title: "Corporate Solutions", href: "/about" },
-
-  { title: "Events", href: "/careers" },
+  { title: "Membership", href: "/membership" },
+  { title: "Corporate Solutions", href: "/corporate" },
+  {
+    title: "Programs",
+    href: "/programs",
+    dropdown: [
+      {
+        title: "Entrepreneurship Development Programs",
+        href: "/programs/edp",
+      },
+      {
+        title: "Skill Training Workshops",
+        href: "/programs/skill-training",
+      },
+      {
+        title: "SHG Support",
+        href: "/programs/shg",
+      },
+      {
+        title: "Student Internship Program",
+        href: "/programs/internship",
+      },
+    ],
+  },
+  { title: "Events", href: "/events" },
   { title: "Contact", href: "/contact" },
 ];
 

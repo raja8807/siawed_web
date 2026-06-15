@@ -13,6 +13,10 @@ const BannerSection = () => {
       <div className={styles.top}>
         <CustomContainer>
           <div className={styles.topWrap}>
+            <div className={styles.badge14Years}>
+              <strong>Est. 2013</strong>
+              <span>Serving women for 14 years</span>
+            </div>
             <div className={styles.bar}>
               <div className={styles.images}>
                 {images.map((img, idx) => {
@@ -37,6 +41,9 @@ const BannerSection = () => {
               <br />
               Responsible Procurement.
             </h1>
+            <p className={styles.heroSubline}>
+              14 years of creating opportunity, dignity and economic freedom for women across India.
+            </p>
             <div className={styles.btns}>
               <CustomButton>Join Siawed <PeopleFill/></CustomButton>
               

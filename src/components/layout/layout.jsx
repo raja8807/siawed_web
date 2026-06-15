@@ -30,6 +30,8 @@ const WhatsappButton = ({ setShow }) => {
   );
 };
 
+import StickyCTA from "../common/sticky_cta/sticky_cta";
+
 const Layout = ({ children }) => {
   // const [show, setShow] = useState(false);
 
@@ -52,7 +54,9 @@ const Layout = ({ children }) => {
       {children}
       {/* <EnquireButton setShow={setShow} />
       <WhatsappButton /> */}
-
+      
+      <StickyCTA />
+      
       <Footer />
       {/* <EnquiryModal show={show} setShow={setShow} /> */}
     </div>

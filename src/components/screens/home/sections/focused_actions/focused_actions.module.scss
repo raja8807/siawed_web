@@ -2,12 +2,16 @@
   padding: 100px 0;
   background-color: $color_1; // Dark green background
   // Chevron/pattern look using css linear gradient patterns
-  background-image: 
-    linear-gradient(135deg, rgba(255,255,255,0.015) 25%, transparent 25%), 
-    linear-gradient(225deg, rgba(255,255,255,0.015) 25%, transparent 25%), 
-    linear-gradient(45deg, rgba(255,255,255,0.015) 25%, transparent 25%), 
-    linear-gradient(315deg, rgba(255,255,255,0.015) 25%, $color_1 25%);
-  background-position: 40px 0, 40px 0, 0 0, 0 0;
+  background-image:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.015) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.015) 25%, $color_1 25%);
+  background-position:
+    40px 0,
+    40px 0,
+    0 0,
+    0 0;
   background-size: 80px 80px;
   background-repeat: repeat;
   position: relative;
@@ -101,6 +105,9 @@
           width: 60%;
           height: 390px;
           z-index: 2;
+          background-color: $color_1;
+          border-radius: 20px;
+          border: 14px solid white;
 
           img {
             width: 100%;
@@ -159,6 +166,41 @@
             }
           }
         }
+
+        .wenbaLogoCard {
+          position: absolute;
+          top: 250px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 5;
+          background: rgba(255, 255, 255, 0.95);
+          padding: 15px 25px;
+          border-radius: 16px;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+          border: 2px solid $color_2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          animation: float 4s ease-in-out infinite;
+
+          .wenbaLogoImg {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+          }
+
+          @keyframes float {
+            0% {
+              transform: translate(-50%, 0px);
+            }
+            50% {
+              transform: translate(-50%, -10px);
+            }
+            100% {
+              transform: translate(-50%, 0px);
+            }
+          }
+        }
       }
     }
 
@@ -177,6 +219,7 @@
         font-size: 14px;
         font-weight: 600;
         color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 20px; // Add spacing below badge
 
         .dot {
           width: 8px;
@@ -192,7 +235,7 @@
         font-weight: 800;
         color: #ffffff;
         line-height: 1.15;
-        margin: 20px 0;
+        margin: 0 0 20px 0;
         letter-spacing: -0.5px;
       }
 
