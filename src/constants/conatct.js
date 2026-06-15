@@ -1,25 +1,27 @@
 export const CONTACT_DETAILS = {
   phone1: {
-    number: "9444175678",
-    text: "+91 99622 83299",
+    number: "914443514334",
+    text: "044 4351 4334",
+  },
+  phone2: {
+    number: "919940666603",
+    text: "+91 99406 66603",
   },
   whatsapp1: {
-    number: "919444175678",
-    text: "+91 94441 75678",
+    number: "919940666603",
+    text: "+91 99406 66603",
     message:
-      "Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20tour%20packages%20and%20destinations.",
+      "Hello%2C%20I%20would%20like%20to%20know%20more%20about%20SIAWED%20and%20your%20programs.",
   },
   emails: [
-    "support@amigosbs.com",
-    "chennai@amigosbs.com",
-    "christy@amigosbs.com",
+    "info@siawed.org",
   ],
 
   address: [
-    "Amigos Business Solutions",
-    "168, Thirugnana Sambandar Street, ",
-    "Thiruvalleeswarar Nagar, ",
-    "Anna Nagar, Chennai -600040.",
+    '601, "DEEPA", Chitra Avenue,',
+    "9, Choolaimedu High Road,",
+    "Choolaimedu,",
+    "Chennai – 600094.",
   ],
 };
 
@@ -27,33 +29,15 @@ export const BRANCHES = [
   {
     title: "CHENNAI Location",
     address: [
-      "Amigos Business Solutions",
-      "168, Thirugnana Sambandar Street, ",
-      "Thiruvalleeswarar Nagar, ",
-      "Anna Nagar, Chennai -600040.",
+      '601, "DEEPA", Chitra Avenue,',
+      "9, Choolaimedu High Road,",
+      "Choolaimedu,",
+      "Chennai – 600094.",
     ],
-    emails: [
-      "chennai@amigosbs.com",
-      "marshall@amigosbs.com",
-      "christy@amigosbs.com",
-    ],
+    emails: ["info@siawed.org"],
     phones: [
-      "Office: +91 44 2648 2600 / +9196778 60678",
-      "Mobile: +91 94441 75678 / +91 94454 75692",
-    ],
-  },
-  {
-    title: "TRICHY Location",
-    address: [
-      "Amigos Business Solutions",
-      "No.14/1, St. Ann’s Complex, ",
-      "Convent Rd, Melapudur, ",
-      "Trichy- 620 001.",
-    ],
-    emails: ["trichy@amigosbs.com", "pathinathan@amigosbs.com"],
-    phones: [
-      "+91 431 241 0505 / +91 81240 81679",
-      "+91 94431 26261 / +91 86950 39389",
+      "Office: 044 4351 4334",
+      "Mobile: +91 99406 66603",
     ],
   },
 ];

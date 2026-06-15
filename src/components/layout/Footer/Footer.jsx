@@ -5,11 +5,12 @@ import Link from "next/link";
 import {
   TelephoneFill,
   Facebook,
-  Linkedin,
-  Youtube,
-  CaretRightFill,
+  Instagram,
+  Pinterest,
+  EnvelopeFill,
+  GeoAltFill,
+  ArrowUpRight,
 } from "react-bootstrap-icons";
-import { PAGES, POPULAR_DESTINATIONS } from "@/constants/constants";
 import { CONTACT_DETAILS } from "@/constants/conatct";
 import FONTS from "@/styles/fonts";
 
@@ -25,122 +26,164 @@ const XIcon = () => (
   </svg>
 );
 
+const QUICK_LINKS = [
+  { title: "Home", href: "/" },
+  { title: "About Us", href: "/about" },
+  { title: "Our Services", href: "/services" },
+  { title: "Blogs", href: "/blogs" },
+  { title: "Contact Us", href: "/contact" },
+];
+
+const OUR_PROGRAMS = [
+  { title: "Health & Wellness Outreach" },
+  { title: "Human Rights Advocacy" },
+  { title: "Disaster Relief & Recovery" },
+  { title: "Clean Water & Sanitation" },
+  { title: "Environmental Awareness" },
+];
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <Container>
-        <Row className={styles.footerRow}>
-          <Col lg={3} md={6} sm={12} className={styles.footerCol}>
-            <div className={styles.logoSection}>
-              <Image
-                src="/logo/logo.png"
-                alt="TOURIZA Logo"
-                className={styles.logoImage}
-              />
-              <p className={styles.description}>
-                Our Taxi Booking Service is designed to make your travel experience fast, safe, and convenient — whether you&apos;re heading to work, the airport, or just exploring the city.
-              </p>
-              {/* 
-              <div className={styles.contactInfo}>
-                <div className={styles.iconWrapper}>
-                  <TelephoneFill />
+      {/* Main Footer Content */}
+      <div className={styles.mainFooter}>
+        <Container>
+          <Row className={styles.footerRow}>
+            {/* Column 1: Logo & Description */}
+            <Col lg={3} md={6} sm={12} className={styles.footerCol}>
+              <div className={styles.logoSection}>
+                <div className={styles.brandMark}>
+                  <Image
+                    src="/logo/logo.png"
+                    alt="SIAWED Logo"
+                    className={styles.logoImage}
+                  />
                 </div>
-                <div className={styles.contactDetails}>
-                  <span className={styles.contactLabel}>Call Us 24/7</span>
-                  <a
-                    href={`tel:+${CONTACT_DETAILS.whatsapp1.number}`}
-                    className={styles.contactNumber}
-                  >
-                    {CONTACT_DETAILS.phone1.text}
-                  </a>
-                </div>
-              </div> */}
+                <p className={styles.description}>
+                  We&apos;ve gathered answers to the questions we hear most, making it
+                  easy for you to learn about our work, values, and the impact.
+                </p>
+              </div>
+            </Col>
 
-              <div className={styles.socialFollow}>
-                <span className={styles.followText}>Follow Us -</span>
-                <div className={styles.socialIcons}>
-                  <a href="#">
-                    <Facebook />
+            {/* Column 2: Quick Links */}
+            <Col lg={2} md={6} sm={12} className={styles.footerCol}>
+              <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
+                Quick Links
+              </h4>
+              <ul className={styles.linkList}>
+                {QUICK_LINKS.map((link) => (
+                  <li key={link.title}>
+                    <Link href={link.href}>
+                      <span className={styles.bullet}>•</span> {link.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Col>
+
+            {/* Column 3: Our Programs */}
+            <Col lg={3} md={6} sm={12} className={styles.footerCol}>
+              <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
+                Our Programs
+              </h4>
+              <ul className={styles.linkList}>
+                {OUR_PROGRAMS.map((program) => (
+                  <li key={program.title}>
+                    <span className={styles.programItem}>
+                      <span className={styles.bullet}>•</span> {program.title}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Col>
+
+            {/* Column 4: Location & Socials */}
+            <Col lg={4} md={6} sm={12} className={styles.footerCol}>
+              <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
+                Our Location
+              </h4>
+              <div className={styles.locationBlock}>
+                <div className={styles.locationIconCircle}>
+                  <GeoAltFill className={styles.locIcon} />
+                </div>
+                <p className={styles.locationText}>
+                  {CONTACT_DETAILS.address.join(" ")}
+                </p>
+              </div>
+
+              <h5 className={styles.socialTitle}>Follow Us On Socials:</h5>
+              <div className={styles.socialIcons}>
+                <a href="#" aria-label="Pinterest">
+                  <Pinterest />
+                </a>
+                <a href="#" aria-label="X / Twitter">
+                  <XIcon />
+                </a>
+                <a href="#" aria-label="Facebook">
+                  <Facebook />
+                </a>
+                <a href="#" aria-label="Instagram">
+                  <Instagram />
+                </a>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
+      {/* Middle Bar: Newsletter & Contact */}
+      <div className={styles.middleBar}>
+        <Container>
+          <div className={styles.middleBarInner}>
+            {/* Newsletter Form */}
+            <div className={styles.newsletterForm}>
+              <input
+                type="email"
+                placeholder="Enter Email Address*"
+                className={styles.emailInput}
+              />
+              <button className={styles.subscribeBtn}>
+                Subscribe <ArrowUpRight className={styles.arrow} />
+              </button>
+            </div>
+
+            {/* Contact Details */}
+            <div className={styles.contactDetails}>
+              <div className={styles.contactBlock}>
+                <div className={styles.contactIconCircle}>
+                  <EnvelopeFill className={styles.contactIcon} />
+                </div>
+                <div className={styles.contactInfo}>
+                  <span className={styles.contactLabel}>Email Address</span>
+                  <a href={`mailto:${CONTACT_DETAILS.emails[0]}`}>
+                    {CONTACT_DETAILS.emails[0]}
                   </a>
-                  <a href="#">
-                    <Linkedin />
-                  </a>
-                  <a href="#">
-                    <XIcon />
-                  </a>
-                  <a href="#">
-                    <Youtube />
+                </div>
+              </div>
+
+              <div className={styles.contactBlock}>
+                <div className={styles.contactIconCircle}>
+                  <TelephoneFill className={styles.contactIcon} />
+                </div>
+                <div className={styles.contactInfo}>
+                  <span className={styles.contactLabel}>Phone Number</span>
+                  <a href={`tel:+${CONTACT_DETAILS.phone1.number}`}>
+                    {CONTACT_DETAILS.phone1.text}
                   </a>
                 </div>
               </div>
             </div>
-          </Col>
+          </div>
+        </Container>
+      </div>
 
-          <Col lg={3} md={6} sm={12} className={styles.footerCol}>
-            <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
-              Quick Links
-            </h4>
-            <ul className={styles.linkList}>
-              {PAGES.map((page) => {
-                return (
-                  <li key={page.title}>
-                    <Link href={page.href || "#"}>
-                      <CaretRightFill className={styles.bulletIcon} />{" "}
-                      {page.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </Col>
-
-          <Col lg={3} md={6} sm={12} className={styles.footerCol}>
-            <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
-              Our Services
-            </h4>
-
-            <ul className={styles.linkList}>
-              {PAGES[1].dropdown.map((pd) => {
-                return (
-                  <li key={pd.title}>
-                    <Link href={pd.href || "#"}>
-                      <CaretRightFill className={styles.bulletIcon} /> {pd.title}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </Col>
-
-          <Col lg={3} md={6} sm={12} className={styles.footerCol}>
-            <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
-              Contact Us
-            </h4>
-            <ul className={styles.contactList}>
-              <li>
-                <span className={styles.address}>
-                  {CONTACT_DETAILS.address.map((line, index) => (
-                    <React.Fragment key={index}>
-                      {line}
-                      <br />
-                    </React.Fragment>
-                  ))}
-                </span>
-              </li>
-              <li className={styles.contactItem}>
-                <a href={`tel:+${CONTACT_DETAILS.phone1.number}`}>
-                  {CONTACT_DETAILS.phone1.text}
-                </a>
-              </li>
-              <li className={styles.contactItem}>
-                <a href={`mailto:${CONTACT_DETAILS.emails[0]}`}>
-                  {CONTACT_DETAILS.emails[0]}
-                </a>
-              </li>
-            </ul>
-          </Col>
-        </Row>
-      </Container>
+      {/* Bottom Copyright */}
+      <div className={styles.copyright}>
+        <Container>
+          <p>Copyright © 2026 SIAWED. All rights reserved.</p>
+        </Container>
+      </div>
     </footer>
   );
 };

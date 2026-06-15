@@ -5,7 +5,8 @@ import { Image } from "react-bootstrap";
 const LoadingScreen = (noBg) => {
   return (
     <div className={`${styles.LoadingScreen} ${noBg ? styles.noBg : ""}`}>
-      <Image src="loading.gif" alt="Amigos" width={300} />
+      <Image className={styles.loader} src="loading.gif" alt="Amigos" width={160} />
+      <Image className={styles.logo} src="/logo/logo_circle.png" alt="Amigos" width={90} />
     </div>
   );
 };

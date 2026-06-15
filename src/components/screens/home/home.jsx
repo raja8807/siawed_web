@@ -13,8 +13,8 @@ const HomeScreen = () => {
       <AboutSection />
       <VisionMissionSection />
       <ImpactSection />
-      <WhyChooseUsSection />
       <FocusedActionsSection />
+      <WhyChooseUsSection />
     </>
   );
 };

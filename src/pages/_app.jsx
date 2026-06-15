@@ -51,11 +51,12 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Amigos | Home</title>
+        <title>Siawed | Home</title>
       </Head>
 
       <main className={FONTS.font1}>
         {isHome && loading && <LoadingScreen />}
+        
         <Layout>
           <Component {...pageProps} />
           <ToastContainer position="bottom-right" />
