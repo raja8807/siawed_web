@@ -142,7 +142,7 @@ const FocusedActionsSection = () => {
             </div>
           </div>
           <p className={styles.noteText}>
-            Let's make something great work together. <a href="/contact">Get Free Quote</a>
+            Let&apos;s make something great work together. <a href="/contact">Get Free Quote</a>
           </p>
         </div>
       </CustomContainer>
