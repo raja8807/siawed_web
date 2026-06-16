@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import styles from "./focused_actions.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { BagHeartFill, BasketFill, Gem, Grid, TelephoneFill, ArrowUpRight } from "react-bootstrap-icons";
+import {
+  BagHeartFill,
+  BasketFill,
+  Gem,
+  Grid,
+  TelephoneFill,
+  ArrowUpRight,
+} from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
 import FONTS from "@/styles/fonts";
 
@@ -11,17 +18,20 @@ const FocusedActionsSection = () => {
   const tabsContent = {
     handicrafts: {
       title: "Authentic Handicrafts",
-      description: "Support rural artisans by purchasing unique, handcrafted products made with traditional techniques and cultural heritage.",
+      description:
+        "Support rural artisans by purchasing unique, handcrafted products made with traditional techniques and cultural heritage.",
       icon: <BagHeartFill className={styles.icon} />,
     },
     organic: {
       title: "Organic Foods",
-      description: "Sourced directly from women farmers, offering high-quality, chemical-free produce and nutritious packaged goods.",
+      description:
+        "Sourced directly from women farmers, offering high-quality, chemical-free produce and nutritious packaged goods.",
       icon: <BasketFill className={styles.icon} />,
     },
     jewelry: {
       title: "Exquisite Jewelry",
-      description: "Discover beautiful, handcrafted jewelry pieces that empower the talented women who design and create them.",
+      description:
+        "Discover beautiful, handcrafted jewelry pieces that empower the talented women who design and create them.",
       icon: <Gem className={styles.icon} />,
     },
   };
@@ -37,21 +47,37 @@ const FocusedActionsSection = () => {
               <div className={styles.cardVolunteers}>
                 <h4 className={styles.cardTitle}>500+ Women Artisans</h4>
                 <div className={styles.avatarsRow}>
-                  <Image src="/avtr1.jpg" alt="Artisan 1" className={styles.avatar} />
-                  <Image src="/avtr1.jpg" alt="Artisan 2" className={styles.avatar} />
-                  <Image src="/avtr1.jpg" alt="Artisan 3" className={styles.avatar} />
-                  <Image src="/avtr1.jpg" alt="Artisan 4" className={styles.avatar} />
+                  <Image
+                    src="/avtr1.jpg"
+                    alt="Artisan 1"
+                    className={styles.avatar}
+                  />
+                  <Image
+                    src="/avtr1.jpg"
+                    alt="Artisan 2"
+                    className={styles.avatar}
+                  />
+                  <Image
+                    src="/avtr1.jpg"
+                    alt="Artisan 3"
+                    className={styles.avatar}
+                  />
+                  <Image
+                    src="/avtr1.jpg"
+                    alt="Artisan 4"
+                    className={styles.avatar}
+                  />
                 </div>
               </div>
 
               {/* Top-Right Image (Behind) */}
               <div className={styles.imgTopRight}>
-                <Image src="/about-us-image-1.jpg" alt="WENBA Products" />
+                <Image src="/wenba_prod_1.webp" alt="WENBA Products" />
               </div>
 
               {/* Middle-Left Image */}
               <div className={styles.imgMiddleLeft}>
-                <Image src="/about-us-image-2.jpg" alt="Women Entrepreneurs" />
+                <Image src="/wenba_2.webp" alt="Women Entrepreneurs" />
               </div>
 
               {/* Middle-Right Image (Main) */}
@@ -71,7 +97,6 @@ const FocusedActionsSection = () => {
               </div>
 
               {/* Floating WENBA Logo on Left */}
-       
             </div>
           </div>
 
@@ -84,14 +109,22 @@ const FocusedActionsSection = () => {
             <h2 className={`${styles.title} ${FONTS.font1}`} data-aos="fade-up">
               Empowering Native Business Artisans
             </h2>
-            <p className={styles.description} data-aos="fade-up" data-aos-delay="100">
-              WENBA is SIAWED&apos;s dedicated marketplace designed to connect women
-              entrepreneurs, rural artisans, and self-help groups directly with
-              consumers and corporate buyers.
+            <p
+              className={styles.description}
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              WENBA is SIAWED&apos;s dedicated marketplace designed to connect
+              women entrepreneurs, rural artisans, and self-help groups directly
+              with consumers and corporate buyers.
             </p>
 
             {/* Tabs Row */}
-            <div className={styles.tabsRow} data-aos="fade-up" data-aos-delay="150">
+            <div
+              className={styles.tabsRow}
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <button
                 className={`${styles.tabBtn} ${activeTab === "handicrafts" ? styles.active : ""}`}
                 onClick={() => setActiveTab("handicrafts")}
@@ -123,14 +156,23 @@ const FocusedActionsSection = () => {
                 {tabsContent[activeTab].icon}
               </div>
               <div className={styles.contentText}>
-                <h3 className={styles.contentTitle}>{tabsContent[activeTab].title}</h3>
-                <p className={styles.contentDescription}>{tabsContent[activeTab].description}</p>
+                <h3 className={styles.contentTitle}>
+                  {tabsContent[activeTab].title}
+                </h3>
+                <p className={styles.contentDescription}>
+                  {tabsContent[activeTab].description}
+                </p>
               </div>
             </div>
 
             {/* Action Button */}
-            <div className={styles.buttonWrapper} data-aos="fade-up" data-aos-delay="250">
-              <button 
+            <div
+              className={styles.buttonWrapper}
+              data-aos="fade-up"
+              data-aos-delay="250"
+              data-aos-offset="-1000"
+            >
+              <button
                 className={styles.contactBtn}
                 onClick={() => window.open("https://www.wenba.in", "_blank")}
               >
@@ -141,15 +183,30 @@ const FocusedActionsSection = () => {
         </div>
 
         {/* Bottom Contact Note */}
-        <div className={styles.bottomNote} data-aos="fade-up" data-aos-delay="300">
+        <div
+          className={styles.bottomNote}
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <div className={styles.noteAvatarWrapper}>
-            <Image src="/avtr1.jpg" alt="Representative" className={styles.noteAvatar} />
+            <Image
+              src="/avtr1.jpg"
+              alt="Representative"
+              className={styles.noteAvatar}
+            />
             <div className={styles.phoneBadge}>
               <TelephoneFill className={styles.phoneIcon} />
             </div>
           </div>
           <p className={styles.noteText}>
-            Are you a woman entrepreneur? <a href="https://www.wenba.in/register" target="_blank" rel="noopener noreferrer">Register your products on WENBA today.</a>
+            Are you a woman entrepreneur?{" "}
+            <a
+              href="https://www.wenba.in/register"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Register your products on WENBA today.
+            </a>
           </p>
         </div>
       </CustomContainer>

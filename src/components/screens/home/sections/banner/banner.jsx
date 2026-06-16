@@ -13,11 +13,11 @@ const BannerSection = () => {
       <div className={styles.top}>
         <CustomContainer>
           <div className={styles.topWrap}>
-            <div className={styles.badge14Years}>
+            <div className={styles.badge14Years} data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">
               <strong>Est. 2013</strong>
               <span>Serving women for 14 years</span>
             </div>
-            <div className={styles.bar}>
+            <div className={styles.bar} data-aos="fade-right" data-aos-duration="800">
               <div className={styles.images}>
                 {images.map((img, idx) => {
                   return (
@@ -33,7 +33,7 @@ const BannerSection = () => {
               </div>
               Southern Industrial Academy for Women Entrepreneurs Development
             </div>
-            <h1>
+            <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
               <span>Empowering</span>
               <br />
               Women Entrepreneurs. <br />
@@ -41,10 +41,10 @@ const BannerSection = () => {
               <br />
               Responsible Procurement.
             </h1>
-            <p className={styles.heroSubline}>
+            <p className={styles.heroSubline} data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
               14 years of creating opportunity, dignity and economic freedom for women across India.
             </p>
-            <div className={styles.btns}>
+            <div className={styles.btns} data-aos="fade-up" data-aos-offset="-1000" data-aos-duration="1000" data-aos-delay="600">
               <CustomButton>Join Siawed <PeopleFill/></CustomButton>
               
               <CustomButton variant={2}>Become a CSR Partner</CustomButton>
@@ -56,7 +56,7 @@ const BannerSection = () => {
       <div className={styles.btm}>
         <CustomContainer>
           <div className={styles.btmWrap}>
-            <div className={styles.btmLft}>
+            <div className={styles.btmLft} data-aos="fade-up" data-aos-duration="1000">
               <p>
                 Connecting women-led enterprises, native entrepreneurs, rural
                 artisans, SHGs and social enterprises with corporates,

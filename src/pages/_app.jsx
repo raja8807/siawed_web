@@ -15,37 +15,56 @@ import LoadingScreen from "@/components/ui/loading_screen/loading_screen";
 
 
 export default function App({ Component, pageProps }) {
+  const [loading, setLoading] = useState(true);
+  const router = useRouter();
+  const isHome = router.pathname === "/";
+
   useEffect(() => {
-    // ----------- AOS ----------------------
-    Aos.init({
-      duration: 1000,
-      once: false,
-    });
-
     // ----------- Progress ----------------------
+    const handleStart = (...params) => NProgress.start(params);
+    const handleStop = () => NProgress.done();
 
-    Router.events.on("routeChangeStart", (...params) => {
-      NProgress.start(params);
-    });
-    Router.events.on("routeChangeComplete", NProgress.done);
-    Router.events.on("routeChangeError", NProgress.done);
+    Router.events.on("routeChangeStart", handleStart);
+    Router.events.on("routeChangeComplete", handleStop);
+    Router.events.on("routeChangeError", handleStop);
     return () => {
-      Router.events.off("routeChangeStart", NProgress.start);
-      Router.events.off("routeChangeComplete", NProgress.done);
-      Router.events.off("routeChangeError", NProgress.done);
+      Router.events.off("routeChangeStart", handleStart);
+      Router.events.off("routeChangeComplete", handleStop);
+      Router.events.off("routeChangeError", handleStop);
     };
   }, []);
 
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    setTimeout(() => {
+    // Determine if we need to show the loader based on the initial route
+    const delay = router.pathname === "/" ? 1400 : 0;
+    
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 1400);
-  }, []);
+      
+      // Initialize AOS *after* the loader disappears
+      // This ensures animations are visible to the user
+      Aos.init({
+        duration: 1000,
+        once: false,
+      });
+    }, delay);
 
-  const router = useRouter();
-  const isHome = router.pathname === "/";
+    return () => clearTimeout(timer);
+  }, []); // Run once on mount
+
+  // Refresh AOS on route changes to ensure new page elements animate properly
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setTimeout(() => {
+        Aos.refresh();
+      }, 100);
+    };
+
+    Router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      Router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
 
   return (
     <>
@@ -55,15 +74,14 @@ export default function App({ Component, pageProps }) {
       </Head>
 
       <main className={FONTS.font1}>
+        {/* Loader is an overlay, layout renders behind it ensuring perfect SEO */}
         {isHome && loading && <LoadingScreen />}
         
         <Layout>
           <Component {...pageProps} />
           <ToastContainer position="bottom-right" />
         </Layout>
-
       </main>
-
     </>
   );
 }
