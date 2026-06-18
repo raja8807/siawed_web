@@ -13,6 +13,7 @@ import {
 } from "react-bootstrap-icons";
 import { CONTACT_DETAILS } from "@/constants/conatct";
 import FONTS from "@/styles/fonts";
+import { PAGES } from "@/constants/constants";
 
 const XIcon = () => (
   <svg
@@ -27,11 +28,7 @@ const XIcon = () => (
 );
 
 const QUICK_LINKS = [
-  { title: "Home", href: "/" },
-  { title: "About Us", href: "/about" },
-  { title: "Our Services", href: "/services" },
-  { title: "Blogs", href: "/blogs" },
-  { title: "Contact Us", href: "/contact" },
+  ...PAGES,
   { title: "WENBA - Register your product", href: "https://www.wenba.in/register" },
   { title: "WENBA - Corporate solutions", href: "https://www.wenba.in/corporate" },
 ];
@@ -53,9 +50,8 @@ const Footer = () => {
                     className={styles.logoImage}
                   />
                 </div>
-                <p className={styles.description}>
-                  We&apos;ve gathered answers to the questions we hear most, making it
-                  easy for you to learn about our work, values, and the impact.
+                <p className={styles.description} style={{fontWeight: '600', fontSize: '16px', color: 'rgba(255,255,255,0.95)'}}>
+                  Empowering Women. Connecting Opportunities. Creating Sustainable Growth.
                 </p>
                 <div style={{ marginTop: "20px" }}>
                   <button 

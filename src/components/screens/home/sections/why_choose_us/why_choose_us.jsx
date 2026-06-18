@@ -1,9 +1,18 @@
 import React from "react";
 import styles from "./why_choose_us.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
-import { Globe2, ShieldCheck, CurrencyDollar } from "react-bootstrap-icons";
+import {
+  Award,
+  Briefcase,
+  Cart,
+  Heart,
+  GraphUp,
+  CalendarEvent,
+} from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
+import CustomButton from "@/components/ui/custom_button/custom_button";
 import FONTS from "@/styles/fonts";
+import SectionHeading from "@/components/common/section_heading/section_heading";
 
 const WhyChooseUsSection = () => {
   return (
@@ -12,17 +21,17 @@ const WhyChooseUsSection = () => {
         <div className={styles.wrap}>
           {/* Left Column: Content and List */}
           <div className={styles.left}>
-            <div className={styles.badge} data-aos="fade-down">
-              <span className={styles.dot} /> Why Choose Us
-            </div>
-            <h2 className={`${styles.title} ${FONTS.font1}`} data-aos="fade-up">
-              What Makes our Impact Strong
-            </h2>
-            <p className={styles.description} data-aos="fade-up" data-aos-delay="100">
-              We approach every initiative with compassion, operate with full
+           
+
+            <SectionHeading
+              title={"Why Choose Us"}
+              caption={` We approach every initiative with compassion, operate with full
               transparency, and focus on creating sustainable impact that improves
-              lives.
-            </p>
+              lives.`}
+
+              head={'What Makes our Impact Strong'}
+              leftAllign
+            />
 
             <div
               className={styles.listCard}
@@ -31,30 +40,98 @@ const WhyChooseUsSection = () => {
             >
               <div className={styles.listItem}>
                 <div className={styles.iconContainer}>
-                  <Globe2 className={styles.icon} />
+                  <Award className={styles.icon} />
                 </div>
-                <p className={styles.itemText}>
-                  We operate with complete openness, clearly communicating
-                </p>
+                <div className={styles.itemTextWrap}>
+                  <h4 className={styles.itemTitle}>Proven Legacy</h4>
+                  <p className={styles.itemText}>
+                    Backed by 25+ years of entrepreneurial experience and 14+
+                    years of dedicated service to women entrepreneurship
+                    development.
+                  </p>
+                </div>
               </div>
 
               <div className={styles.listItem}>
                 <div className={styles.iconContainer}>
-                  <ShieldCheck className={styles.icon} />
+                  <Briefcase className={styles.icon} />
                 </div>
-                <p className={styles.itemText}>
-                  Ensuring every program is guided by empathy, dignity, & community
-                </p>
+                <div className={styles.itemTextWrap}>
+                  <h4 className={styles.itemTitle}>
+                    Holistic Business Support
+                  </h4>
+                  <p className={styles.itemText}>
+                    Training, mentorship, networking, and market access — all
+                    under one ecosystem.
+                  </p>
+                </div>
               </div>
 
               <div className={styles.listItem}>
                 <div className={styles.iconContainer}>
-                  <CurrencyDollar className={styles.icon} />
+                  <Cart className={styles.icon} />
                 </div>
-                <p className={styles.itemText}>
-                  Our initiative focus on long-term solution that empower community
-                </p>
+                <div className={styles.itemTextWrap}>
+                  <h4 className={styles.itemTitle}>
+                    Market Access Through WENBA
+                  </h4>
+                  <p className={styles.itemText}>
+                    Connecting women-owned businesses with buyers, corporates,
+                    and new markets.
+                  </p>
+                </div>
               </div>
+
+              <div className={styles.listItem}>
+                <div className={styles.iconContainer}>
+                  <Heart className={styles.icon} />
+                </div>
+                <div className={styles.itemTextWrap}>
+                  <h4 className={styles.itemTitle}>
+                    Creating Impact Beyond Business
+                  </h4>
+                  <p className={styles.itemText}>
+                    Empowering women entrepreneurs to drive economic
+                    independence and community growth.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.listItem}>
+                <div className={styles.iconContainer}>
+                  <GraphUp className={styles.icon} />
+                </div>
+                <div className={styles.itemTextWrap}>
+                  <h4 className={styles.itemTitle}>Vendor Development</h4>
+                  <p className={styles.itemText}>
+                    Supporting businesses in improving visibility, credibility,
+                    and readiness for larger market opportunities.
+                  </p>
+                </div>
+              </div>
+
+              <div className={styles.listItem}>
+                <div className={styles.iconContainer}>
+                  <CalendarEvent className={styles.icon} />
+                </div>
+                <div className={styles.itemTextWrap}>
+                  <h4 className={styles.itemTitle}>
+                    Events & Knowledge Sharing
+                  </h4>
+                  <p className={styles.itemText}>
+                    Seminars, webinars, conferences, business meetups, and
+                    learning forums that encourage collaboration and growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              style={{ marginTop: "30px" }}
+            >
+              <CustomButton href="/about">Learn More &rarr;</CustomButton>
             </div>
           </div>
 
@@ -65,7 +142,10 @@ const WhyChooseUsSection = () => {
                 <Image src="/impact-rally-1.png" alt="Empowerment walk" />
               </div>
               <div className={styles.imageSub}>
-                <Image src="/impact-rally-2.png" alt="World Population Day rally" />
+                <Image
+                  src="/impact-rally-2.png"
+                  alt="World Population Day rally"
+                />
               </div>
             </div>
           </div>

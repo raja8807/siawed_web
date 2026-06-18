@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
 import FONTS from "@/styles/fonts";
+import CustomButton from "@/components/ui/custom_button/custom_button";
 
 const FocusedActionsSection = () => {
   const [activeTab, setActiveTab] = useState("handicrafts");
@@ -106,7 +107,7 @@ const FocusedActionsSection = () => {
               <span className={styles.dot} /> Discover WENBA
             </div>
 
-            <h2 className={`${styles.title} ${FONTS.font1}`} data-aos="fade-up">
+            <h2 className={`${styles.title} ${FONTS.font2}`} data-aos="fade-up">
               Empowering Native Business Artisans
             </h2>
             <p
@@ -172,12 +173,9 @@ const FocusedActionsSection = () => {
               data-aos-delay="250"
               data-aos-offset="-1000"
             >
-              <button
-                className={styles.contactBtn}
-                onClick={() => window.open("https://www.wenba.in", "_blank")}
-              >
-                Explore WENBA <ArrowUpRight className={styles.arrow} />
-              </button>
+              <CustomButton variant={2}>
+                Explore WENBA <ArrowUpRight className={styles.arrow}  />
+              </CustomButton>
             </div>
           </div>
         </div>

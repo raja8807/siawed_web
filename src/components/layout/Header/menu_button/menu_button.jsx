@@ -5,6 +5,7 @@ import {
   EnvelopeAtFill,
   GeoAlt,
   GeoAltFill,
+  HeartPulse,
   List,
   Telephone,
   TelephoneFill,
@@ -16,7 +17,7 @@ import Link from "next/link";
 import { CONTACT_DETAILS } from "@/constants/conatct";
 import Logo from "@/components/common/logo/logo";
 import FONTS from "@/styles/fonts";
-import { PAGES } from "@/constants/constants";
+import CustomButton from "@/components/ui/custom_button/custom_button";
 
 const NavItem = ({ item, setShowDrawer }) => {
   const [showDropDown, setShowDropDown] = useState(false);
@@ -70,6 +71,89 @@ const NavItem = ({ item, setShowDrawer }) => {
   );
 };
 
+const MOBILE_PAGES = [
+  {
+    title: "About Us",
+    href: "/about",
+    dropdown: [
+      { title: "Who we are", href: "/about#who-we-are" },
+      { title: "What we do", href: "/about#what-we-do" },
+      { title: "Our services UX", href: "/services" },
+      { title: "Why choose us", href: "/about#why-choose-us" },
+      { title: "Vision & Mission", href: "/about#vision-mission" },
+      { title: "Our Founder President", href: "/about#founder" },
+    ]
+  },
+  {
+    title: "Programs",
+    href: "/programs",
+    dropdown: [
+      { title: "Entrepreneurship Development", href: "/programs/edp" },
+      { title: "Capacity Building & Training", href: "/programs/training" },
+      { title: "Digital Marketing Training", href: "/programs/digital-marketing" },
+      { title: "Business Growth Programs", href: "/programs/business-growth" },
+      { title: "Mentorship programs", href: "/programs/mentorship" },
+      { title: "Internship opportunities", href: "/programs/internships" },
+      { title: "Certification courses", href: "/programs/certifications" },
+    ]
+  },
+  {
+    title: "WENBA",
+    href: "/wenba",
+    dropdown: [
+      { title: "What is WENBA and its offerings to native MSMEs.", href: "/wenba#about" },
+      { title: "Register as a vendor", href: "/wenba/vendor-registration" },
+      { title: "Product categories available", href: "/wenba/categories" },
+      { title: "Raise a procurement request", href: "/wenba/procurement" },
+    ]
+  },
+  {
+    title: "Memberships",
+    href: "/memberships",
+    dropdown: [
+      { title: "Member benefits", href: "/memberships#benefits" },
+      { title: "Membership plans", href: "/memberships#plans" },
+      { title: "Become a member", href: "/memberships/apply" },
+    ]
+  },
+  {
+    title: "Corporate",
+    href: "/corporate",
+    dropdown: [
+      { title: "Corporate catalogue", href: "/corporate/catalogue" },
+      { title: "Impact reports at a glance", href: "/corporate/impact" },
+      { title: "Request a consultation", href: "/corporate/consultation" },
+    ]
+  },
+  {
+    title: "Events",
+    href: "/events",
+    dropdown: [
+      { title: "Upcoming Events", href: "/events/upcoming" },
+      { title: "Past Events", href: "/events/past" },
+      { title: "Gallery", href: "/events/gallery" },
+    ]
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+    dropdown: [
+      { title: "Get in touch", href: "/contact" },
+      { title: "Volunteer with us", href: "/volunteer" },
+      { title: "Careers", href: "/careers" },
+    ]
+  },
+  {
+    title: "sponsor Now",
+    href: "/sponsor",
+    dropdown: [
+      { title: "Educate a girl child", href: "/sponsor/educate" },
+      { title: "Go green initiatives", href: "/sponsor/green" },
+      { title: "Social cause", href: "/sponsor/social" },
+    ]
+  }
+];
+
 const RightMenu = ({ pages }) => {
   const [showDrawer, setShowDrawer] = useState(false);
 
@@ -79,8 +163,8 @@ const RightMenu = ({ pages }) => {
         href={`tel:+${CONTACT_DETAILS.phone1.number}`}
         className={styles.callBtn}
       >
-        <span>Donate Us</span>
-        <ArrowRight />
+        <CustomButton><HeartPulse/> Donate Us</CustomButton>
+        
       </Link>
 
       <div className={styles.MenuButton}>
@@ -107,7 +191,7 @@ const RightMenu = ({ pages }) => {
             <div>
               <nav className={styles.navSm}>
                 <ul>
-                  {pages.map((page) => {
+                  {MOBILE_PAGES.map((page) => {
                     return (
                       <NavItem
                         key={page.title}
@@ -118,31 +202,11 @@ const RightMenu = ({ pages }) => {
                   })}
                 </ul>
               </nav>
-            </div>
 
-            <div className={FONTS.font1}>
-              <div className={styles.row}>
-                <b>Our Services</b>
-                
-              </div>
-
-              <div className={styles.row}>
-                <b>Contact Us</b>
-                <p>
-                  <GeoAltFill />
-                  {CONTACT_DETAILS.address[0]}
-                </p>
-                <p>{CONTACT_DETAILS.address[1]}</p>
-                <p>{CONTACT_DETAILS.address[2]}</p>
-                <p>{CONTACT_DETAILS.address[3]}</p>
-                <br />
-                <p>
-                  <TelephoneFill /> {CONTACT_DETAILS.phone1.text}
-                </p>
-                <br />
-                <p>
-                  <EnvelopeAtFill /> {CONTACT_DETAILS.emails[0]}
-                </p>
+              <div style={{ marginTop: "30px", display: "flex", justifyContent: "center" }}>
+                <CustomButton variant={2} href="/donate" style={{ width: "100%", textAlign: "center", justifyContent: "center" }}>
+                  <HeartPulse className="me-2" /> Donate Now
+                </CustomButton>
               </div>
             </div>
           </Offcanvas.Body>

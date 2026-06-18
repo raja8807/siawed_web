@@ -25,7 +25,7 @@ const SectionHeading = ({
         <span />
         {title}
       </p>
-      <h2 className={FONTS.font1} data-aos="fade-up">
+      <h2 className={FONTS.font2} data-aos="fade-up">
         {head}
       </h2>
       <small>{caption}</small>

@@ -22,24 +22,19 @@ const AboutSection = () => {
           <div className={styles.right}>
             <SectionHeading
               title={"About Us"}
-              head={`Helping women never doubt that they are "Valuable & Powerful"`}
-              caption="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid adipisci voluptas voluptatem, omnis impedit aperiam!"
+              head={`Empowering Women Through Entrepreneurship and Skill Development`}
+              caption=""
               leftAllign
             />
             <p>
-              <span>
-                Southern Industrial Academy for Women Entrepreneurs Development
-                (SIAWED)
-              </span>{" "}
-              is a <span>Non Governmental Organisation (NGO)</span> founded in
-              the year 2013 in Chennai with the mission of providing economic
-              empowerment to the women community irrespective of their
-              socio-economic barriers. We facilitate <span>women</span> of
-              varying backgrounds to join together and develop their common
-              skills and knowledge for collective benefit.
+              <strong>Southern Industrial Academy for Women Entrepreneurs Development (SIAWED)</strong> is a not-for-profit organization dedicated to empowering women through entrepreneurship, skill development, leadership, and economic opportunities.
             </p>
             <br />
-            <CustomButton>Know More</CustomButton>
+            <p>
+              Led by first-generation entrepreneurs with over 25 years of business leadership experience, SIAWED has been creating pathways for women to transform their ideas into successful enterprises — providing access to training, mentorship, networking, market linkages, and business support services.
+            </p>
+            <br />
+            <CustomButton href="/about">Read More &rarr;</CustomButton>
           </div>
         </div>
       </CustomContainer>

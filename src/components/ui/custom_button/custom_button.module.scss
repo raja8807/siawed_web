@@ -1,7 +1,7 @@
 .CustomButton {
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   letter-spacing: 1px;
@@ -12,14 +12,14 @@
   }
 
   &.v1 {
-    background-color: $color_2;
+    background-color: $color_1;
     color: white;
     border: 1px solid $color_1;
 
     &:hover {
       background-color: white;
-      color: $color_2;
-      border-color: $color_2;
+      color: $color_1;
+      border-color: $color_1;
     }
   }
 

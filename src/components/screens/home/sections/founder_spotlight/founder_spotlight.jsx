@@ -28,7 +28,7 @@ const FounderSpotlightSection = () => {
             <Col lg={8} md={12} className={styles.contentCol}>
               <div className={styles.contentWrap} data-aos="fade-left">
                 <span className={styles.label}>Founder Spotlight</span>
-                <h3 className={`${styles.heading} ${FONTS.font1}`}>
+                <h3 className={`${styles.heading} ${FONTS.font2}`}>
                   Empowering women to lead, build, and scale their dreams.
                 </h3>
                 <p className={styles.intro}>
@@ -38,8 +38,8 @@ const FounderSpotlightSection = () => {
                   thriving ecosystem where thousands of women entrepreneurs
                   find the resources, network, and courage to succeed.
                 </p>
-                <Link href="/" passHref legacyBehavior>
-                  <CustomButton variant="outline" className={styles.readMoreBtn}>
+                <Link href="/about" passHref legacyBehavior>
+                  <CustomButton variant={2} className={styles.readMoreBtn}>
                     Read Full Story <ArrowRight className={styles.icon} />
                   </CustomButton>
                 </Link>

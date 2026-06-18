@@ -19,33 +19,31 @@
 // INBOUND AND OUTBOUND TOURS
 
 export const PAGES = [
-  { title: "About Us", href: "/about" },
-  { title: "Membership", href: "/membership" },
-  { title: "Corporate Solutions", href: "/corporate" },
+  {
+    title: "About Us",
+    href: "/about",
+  },
+  {
+    title: "Membership",
+    href: "/membership",
+  },
+  {
+    title: "Corporate Solutions",
+    href: "/corporate-solutions",
+  },
   {
     title: "Programs",
     href: "/programs",
-    dropdown: [
-      {
-        title: "Entrepreneurship Development Programs",
-        href: "/programs/edp",
-      },
-      {
-        title: "Skill Training Workshops",
-        href: "/programs/skill-training",
-      },
-      {
-        title: "SHG Support",
-        href: "/programs/shg",
-      },
-      {
-        title: "Student Internship Program",
-        href: "/programs/internship",
-      },
-    ],
   },
-  { title: "Events", href: "/events" },
-  { title: "Contact", href: "/contact" },
+  {
+    title: "Events",
+    href: "/events",
+  },
+
+  {
+    title: "Contact us",
+    href: "/contact",
+  },
 ];
 
 export const POPULAR_DESTINATIONS = [

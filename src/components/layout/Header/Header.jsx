@@ -29,35 +29,16 @@ const items = [
   "COIMBATORE",
 ];
 
-function InfiniteHorizontalScroll() {
-  return (
-    <div className={styles.wrapper}>
-      <div className={styles.marquee}>
-        {[
-          ...items,
-          ...items,
-          ...items,
-          ...items,
-          ...items,
-          ...items,
-          ,
-          ...items,
-          ...items,
-        ].map((item, index) => (
-          <div key={index} className={styles.item}>
-            <span>{item}</span>
-            <span className={styles.separator}>|</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+
 
 const DropDownItem = ({ item, setParentDropdown }) => {
   const [showSubDropDown, setShowSubDropDown] = useState(false);
 
   if (item.dropdown) {
+
+    
+    
+
     return (
       <div
         className={styles.subDropdown}
@@ -76,6 +57,8 @@ const DropDownItem = ({ item, setParentDropdown }) => {
           <div className={styles.subDropdownWrap}>
             <div className={`${styles.subDropdown}`}>
               {item.dropdown.map((dd) => {
+  
+
                 return (
                   <DropDownItem
                     item={dd}
@@ -98,13 +81,16 @@ const DropDownItem = ({ item, setParentDropdown }) => {
         setParentDropdown(false);
       }}
     >
-      {item.title}
+      {item.title} 
     </Link>
   );
 };
 
 const NavItem = ({ item }) => {
   const [showDropDown, setShowDropDown] = useState(false);
+
+  
+  
 
   if (item.dropdown) {
     return (
@@ -183,8 +169,24 @@ const Header = ({ noSubheader }) => {
       ${FONTS.font1}
       `}
     >
+      <div className={styles.topBar}>
+        <CustomContainer lg>
+          <div className={styles.topBarWrap}>
+            <div className={styles.topBarLeft}>
+              <span>Empowering Women. Connecting Markets.</span>
+            </div>
+            <div className={styles.topBarRight}>
+              <Link href="/join-siawed" className={styles.topBtn}>JOIN SIAWED</Link>
+              <Link href="/register-wenba" className={styles.topBtn}>REGISTER ON WENBA</Link>
+              <Link href="/corporate-enquiry" className={styles.topBtn}>CORPORATE ENQUIRY</Link>
+              {/* <Link href="/donate" className={`${styles.topBtn} ${styles.donateBtn}`}>DONATE</Link> */}
+            </div>
+          </div>
+        </CustomContainer>
+      </div>
       
-      <CustomContainer>
+      <div className={styles.bot}>
+        <CustomContainer lg>
         <div className={styles.wrap}>
           <Logo />
           <div className={styles.left}>
@@ -200,6 +202,7 @@ const Header = ({ noSubheader }) => {
           <RightMenu pages={PAGES} />
         </div>
       </CustomContainer>
+      </div>
     </header>
   );
 };

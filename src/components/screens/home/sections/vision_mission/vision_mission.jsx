@@ -11,7 +11,7 @@ const VisionMissionSection = () => {
         <SectionHeading
           title="Our Focus"
           head="Vision & Mission"
-          caption="Steering our efforts towards empowering women and fostering sustainable entrepreneurship."
+          caption="Empowering Women. Connecting Markets. Creating sustainable Growth."
         />
 
         <div className={styles.cardsWrap}>
@@ -26,11 +26,7 @@ const VisionMissionSection = () => {
             </div>
             <h3 className={styles.cardTitle}>Vision</h3>
             <p className={styles.cardText}>
-              Women are given a foundation course on basics of Entrepreneurship
-              Development ( EDP ) and grouped with similar skills. Each group
-              will be headed by a <span>TEAM LEADER</span> responsible for
-              training and co ordination of the members as per the requisites of
-              Business.
+              Empowering women to become successful entrepreneurs, business leaders and contributors to a sustainable and inclusive economy.
             </p>
           </div>
 
@@ -45,9 +41,7 @@ const VisionMissionSection = () => {
             </div>
             <h3 className={styles.cardTitle}>Mission</h3>
             <p className={styles.cardText}>
-              Our mission is to strengthen the entrepreneurial skills of women
-              both in rural and urban regions and empower the girls to choose
-              <span> entrepreneurship</span> against employment.
+              To support women entrepreneurs through training, networking, mentorship, market access and business opportunities enabling them to build, grow and scale successful enterprises through SIAWED and WENBA Eco system.
             </p>
           </div>
         </div>
