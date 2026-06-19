@@ -49,22 +49,22 @@ const FocusedActionsSection = () => {
                 <h4 className={styles.cardTitle}>500+ Women Artisans</h4>
                 <div className={styles.avatarsRow}>
                   <Image
-                    src="/avtr1.jpg"
+                    src="/images/testimonials/1.webp"
                     alt="Artisan 1"
                     className={styles.avatar}
                   />
                   <Image
-                    src="/avtr1.jpg"
+                    src="/images/testimonials/2.webp"
                     alt="Artisan 2"
                     className={styles.avatar}
                   />
                   <Image
-                    src="/avtr1.jpg"
+                    src="/images/testimonials/3.webp"
                     alt="Artisan 3"
                     className={styles.avatar}
                   />
                   <Image
-                    src="/avtr1.jpg"
+                    src="/images/testimonials/4.webp"
                     alt="Artisan 4"
                     className={styles.avatar}
                   />
@@ -83,7 +83,7 @@ const FocusedActionsSection = () => {
 
               {/* Middle-Right Image (Main) */}
               <div className={styles.imgMain}>
-                <Image src="/logo/wenba_logo.png" alt="WENBA Marketplace" />
+                <Image src="/logo/wenba_logo.jpeg" alt="WENBA Marketplace" />
               </div>
 
               {/* Bottom-Left Card */}

@@ -130,7 +130,7 @@ const TestimonialsSection = () => {
                     </div>
 
                     <div className={styles.authorImageWrap}>
-                      <Image src="/avtr1.jpg" alt={testimonial.name} className={styles.avatar} />
+                      <Image src={testimonial.image} alt={testimonial.name} className={styles.avatar} />
                       <div className={styles.quoteCircle}>
                         <QuoteIcon />
                       </div>
