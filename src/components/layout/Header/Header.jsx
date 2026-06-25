@@ -152,7 +152,7 @@ const Header = () => {
         <div className={styles.drawerOverlay} id="drawer-overlay" onClick={closeDrawer}></div>
         <div className={styles.drawerPanel}>
           <div className={styles.drawerHeader}>
-            <img src="/assets/images/siawed-logo-nav.png" alt="SIAWED"/>
+            <Image src="/logo/logo4.png" alt="SIAWED"/>
             <button className={styles.drawerClose} id="drawer-close" onClick={closeDrawer} aria-label="Close menu">&times;</button>
           </div>
           <div className={styles.drawerBody}>

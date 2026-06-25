@@ -132,9 +132,9 @@ const Footer = () => {
         <div className={styles.footerBottom}>
           <span>&#169; 2026 SIAWED. All rights reserved.</span>
           <span>
+            <Link href="/terms-conditions">Terms & Conditions</Link> &#183;
             <Link href="/privacy-policy">Privacy Policy</Link> &#183;
-            <Link href="/terms-of-use">Terms of Use</Link> &#183;
-            <Link href="/sitemap">Sitemap</Link>
+            <Link href="/refund-policy">Refund Policy</Link>
           </span>
         </div>
       </footer>

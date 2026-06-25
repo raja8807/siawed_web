@@ -114,7 +114,7 @@ const WenbaScreen = () => {
             <h3 className={`${styles.heading} ${FONTS.font2} mx-auto text-center`}>Capacity Building & Training</h3>
             <p className={styles.description} style={{ maxWidth: "700px", margin: "0 auto" }}>
               We train budding entrepreneurs and artisan communities with modern business skills, 
-              ensuring they thrive in today's digital-first economy.
+              ensuring they thrive in today&apos;s digital-first economy.
             </p>
           </div>
           
@@ -362,7 +362,7 @@ const WenbaScreen = () => {
       <section className={styles.finalCta}>
         <CustomContainer>
           <div className={styles.ctaContent} data-aos="fade-up">
-            <h2 className={FONTS.font2}>Join India's Inclusive Procurement Movement</h2>
+            <h2 className={FONTS.font2}>Join India&apos;s Inclusive Procurement Movement</h2>
             <p>
               Whether you are a vendor looking to expand your reach, or a corporate seeking sustainable 
               sourcing partners, WENBA provides the platform and support to achieve measurable social impact.
