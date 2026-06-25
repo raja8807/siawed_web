@@ -73,7 +73,7 @@ export default function App({ Component, pageProps }) {
         <title>Siawed | Home</title>
       </Head>
 
-      <main className={FONTS.font1}>
+      <main className={`${FONTS.font1} `}>
         {/* Loader is an overlay, layout renders behind it ensuring perfect SEO */}
         {isHome && loading && <LoadingScreen />}
         

@@ -1,93 +1,76 @@
-.ImpactSection {
-  padding: 100px 0;
-  background-color: #fafafa;
-  overflow: hidden;
+.impactContainer {
+  /* ============================================================
+     11. IMPACT STATS BAND
+     ============================================================ */
+  /* Override default section padding for impact band */
+  .impact-wrapper {
+    padding: 52px 0 !important;
+  }
 
-  .grid {
+  .impact-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-top: 50px;
-
-    .card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px 24px;
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      box-shadow: 0 4px 25px 0 rgba(168, 180, 208, 0.08);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: all 0.3s ease;
-
-      .iconContainer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        background-color: $color_2; // Yellow circle wrapper
-        border-radius: 50%;
-        margin-bottom: 24px;
-        transition: transform 0.3s ease;
-
-        .icon {
-          font-size: 22px;
-          color: #000000;
-        }
-      }
-
-      .metric {
-        font-size: 28px;
-        font-weight: 700;
-        color: #00362c; // Dark green matching color_1
-        letter-spacing: -0.5px;
-      }
-
-      .line {
-        width: 100%;
-        height: 1px;
-        background-color: #eff0f6; // Light divider line matching screenshot layout
-        margin: 16px 0;
-      }
-
-      .label {
-        font-size: 15px;
-        line-height: 1.5;
-        color: #4a5568;
-        font-weight: 500;
-      }
-
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-        border-color: rgba($color_1, 0.1);
-
-        .iconContainer {
-          transform: scale(1.08);
-        }
-      }
-    }
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: $r;
+    overflow: hidden;
   }
 
-  @include respond-below(lg) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .impact-cell {
+    padding: 36px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  }
+  .impact-cell:last-child {
+    border-right: none;
   }
 
-  @include respond-below(md) {
-    padding: 70px 0;
+  .impact-cell__number {
+    display: block;
 
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+    font-size: 46px;
+    font-weight: 800;
+    color: $orange-mid;
+    line-height: 1;
+  }
+  .impact-cell__label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.42);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 8px;
   }
 
-  @include respond-below(sm) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  // @media (max-width: 900px) {
+  //   .impact-wrapper {
+  //     padding: 44px 0 !important;
+  //   }
+  //   .impact-grid {
+  //     grid-template-columns: repeat(3, 1fr);
+  //   }
+  //   .impact-cell:nth-child(3) {
+  //     border-right: none;
+  //   }
+  //   .impact-cell:nth-child(n + 4) {
+  //     border-top: 1px solid rgba(255, 255, 255, 0.07);
+  //   }
+  // }
+
+  // @media (max-width: 560px) {
+  //   .impact-grid {
+  //     grid-template-columns: 1fr 1fr;
+  //   }
+  //   .impact-cell:nth-child(2) {
+  //     border-right: none;
+  //   }
+  //   .impact-cell:nth-child(3) {
+  //     border-top: 1px solid rgba(255, 255, 255, 0.07);
+  //     border-right: 1px solid rgba(255, 255, 255, 0.07);
+  //   }
+  //   .impact-cell:nth-child(5) {
+  //     grid-column: 1/-1;
+  //     border-right: none;
+  //   }
+  // }
 }

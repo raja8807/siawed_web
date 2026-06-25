@@ -1,199 +1,75 @@
-.TestimonialsSection {
-  padding: 100px 0;
-  background-color: #fafbfb;
-  position: relative;
-  overflow: hidden;
-
-  // Subtle dotted pattern background from the design
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: radial-gradient(
-      rgba($color_1, 0.05) 2px,
-      transparent 2px
-    );
-    background-size: 30px 30px;
-    z-index: 0;
-    pointer-events: none;
+.testimonialsContainer {
+  /* ============================================================
+     17. TESTIMONIALS SECTION
+     ============================================================ */
+  .testi__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 48px;
   }
 
-  > * {
-    position: relative;
-    z-index: 1;
+  .testi-card {
+    background: $ivory;
+    border: 1px solid $mist;
+    border-radius: $r;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
-}
 
-// Heading Area
-.headerWrap {
-  text-align: center;
-  margin-bottom: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  .testi-card__quote {
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.72;
+    color: $charcoal;
+    flex: 1;
+  }
+  .testi-card__quote::before {
+    content: "\201C";
+    font-size: 46px;
+    color: $blue;
+    font-style: normal;
+    line-height: 0;
+    vertical-align: -0.5em;
+    margin-right: 3px;
+  }
 
-  .pillBadge {
-    display: inline-flex;
+  .testi-card__author {
+    display: flex;
     align-items: center;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    padding: 6px 16px;
-    border-radius: 30px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      background-color: $color_2;
-      border-radius: 50%;
-      margin-right: 8px;
-    }
+    gap: 12px;
+    border-top: 1px solid $mist;
+    padding-top: 14px;
   }
-
-  .mainTitle {
-    font-size: 42px;
+  .testi-card__author img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid $mist;
+  }
+  .testi-card__name {
+    display: block;
+    font-size: 13px;
     font-weight: 800;
-    color: #0d3b36; // Dark green matching design
-    margin-bottom: 20px;
+    color: $charcoal;
+  }
+  .testi-card__role {
+    font-size: 11.5px;
+    color: $slate;
   }
 
-  .subTitle {
-    font-size: 16px;
-    color: #666666;
-    max-width: 700px;
-    line-height: 1.6;
-    margin: 0 auto;
-  }
-}
-
-// Carousel Container
-.carouselContainer {
-  position: relative;
-  // max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.slideWrap {
-  padding: 15px; // Provides room for the box-shadow so it doesn't get cut off
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
-
-.testimonialCard {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 40px 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    // transform: translateY(-5px);
-  }
-
-  .stars {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 25px;
-
-    svg {
-      color: $color_2;
-      font-size: 16px;
+  @media (max-width: 900px) {
+    .testi__grid {
+      grid-template-columns: 1fr 1fr;
     }
   }
-
-  .quoteText {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #0d3b36;
-    font-weight: 600;
-    flex-grow: 1;
-    margin-bottom: 40px;
-  }
-
-  .authorSection {
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    padding-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .authorInfo {
-      .authorName {
-        font-size: 18px;
-        font-weight: 700;
-        color: #0d3b36;
-        margin-bottom: 4px;
-      }
-
-      .authorRole {
-        font-size: 13px;
-        color: #888888;
-      }
-    }
-
-    .authorImageWrap {
-      position: relative;
-      width: 100px;
-      height: 100px;
-      flex-shrink: 0;
-
-      .avatar {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 2px solid #ffffff;
-        position: relative;
-        z-index: 2;
-      }
-
-      .quoteCircle {
-        position: absolute;
-        bottom: -5px;
-        right: -15px;
-        width: 35px;
-        height: 35px;
-        background-color: $color_2;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-
-        svg {
-          color: #0d3b36;
-          font-size: 16px;
-          margin-left: 12px; // offset to push it out from under the image
-        }
-      }
-    }
-  }
-}
-
-// Responsive
-@include respond-below(md) {
-  .headerWrap .mainTitle {
-    font-size: 32px;
-  }
-
-  .testimonialCard {
-    padding: 30px 20px;
-
-    .quoteText {
-      font-size: 16px;
+  @media (max-width: 768px) {
+    .testi__grid {
+      grid-template-columns: 1fr;
     }
   }
 }

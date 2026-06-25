@@ -1,36 +1,101 @@
-.CustomButton {
-  border: none;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-weight: 600;
+@import "../../../styles/scss/variables";
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 22px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
-  letter-spacing: 1px;
+  transition: all $t-base;
+  border: 2px solid transparent;
+  white-space: nowrap;
 
-  svg {
-    margin-bottom: 2px;
-    margin-left: 4px;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.btn-blue {
+  background: $blue;
+  color: #fff;
+  border-color: $blue;
+
+  &:hover {
+    background: $blue-deep;
+    border-color: $blue-deep;
   }
+}
 
-  &.v1 {
-    background-color: $color_1;
-    color: white;
-    border: 1px solid $color_1;
+.btn-orange {
+  background: $orange;
+  color: #fff;
+  border-color: $orange;
 
-    &:hover {
-      background-color: white;
-      color: $color_1;
-      border-color: $color_1;
-    }
+  &:hover {
+    background: #c45c10;
+    border-color: #c45c10;
   }
+}
 
-  &.v2 {
-    background-color: white;
-    color: $color_1;
-    border: 1px solid $color_1;
+.btn-teal {
+  background: $teal;
+  color: #fff;
+  border-color: $teal;
 
-    &:hover {
-      background-color: $color_2;
-      color: white;
-    }
+  &:hover {
+    background: #095f55;
+    border-color: #095f55;
   }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: $slate;
+  border-color: $mist;
+
+  &:hover {
+    border-color: $blue;
+    color: $blue;
+  }
+}
+
+/* White outline — on dark backgrounds */
+.btn-outline-white {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+/* Blue outline */
+.btn-outline-blue {
+  background: transparent;
+  color: $blue;
+  border-color: $blue;
+
+  &:hover {
+    background: $blue;
+    color: #fff;
+  }
+}
+
+/* Button sizes */
+.btn-lg {
+  font-size: 14px;
+  padding: 12px 28px;
+}
+.btn-sm {
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+/* Full width */
+.btn-full {
+  width: 100%;
 }

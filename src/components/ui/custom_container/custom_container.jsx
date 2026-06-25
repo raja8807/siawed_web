@@ -5,7 +5,8 @@ const CustomContainer = ({ children, lg }) => {
     <Container
       style={{
         height: "100%",
-        maxWidth: lg && "1500px",
+        // maxWidth: lg && "1500px",
+        padding:'100px 0'
       }}
     >
       {children}

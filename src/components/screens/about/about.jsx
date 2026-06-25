@@ -7,7 +7,7 @@ import FONTS from "@/styles/fonts";
 import WhyChooseUsSection from "../home/sections/why_choose_us/why_choose_us";
 import CredibilityBanner from "../home/sections/credibility_banner/credibility_banner";
 import VisionMissionSection from "../home/sections/vision_mission/vision_mission";
-import TestimonialsSection from "../home/sections/testimonials/testimonials";
+import TestimonialsSection from "../home/sections/testimonials/Testimonials";
 
 const AboutScreen = () => {
   return (
@@ -35,7 +35,7 @@ const AboutScreen = () => {
             </div>
 
             <div className={styles.right} data-aos="fade-left">
-              <h2 className={`${styles.heading} ${FONTS.font2}`}>
+              <h2 className={`${`${styles.heading} ${FONTS.font2}`} ${FONTS.font2}`}>
                 Empowering Women Through Entrepreneurship
               </h2>
               

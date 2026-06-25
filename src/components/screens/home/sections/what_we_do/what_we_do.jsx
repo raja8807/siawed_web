@@ -5,6 +5,7 @@ import SectionHeading from "@/components/common/section_heading/section_heading"
 import { CheckCircleFill } from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
 import CustomButton from "@/components/ui/custom_button/custom_button";
+import { FONTS } from "@/styles/fonts";
 
 const WhatWeDoSection = () => {
   const points = [
@@ -46,7 +47,7 @@ const WhatWeDoSection = () => {
             <div className={styles.imageWrap}>
               <Image src="/founder.webp" alt="What We Do" className={styles.mainImage} />
               <div className={styles.floatingBox}>
-                <h4>Comprehensive Ecosystem</h4>
+                <h4 className={FONTS.font2}>Comprehensive Ecosystem</h4>
                 <p>Support and Opportunities</p>
               </div>
             </div>

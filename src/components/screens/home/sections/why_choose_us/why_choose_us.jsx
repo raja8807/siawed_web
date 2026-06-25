@@ -43,7 +43,7 @@ const WhyChooseUsSection = () => {
                   <Award className={styles.icon} />
                 </div>
                 <div className={styles.itemTextWrap}>
-                  <h4 className={styles.itemTitle}>Proven Legacy</h4>
+                  <h4 className={`${styles.itemTitle} ${FONTS.font2}`}>Proven Legacy</h4>
                   <p className={styles.itemText}>
                     Backed by 25+ years of entrepreneurial experience and 14+
                     years of dedicated service to women entrepreneurship
@@ -57,7 +57,7 @@ const WhyChooseUsSection = () => {
                   <Briefcase className={styles.icon} />
                 </div>
                 <div className={styles.itemTextWrap}>
-                  <h4 className={styles.itemTitle}>
+                  <h4 className={`${styles.itemTitle} ${FONTS.font2}`}>
                     Holistic Business Support
                   </h4>
                   <p className={styles.itemText}>
@@ -72,7 +72,7 @@ const WhyChooseUsSection = () => {
                   <Cart className={styles.icon} />
                 </div>
                 <div className={styles.itemTextWrap}>
-                  <h4 className={styles.itemTitle}>
+                  <h4 className={`${styles.itemTitle} ${FONTS.font2}`}>
                     Market Access Through WENBA
                   </h4>
                   <p className={styles.itemText}>
@@ -87,7 +87,7 @@ const WhyChooseUsSection = () => {
                   <Heart className={styles.icon} />
                 </div>
                 <div className={styles.itemTextWrap}>
-                  <h4 className={styles.itemTitle}>
+                  <h4 className={`${styles.itemTitle} ${FONTS.font2}`}>
                     Creating Impact Beyond Business
                   </h4>
                   <p className={styles.itemText}>
@@ -102,7 +102,7 @@ const WhyChooseUsSection = () => {
                   <GraphUp className={styles.icon} />
                 </div>
                 <div className={styles.itemTextWrap}>
-                  <h4 className={styles.itemTitle}>Vendor Development</h4>
+                  <h4 className={`${styles.itemTitle} ${FONTS.font2}`}>Vendor Development</h4>
                   <p className={styles.itemText}>
                     Supporting businesses in improving visibility, credibility,
                     and readiness for larger market opportunities.
@@ -115,7 +115,7 @@ const WhyChooseUsSection = () => {
                   <CalendarEvent className={styles.icon} />
                 </div>
                 <div className={styles.itemTextWrap}>
-                  <h4 className={styles.itemTitle}>
+                  <h4 className={`${styles.itemTitle} ${FONTS.font2}`}>
                     Events & Knowledge Sharing
                   </h4>
                   <p className={styles.itemText}>

@@ -3,53 +3,47 @@ import styles from "./services_grid.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import SectionHeading from "@/components/common/section_heading/section_heading";
 import CustomButton from "@/components/ui/custom_button/custom_button";
+import { FONTS } from "@/styles/fonts";
 import { 
-  Lightbulb, 
-  PersonVideo3, 
-  Tools, 
+  RocketTakeoff, 
+  Mortarboard, 
   Shop, 
   Building, 
-  BoxSeam, 
-  CalendarEvent, 
-  ArrowRightCircle
+  People, 
+  Palette
 } from "react-bootstrap-icons";
 
 const ServicesGridSection = () => {
   const services = [
     {
       title: "Entrepreneurship Development",
-      desc: "Training programs and workshops for aspiring and existing women entrepreneurs.",
-      icon: <Lightbulb />
+      desc: "End-to-end training programs for aspiring and existing women entrepreneurs \u2014 from idea validation to business launch and growth.",
+      icon: <RocketTakeoff aria-hidden="true" />
     },
     {
-      title: "Business Mentoring",
-      desc: "Expert guidance to overcome business challenges and accelerate growth.",
-      icon: <PersonVideo3 />
+      title: "Capacity Building & Training",
+      desc: "Industry-relevant skill programs to enhance professional and entrepreneurial competencies, including digital and leadership skills.",
+      icon: <Mortarboard aria-hidden="true" />
     },
     {
-      title: "Skill Development",
-      desc: "Industry-relevant training to enhance professional and entrepreneurial competencies.",
-      icon: <Tools />
-    },
-    {
-      title: "Market Access & Promotion",
-      desc: "Showcase your products through exhibitions, events, and WENBA.",
-      icon: <Shop />
+      title: "Market Access & WENBA",
+      desc: "Showcase products through exhibitions, events and the WENBA marketplace \u2014 reaching corporate buyers and consumers nationwide.",
+      icon: <Shop aria-hidden="true" />
     },
     {
       title: "Corporate Linkages",
-      desc: "Connecting women-owned businesses with corporate buyers, procurement teams, and partners.",
-      icon: <Building />
+      desc: "Connecting women-owned businesses with corporate procurement teams, investors and strategic partners for sustainable growth.",
+      icon: <Building aria-hidden="true" />
     },
     {
-      title: "Vendor Development",
-      desc: "Supporting businesses in improving visibility, credibility, and readiness for market opportunities.",
-      icon: <BoxSeam />
+      title: "Community Outreach",
+      desc: "Health, wellness, human rights advocacy and environmental awareness programs that uplift entire communities and families.",
+      icon: <People aria-hidden="true" />
     },
     {
-      title: "Events & Knowledge Sharing",
-      desc: "Seminars, webinars, conferences, business meetups, and learning forums for growth.",
-      icon: <CalendarEvent />
+      title: "SHG & Artisan Support",
+      desc: "Dedicated pathways for self-help groups and native artisans to formalise, brand and scale their craft-based enterprises.",
+      icon: <Palette aria-hidden="true" />
     }
   ];
 
@@ -57,9 +51,9 @@ const ServicesGridSection = () => {
     <section className={styles.ServicesGridSection}>
       <CustomContainer>
         <SectionHeading
-          title="Our Services"
-          head="Comprehensive Ecosystem of Support"
-          caption="Providing everything you need to start, manage, and scale your enterprise."
+          title="What We Do"
+          head={<>A Complete Ecosystem to <em className="em-orange">Start, Grow &amp; Scale</em></>}
+          caption=""
         />
 
         <div className={styles.gridWrap}>
@@ -68,26 +62,13 @@ const ServicesGridSection = () => {
               className={styles.serviceCard} 
               key={idx}
               data-aos="fade-up"
-              data-aos-delay={(idx % 4) * 100}
+              data-aos-delay={(idx % 3) * 100}
             >
               <div className={styles.iconWrap}>{service.icon}</div>
-              <h4 className={styles.cardTitle}>{service.title}</h4>
+              <h4 className={`${styles.cardTitle} ${FONTS.font2}`}>{service.title}</h4>
               <p className={styles.cardDesc}>{service.desc}</p>
             </div>
           ))}
-
-          {/* 8th Card as View All CTA */}
-          <div 
-            className={`${styles.serviceCard} ${styles.ctaCard}`}
-            data-aos="fade-up"
-            data-aos-delay={300}
-          >
-            <div className={styles.ctaContent}>
-              <h4>Explore More</h4>
-              <p>Discover all our initiatives and programs.</p>
-              <CustomButton href="/services">View All Services <ArrowRightCircle className="ms-2" /></CustomButton>
-            </div>
-          </div>
         </div>
       </CustomContainer>
     </section>

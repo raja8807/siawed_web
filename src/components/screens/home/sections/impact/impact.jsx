@@ -1,66 +1,38 @@
 import React from "react";
-import styles from "./impact.module.scss";
-import CustomContainer from "@/components/ui/custom_container/custom_container";
-import SectionHeading from "@/components/common/section_heading/section_heading";
-import { People, Shop, Mortarboard, Heart, Handshake } from "react-bootstrap-icons";
+import styles from "./Impact.module.scss";
 
-const ImpactSection = () => {
-  const impacts = [
-    {
-      id: 1,
-      metric: "400+",
-      label: "Women Entrepreneurs Network",
-      icon: <People className={styles.icon} />,
-    },
-    {
-      id: 2,
-      metric: "150+",
-      label: "Vendor Partners",
-      icon: <Shop className={styles.icon} />,
-    },
-    {
-      id: 3,
-      metric: "50+",
-      label: "Training Programs",
-      icon: <Mortarboard className={styles.icon} />,
-    },
-    {
-      id: 4,
-      metric: "1000+",
-      label: "Beneficiaries",
-      icon: <Heart className={styles.icon} />,
-    },
-   
-  ];
+import SectionWrapper from "../../../../ui/section_wrapper/section_wrapper";
+import { FONTS } from "@/styles/fonts";
 
+const ImpactSectionx = () => {
   return (
-    <section className={styles.ImpactSection}>
-      <CustomContainer>
-        <SectionHeading
-          title="Our Reach"
-          head="Impact at a Glance"
-          caption="Making a tangible difference in women's economic empowerment through structured development."
-        />
-
-        <div className={styles.grid}>
-          {impacts.map((item, index) => (
-            <div
-              key={item.id}
-              className={styles.card}
-            
-            >
-              <div className={styles.iconContainer}>
-                {item.icon}
-              </div>
-              <h3 className={styles.metric}>{item.metric}</h3>
-              <div className={styles.line} />
-              <p className={styles.label}>{item.label}</p>
-            </div>
-          ))}
+    <div className={styles.impactContainer}>
+      <SectionWrapper id="impact" bgColor="charcoal" aos="fade-up" className={styles['impact-wrapper']}>
+        <div className={styles['impact-grid']}>
+          <div className={styles['impact-cell']}>
+            <span className={`${styles['impact-cell__number']} ${FONTS.font2}`}>400+</span>
+            <span className={styles['impact-cell__label']}>Women Entrepreneurs</span>
+          </div>
+          <div className={styles['impact-cell']}>
+            <span className={`${styles['impact-cell__number']} ${FONTS.font2}`}>150+</span>
+            <span className={styles['impact-cell__label']}>Vendor Partners</span>
+          </div>
+          <div className={styles['impact-cell']}>
+            <span className={`${styles['impact-cell__number']} ${FONTS.font2}`}>50+</span>
+            <span className={styles['impact-cell__label']}>Training Programs</span>
+          </div>
+          <div className={styles['impact-cell']}>
+            <span className={`${styles['impact-cell__number']} ${FONTS.font2}`}>1,000+</span>
+            <span className={styles['impact-cell__label']}>Beneficiaries</span>
+          </div>
+          <div className={styles['impact-cell']}>
+            <span className={`${styles['impact-cell__number']} ${FONTS.font2}`}>3,500+</span>
+            <span className={styles['impact-cell__label']}>Active Volunteers</span>
+          </div>
         </div>
-      </CustomContainer>
-    </section>
+      </SectionWrapper>
+    </div>
   );
 };
 
-export default ImpactSection;
+export default ImpactSectionx;

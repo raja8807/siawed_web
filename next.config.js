@@ -9,6 +9,14 @@ const nextConfig = {
     prependData:
       '@import "_variables.scss";@import "_mixins.scss";@import "_media_queries.scss";',
   },
+
+  webpack: (config) => {
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+    };
+    return config;
+  },
 };
 
 module.exports = nextConfig;

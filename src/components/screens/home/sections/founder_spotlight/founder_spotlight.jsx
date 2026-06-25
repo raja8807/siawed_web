@@ -28,7 +28,7 @@ const FounderSpotlightSection = () => {
             <Col lg={8} md={12} className={styles.contentCol}>
               <div className={styles.contentWrap} data-aos="fade-left">
                 <span className={styles.label}>Founder Spotlight</span>
-                <h3 className={`${styles.heading} ${FONTS.font2}`}>
+                <h3 className={`${`${styles.heading} ${FONTS.font2}`} ${FONTS.font2}`}>
                   Empowering women to lead, build, and scale their dreams.
                 </h3>
                 <p className={styles.intro}>

@@ -1,289 +1,520 @@
-.Header {
-  width: 100vw;
-  z-index: 1000;
+@import "../../styles/scss/variables";
 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-
-  border-bottom: 1px solid rgba($color_1, $alpha: 0.1);
-  background-color: #ffffff25;
-
-  .topBar {
-    background-color: $color_1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-    .topBarWrap {
+.headerContainer {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  :global {
+    /* ============================================================
+       05. TOPBAR
+       ============================================================ */
+    .topbar {
+      background: $blue-deep;
+      padding: 6px 52px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 8px 0;
-
-      .topBarLeft {
-        font-size: 12px;
-        color: rgba(255, 255, 255, 0.8);
-        font-weight: 500;
-        letter-spacing: 0.5px;
-      }
-
-      .topBarRight {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-
-        .topBtn {
-          font-size: 11px;
-          color: #ffffff;
-          font-weight: 700;
-          text-decoration: none;
-          letter-spacing: 1px;
-          transition: all 0.3s ease;
-
-          &:hover {
-            color: $color_2;
-          }
-
-          &.donateBtn {
-            background-color: $color_2;
-            color: #000000;
-            padding: 4px 12px;
-            border-radius: 4px;
-
-            &:hover {
-              background-color: #ffffff;
-            }
-          }
-        }
-      }
-
-      @include respond-below(md) {
-        justify-content: center;
-        span {
-          display: none;
-        }
-      }
+      font-size: 11.5px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.78);
+      letter-spacing: 0.02em;
     }
-  }
 
-  .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
+    .topbar a {
+      color: rgba(255, 255, 255, 0.72);
+      transition: color $t-fast;
+    }
+    .topbar a:hover {
+      color: #fff;
+    }
 
-    .left {
+    .topbar__right {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+    }
+
+    /* ============================================================
+       06. NAVIGATION & MEGA DROPDOWNS
+       ============================================================ */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: $white;
+      border-bottom: 2px solid $mist;
       display: flex;
       align-items: center;
-      gap: 100px;
+      padding: 6px 40px;
+      box-shadow: $sh-sm;
+    }
 
-      .navLg {
-        ul {
-          display: flex;
-          gap: 40px;
-          padding: 0;
-          margin: 0;
+    /* Logo */
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+    .nav__logo img {
+      height: 75px;
+      width: auto;
+    }
 
-          li {
-            list-style: none;
-            position: relative;
+    /* Menu list */
+    .nav__menu {
+      display: flex;
+      align-items: center;
+      margin-bottom: -6px;
+      flex: 1;
+    }
 
-            a,
-            p {
-              color: $color_1;
-              // font-size: 1px;
-              // letter-spacing: 0.8px;
+    /* Top-level item */
+    .nav__item {
+      position: relative;
+    }
 
-              font-weight: 600;
-              cursor: pointer;
-              font-size: 15px;
+    .nav__link {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: $nav-h;
+      padding: 0 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: $charcoal;
+      border-bottom: 3px solid transparent;
+      transition:
+        color $t-base,
+        border-color $t-base;
+      white-space: nowrap;
+    }
 
-              &:hover {
-                color: $color_2;
-              }
-            }
+    .nav__link-arrow {
+      font-size: 9px;
+      opacity: 0.45;
+      transition:
+        transform $t-base,
+        opacity $t-base;
+    }
 
-            .dropdownWrap {
-              position: absolute;
-              top: 0px;
-              padding-top: 30px;
+    .nav__item:hover > .nav__link {
+      color: $blue;
+      border-bottom-color: $blue;
+    }
+    .nav__item:hover > .nav__link .nav__link-arrow {
+      transform: rotate(180deg);
+      opacity: 1;
+    }
 
-              .dropdown {
-                background-color: $color_2;
+    /* WENBA special item */
+    .nav__item--wenba > .nav__link {
+      color: $teal;
+      font-weight: 800;
+    }
+    .nav__item--wenba:hover > .nav__link {
+      color: $teal-mid;
+      border-bottom-color: $teal;
+    }
 
-                padding: 20px;
-                min-width: 220px;
-                border-radius: 10px;
-                display: flex;
-                flex-direction: column;
-                // gap: 16px;
-                // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-                animation: openDropDown 0.25s;
-                transform-origin: top;
+    /* ── Dropdown panel ── */
+    .dropdown {
+      position: absolute;
+      top: calc(#{$nav-h} - 2px);
+      left: 0;
+      min-width: 230px;
+      background: $white;
+      border-top: 3px solid $blue;
+      border-radius: 0 0 $r $r;
+      box-shadow: $sh-md;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+      z-index: 100;
+      padding: 8px 0 12px;
+    }
 
-                .subDropdown {
-                  position: relative;
+    .nav__item:hover > .dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
 
-                  a,
-                  p {
-                    color: white;
-                    // display: none;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 10px;
-                    cursor: pointer;
-                  }
+    /* WENBA mega */
+    .dropdown--mega {
+      min-width: 520px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top-color: $teal;
+    }
+    .dropdown--mega .dropdown__col:first-child {
+      border-right: 1px solid $mist;
+    }
+    .dropdown--mega .dropdown__col {
+      padding: 8px 0;
+    }
 
-                  .subDropdownWrap {
-                    position: absolute;
-                    top: -30px;
-                    left: 100%;
-                    padding-top: 30px;
+    /* WENBA items hover color */
+    .nav__item--wenba .dropdown__link:hover {
+      color: $teal;
+    }
+    .nav__item--wenba .dropdown__label {
+      color: $teal-mid;
+    }
 
-                    .subDropdown {
-                      background-color: $color_2;
-                      padding: 10px;
-                      min-width: 250px;
-                      border-radius: 10px;
-                      display: flex;
-                      flex-direction: column;
-                      // gap: 16px;
-                      // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-                      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    .dropdown__label {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: $orange;
+      padding: 10px 18px 4px;
+    }
 
-                      animation: openDropDown 0.25s;
-                      transform-origin: top;
-                    }
-                  }
-                }
+    .dropdown__divider {
+      border: none;
+      border-top: 1px solid $mist;
+      margin: 6px 0;
+    }
 
-                a,
-                p {
-                  color: white;
-                  font-size: 16px;
-                  font-weight: normal;
-                  display: block;
-                  cursor: pointer;
-                  // border: 1px solid red;
-                  padding: 8px 0;
+    .dropdown__link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: $slate;
+      transition:
+        background $t-fast,
+        color $t-fast;
+      white-space: nowrap;
+    }
+    .dropdown__link:hover {
+      background: $ivory;
+      color: $blue;
+    }
 
-                  // margin-bottom: 10px;
+    .dropdown__icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: $ivory;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    .dropdown__link:hover .dropdown__icon {
+      background: $blue-light;
+    }
 
-                  &:hover {
-                    color: $color_1;
-                  }
-                }
-              }
-            }
-          }
-        }
+    /* Nav right CTAs */
+    .nav__ctas {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       07. MOBILE HAMBURGER
+       ============================================================ */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px;
+      margin-left: auto;
+      cursor: pointer;
+    }
+    .hamburger__line {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: $charcoal;
+      border-radius: 2px;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    }
+    .hamburger.is-open .hamburger__line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.is-open .hamburger__line:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.is-open .hamburger__line:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ============================================================
+       08. MOBILE SLIDE DRAWER
+       ============================================================ */
+    .drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+    }
+    .drawer.is-open {
+      display: block;
+    }
+
+    .drawer__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.52);
+    }
+
+    .drawer__panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: min(340px, 100vw);
+      height: 100%;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(-100%);
+      transition: transform $t-slow ease;
+      overflow-y: auto;
+    }
+    .drawer.is-open .drawer__panel {
+      transform: translateX(0);
+    }
+
+    .drawer__header {
+      background: $blue-deep;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+    .drawer__header img {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .drawer__close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .drawer__body {
+      flex: 1;
+      overflow-y: auto;
+      padding-bottom: 130px;
+    }
+
+    /* Drawer menu item row */
+    .drawer-item {
+      border-bottom: 1px solid $mist;
+    }
+
+    .drawer-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      color: $charcoal;
+      transition: background $t-fast;
+    }
+    .drawer-trigger:hover {
+      background: $ivory;
+    }
+    .drawer-trigger--wenba {
+      color: $teal;
+    }
+    .drawer-trigger.is-open {
+      color: $blue;
+    }
+    .drawer-trigger--wenba.is-open {
+      color: $teal-mid;
+    }
+
+    .drawer-trigger__chevron {
+      font-size: 11px;
+      color: #aaa;
+      transition: transform $t-base;
+    }
+    .drawer-trigger.is-open .drawer-trigger__chevron {
+      transform: rotate(180deg);
+      color: $blue;
+    }
+    .drawer-trigger--wenba.is-open .drawer-trigger__chevron {
+      color: $teal;
+    }
+
+    /* Drawer submenu */
+    .drawer-sub {
+      display: none;
+      background: $ivory;
+      padding: 6px 0 10px;
+    }
+    .drawer-sub.is-open {
+      display: block;
+    }
+
+    .drawer-sub__label {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: $orange;
+      padding: 10px 20px 4px 52px;
+    }
+
+    .drawer-sub a {
+      display: block;
+      padding: 9px 20px 9px 52px;
+      font-size: 13px;
+      font-weight: 600;
+      color: $slate;
+      transition:
+        color $t-fast,
+        background $t-fast;
+    }
+    .drawer-sub a::before {
+      content: "–";
+      margin-right: 8px;
+      color: $blue-mid;
+    }
+    .drawer-sub a:hover {
+      color: $blue;
+      background: $parchment;
+    }
+
+    /* Drawer footer CTAs */
+    .drawer__footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: min(340px, 100vw);
+      background: $white;
+      border-top: 2px solid $mist;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .drawer__footer .btn {
+      width: 100%;
+      display: block;
+      text-align: center;
+      padding: 11px;
+      font-size: 14px;
+    }
+
+    /* ============================================================
+       09. MOBILE BOTTOM TAB BAR
+       ============================================================ */
+    .bottom-tabs {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 62px;
+      background: $white;
+      border-top: 2px solid $mist;
+      z-index: 898;
+      box-shadow: 0 -2px 14px rgba(0, 0, 0, 0.07);
+    }
+    .bottom-tabs__list {
+      display: flex;
+      height: 100%;
+    }
+    .bottom-tabs__item {
+      flex: 1;
+    }
+
+    .bottom-tab {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      width: 100%;
+      height: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 700;
+      color: $slate;
+      text-decoration: none;
+      transition: color $t-base;
+    }
+    .bottom-tab__icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+    .bottom-tab:hover,
+    .bottom-tab.is-active {
+      color: $blue;
+    }
+
+    /* WENBA floating tab */
+    .bottom-tab--wenba {
+      color: $teal;
+    }
+    .bottom-tab--wenba .bottom-tab__icon {
+      background: $teal;
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-top: -12px;
+      box-shadow: 0 4px 14px rgba(13, 122, 110, 0.4);
+    }
+
+    @media (max-width: 1060px) {
+      .nav__menu,
+      .nav__ctas {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav {
+        padding: 0 20px;
+      }
+      .bottom-tabs {
+        display: block;
       }
     }
-  }
-
-  @include respond-below(md) {
-    .wrap {
-      align-items: flex-start;
-
-      .navLg {
+    @media (max-width: 768px) {
+      .topbar {
         display: none;
       }
     }
-  }
-}
-
-@keyframes openDropDown {
-  from {
-    transform: scaleY(0);
-  }
-
-  to {
-    transform: scaleY(1);
-  }
-}
-
-.Header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-
-// .show {
-//   transform: translateY(0);
-// }
-
-// .hide {
-//   transform: translateY(-100%);
-// }
-
-.scrolled {
-  .bot {
-    animation: fade forwards ease-in 0.3s;
-    overflow: hidden;
-  }
-}
-
-@keyframes fade {
-  from {
-    height: fit-content;
-  }
-
-  to {
-    height: 0px;
-  }
-}
-
-/* InfiniteHorizontalScroll.module.scss */
-
-.wrapper {
-  width: 400px;
-  overflow: hidden;
-  @include respond-below(md) {
-    width: 100%;
-  }
-}
-
-.marquee {
-  display: flex;
-  width: max-content;
-  white-space: nowrap;
-  animation: marquee 72s linear infinite;
-
-  &:hover {
-    animation-play-state: paused;
-  }
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  margin: 0 10px;
-  color: #fff;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  &:hover {
-    color: $color_1;
-
-    .separator {
-      color: #fff;
-    }
-  }
-}
-
-.separator {
-  margin-left: 12px;
-  // color: #666;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
   }
 }

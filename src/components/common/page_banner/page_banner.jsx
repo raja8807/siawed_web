@@ -13,7 +13,7 @@ const PageBanner = ({ title, breadcrumbs, bgImage = "/impact-rally-1.png" }) => 
       <div className={styles.overlay}></div>
       <CustomContainer>
         <div className={styles.content}>
-          <h1 className={`${styles.title} ${FONTS.font2}`}>{title}</h1>
+          <h1 className={`${`${styles.title} ${FONTS.font2}`} ${FONTS.font2}`}>{title}</h1>
           {breadcrumbs && breadcrumbs.length > 0 && (
             <div className={styles.breadcrumbs}>
               {breadcrumbs.map((crumb, index) => (

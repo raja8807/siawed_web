@@ -28,7 +28,7 @@ const WenbaTeaserSection = () => {
                     className={styles.wenbaLogo}
                   />
                 </div>
-                <h3 className={`${styles.heading} ${FONTS.font1}`}>
+                <h3 className={`${`${styles.heading} ${FONTS.font2}`} ${FONTS.font1}`}>
                   Empowering Native Business Artisans
                 </h3>
                 <p className={styles.desc}>
@@ -51,7 +51,7 @@ const WenbaTeaserSection = () => {
             {/* Categories Column */}
             <Col lg={7} md={12} className={styles.rightCol}>
               <div className={styles.categoriesWrap} data-aos="fade-left">
-                <h4 className={FONTS.font1}>Popular Categories</h4>
+                <h4 className={`${FONTS.font1} ${FONTS.font2}`}>Popular Categories</h4>
                 <div className={styles.grid}>
                   {CATEGORIES.map((cat, idx) => (
                     <div key={idx} className={styles.catBox}>

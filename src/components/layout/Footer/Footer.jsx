@@ -1,182 +1,144 @@
-import React from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
-import styles from "./Footer.module.scss";
+import React, { useState } from "react";
 import Link from "next/link";
-import {
-  TelephoneFill,
-  Facebook,
-  Instagram,
-  Pinterest,
-  EnvelopeFill,
-  GeoAltFill,
-  ArrowUpRight,
+import styles from "./Footer.module.scss";
+import { FONTS } from "@/styles/fonts";
+import { 
+  Facebook, 
+  Instagram, 
+  Linkedin, 
+  Youtube, 
+  GeoAltFill, 
+  TelephoneFill, 
+  EnvelopeFill, 
+  Globe 
 } from "react-bootstrap-icons";
-import { CONTACT_DETAILS } from "@/constants/conatct";
-import FONTS from "@/styles/fonts";
-import { PAGES } from "@/constants/constants";
-
-const XIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    fill="currentColor"
-    viewBox="0 0 16 16"
-  >
-    <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z" />
-  </svg>
-);
-
-const QUICK_LINKS = [
-  ...PAGES,
-  { title: "WENBA - Register your product", href: "https://www.wenba.in/register" },
-  { title: "WENBA - Corporate solutions", href: "https://www.wenba.in/corporate" },
-];
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = () => {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      alert("Please enter a valid email");
+      return;
+    }
+    setIsSubscribed(true);
+    setEmail("");
+    setTimeout(() => setIsSubscribed(false), 4000);
+  };
+
   return (
-    <footer className={styles.footer}>
-      {/* Main Footer Content */}
-      <div className={styles.mainFooter}>
-        <Container>
-          <Row className={styles.footerRow}>
-            {/* Column 1: Logo & Description */}
-            <Col lg={4} md={6} sm={12} className={styles.footerCol}>
-              <div className={styles.logoSection}>
-                <div className={styles.brandMark}>
-                  <Image
-                    src="/logo/logo.png"
-                    alt="SIAWED Logo"
-                    className={styles.logoImage}
-                  />
-                </div>
-                <p className={styles.description} style={{fontWeight: '600', fontSize: '16px', color: 'rgba(255,255,255,0.95)'}}>
-                  Empowering Women. Connecting Opportunities. Creating Sustainable Growth.
-                </p>
-                <div style={{ marginTop: "20px" }}>
-                  <button 
-                    style={{ 
-                      backgroundColor: "transparent", 
-                      border: "1px solid rgba(255,255,255,0.3)", 
-                      color: "#fff", 
-                      padding: "10px 20px", 
-                      borderRadius: "8px", 
-                      fontSize: "14px",
-                      cursor: "pointer",
-                      transition: "all 0.3s ease"
-                    }}
-                    onMouseEnter={(e) => e.target.style.backgroundColor = "rgba(255,255,255,0.1)"}
-                    onMouseLeave={(e) => e.target.style.backgroundColor = "transparent"}
-                  >
-                    Request Corporate Catalogue
-                  </button>
-                </div>
-              </div>
-            </Col>
-
-            {/* Column 2: Quick Links */}
-            <Col lg={3} md={6} sm={12} className={styles.footerCol}>
-              <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
-                Quick Links
-              </h4>
-              <ul className={styles.linkList}>
-                {QUICK_LINKS.map((link) => (
-                  <li key={link.title}>
-                    <Link href={link.href}>
-                      <span className={styles.bullet}>•</span> {link.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Col>
-
-            {/* Column 3: Location & Socials */}
-            <Col lg={5} md={6} sm={12} className={styles.footerCol}>
-              <h4 className={`${styles.widgetTitle} ${FONTS.font1}`}>
-                Our Location
-              </h4>
-              <div className={styles.locationBlock}>
-                <div className={styles.locationIconCircle}>
-                  <GeoAltFill className={styles.locIcon} />
-                </div>
-                <p className={styles.locationText}>
-                  {CONTACT_DETAILS.address.join(" ")}
-                </p>
-              </div>
-
-              <h5 className={styles.socialTitle}>Follow Us On Socials:</h5>
-              <div className={styles.socialIcons}>
-                <a href="#" aria-label="Pinterest">
-                  <Pinterest />
-                </a>
-                <a href="#" aria-label="X / Twitter">
-                  <XIcon />
-                </a>
-                <a href="#" aria-label="Facebook">
-                  <Facebook />
-                </a>
-                <a href="#" aria-label="Instagram">
-                  <Instagram />
-                </a>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
-      {/* Middle Bar: Newsletter & Contact */}
-      <div className={styles.middleBar}>
-        <Container>
-          <div className={styles.middleBarInner}>
-            {/* Newsletter Form */}
-            <div className={styles.newsletterForm}>
-              <input
-                type="email"
-                placeholder="Enter Email Address*"
-                className={styles.emailInput}
-              />
-              <button className={styles.subscribeBtn}>
-                Subscribe <ArrowUpRight className={styles.arrow} />
-              </button>
+    <div className={styles.footerContainer}>
+      <footer id="contact">
+        <div className="footer__grid">
+          {/* Col 1: Brand */}
+          <div>
+            <img className="footer__brand-logo" src="/assets/images/siawed-logo-footer.png" alt="SIAWED – Empower Elevate Enrich" />
+            <p className="footer__brand-desc">
+              Southern Industrial Academy for Women Entrepreneurs Development — creating pathways for women across India to build, grow, and scale successful enterprises through the SIAWED & WENBA ecosystem.
+            </p>
+            <div className="footer__social" aria-label="SIAWED social media links">
+              <a href="https://facebook.com/siawed" title="Facebook" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+              <a href="https://instagram.com/siawed" title="Instagram" target="_blank" rel="noopener noreferrer"><Instagram /></a>
+              <a href="https://linkedin.com/company/siawed" title="LinkedIn" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
+              <a href="https://youtube.com/@siawed" title="YouTube" target="_blank" rel="noopener noreferrer"><Youtube /></a>
             </div>
-
-            {/* Contact Details */}
-            <div className={styles.contactDetails}>
-              <div className={styles.contactBlock}>
-                <div className={styles.contactIconCircle}>
-                  <EnvelopeFill className={styles.contactIcon} />
-                </div>
-                <div className={styles.contactInfo}>
-                  <span className={styles.contactLabel}>Email Address</span>
-                  <a href={`mailto:${CONTACT_DETAILS.emails[0]}`}>
-                    {CONTACT_DETAILS.emails[0]}
-                  </a>
-                </div>
-              </div>
-
-              <div className={styles.contactBlock}>
-                <div className={styles.contactIconCircle}>
-                  <TelephoneFill className={styles.contactIcon} />
-                </div>
-                <div className={styles.contactInfo}>
-                  <span className={styles.contactLabel}>Phone Number</span>
-                  <a href={`tel:+${CONTACT_DETAILS.phone1.number}`}>
-                    {CONTACT_DETAILS.phone1.text}
-                  </a>
-                </div>
-              </div>
+            {/* WENBA mini in footer */}
+            <div className="footer__wenba">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 54" aria-label="WENBA">
+                <path d="M36 38 C25 28,6 26,2 34 C9 39,24 40,36 38Z" fill="#66D8CC"/>
+                <path d="M36 38 C47 28,66 26,70 34 C63 39,48 40,36 38Z" fill="#66D8CC"/>
+                <path d="M36 38 C27 18,29 4,36 0 C43 4,45 18,36 38Z" fill="#0D7A6E"/>
+                <circle cx="36" cy="15" r="6.5" fill="#CC2222"/>
+                <path d="M36 22 L36 34 M36 27 L26 20 M36 27 L46 20 M36 34 L30 45 M36 34 L42 45" stroke="#0D7A6E" strokeWidth="3.5" strokeLinecap="round" fill="none"/>
+                <text x="86" y="26" fontFamily="Georgia,serif" fontSize="19" fontWeight="800" fill="#CC2222" letterSpacing="3">WENBA</text>
+                <text x="86" y="44" fontFamily="Arial,sans-serif" fontSize="11.5" fontWeight="600" fill="#1BA090">WE make IT Happen!</text>
+              </svg>
+              <span className="footer__wenba-text">Vendor & procurement marketplace<br/>powered by SIAWED</span>
             </div>
           </div>
-        </Container>
-      </div>
 
-      {/* Bottom Copyright */}
-      <div className={styles.copyright}>
-        <Container>
-          <p>Copyright © 2026 SIAWED. All rights reserved.</p>
-        </Container>
-      </div>
-    </footer>
+          {/* Col 2: Quick Links */}
+          <div className="footer__col">
+            <h4 className={FONTS.font2}>Quick Links</h4>
+            <nav className="footer__links" aria-label="Footer quick links">
+              <Link href="/about">About Us</Link>
+              <Link href="/programs">Programs</Link>
+              <Link href="/wenba">WENBA Marketplace</Link>
+              <Link href="/membership">Membership</Link>
+              <Link href="/corporate-solutions">Corporate Solutions</Link>
+              <Link href="/events">Events</Link>
+              <Link href="/blog">Blog</Link>
+              <Link href="/careers">Careers</Link>
+            </nav>
+          </div>
+
+          {/* Col 3: WENBA Links */}
+          <div className="footer__col">
+            <h4 className={FONTS.font2}>WENBA</h4>
+            <nav className="footer__links" aria-label="WENBA links">
+              <Link href="/wenba/register">Register as Vendor</Link>
+              <Link href="/wenba/catalogue">Product Catalogue</Link>
+              <Link href="/wenba/procurement">Corporate Procurement</Link>
+              <Link href="/wenba/empanelled">Empanelled Vendors</Link>
+              <Link href="/wenba/raise-request">Raise a Request</Link>
+              <Link href="/wenba/dashboard">WENBA Dashboard</Link>
+              <Link href="/wenba/about">About WENBA</Link>
+            </nav>
+          </div>
+
+          {/* Col 4: Contact + Newsletter */}
+          <div className="footer__col">
+            <h4 className={FONTS.font2}>Get in Touch</h4>
+            <address style={{ fontStyle: "normal" }}>
+              <div className="footer__contact-item">
+                <span className="footer__contact-icon" aria-hidden="true"><GeoAltFill /></span>
+                <span className="footer__contact-text">601 &#8220;DEEPA&#8221;, Chitra Avenue, Choolaimedu High Road, Chennai &#8211; 600094</span>
+              </div>
+              <div className="footer__contact-item">
+                <span className="footer__contact-icon" aria-hidden="true"><TelephoneFill /></span>
+                <span className="footer__contact-text"><a href="tel:+914443514334">044 4351 4334</a></span>
+              </div>
+              <div className="footer__contact-item">
+                <span className="footer__contact-icon" aria-hidden="true"><EnvelopeFill /></span>
+                <span className="footer__contact-text"><a href="mailto:info@siawed.org">info@siawed.org</a></span>
+              </div>
+              <div className="footer__contact-item">
+                <span className="footer__contact-icon" aria-hidden="true"><Globe /></span>
+                <span className="footer__contact-text"><a href="http://www.siawed.org" target="_blank" rel="noopener noreferrer">www.siawed.org</a></span>
+              </div>
+            </address>
+
+            <span className="footer__newsletter-label" id="newsletter-label">Newsletter</span>
+            <div className="footer__newsletter" role="form" aria-labelledby="newsletter-label">
+              <input 
+                type="email" 
+                placeholder={isSubscribed ? "You're subscribed!" : "Your email address"} 
+                aria-label="Email address for newsletter"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <button 
+                type="button" 
+                onClick={handleSubscribe} 
+                style={isSubscribed ? { background: '#0D7A6E' } : {}}
+              >
+                {isSubscribed ? "✓ Subscribed!" : "Subscribe"}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer__bottom">
+          <span>&#169; 2026 SIAWED. All rights reserved.</span>
+          <span>
+            <Link href="/privacy-policy">Privacy Policy</Link> &#183;
+            <Link href="/terms-of-use">Terms of Use</Link> &#183;
+            <Link href="/sitemap">Sitemap</Link>
+          </span>
+        </div>
+      </footer>
+    </div>
   );
 };
 

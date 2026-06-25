@@ -29,7 +29,7 @@ const ContactScreen = () => {
               </div>
               <h4 className={FONTS.font2}>Phone Number</h4>
               <p>We work closely with communities to identify real needs.</p>
-              <h5>Call Us: {CONTACT_DETAILS.phone1.text}</h5>
+              <h5 className={FONTS.font2}>Call Us: {CONTACT_DETAILS.phone1.text}</h5>
             </div>
 
             <div className={styles.infoCard} data-aos="fade-up" data-aos-delay="100">
@@ -38,7 +38,7 @@ const ContactScreen = () => {
               </div>
               <h4 className={FONTS.font2}>Email Address</h4>
               <p>We work closely with communities to identify real needs.</p>
-              <h5>Email: {CONTACT_DETAILS.emails[0]}</h5>
+              <h5 className={FONTS.font2}>Email: {CONTACT_DETAILS.emails[0]}</h5>
             </div>
 
             <div className={styles.infoCard} data-aos="fade-up" data-aos-delay="200">
@@ -47,7 +47,7 @@ const ContactScreen = () => {
               </div>
               <h4 className={FONTS.font2}>Working Hours</h4>
               <p>We work closely with communities to identify real needs.</p>
-              <h5>Mon - Fri: 09 AM - 06 PM</h5>
+              <h5 className={FONTS.font2}>Mon - Fri: 09 AM - 06 PM</h5>
             </div>
           </div>
 

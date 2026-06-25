@@ -1,0 +1,86 @@
+.wwdContainer {
+  /* ============================================================
+     13. WHAT WE DO SECTION
+     ============================================================ */
+  .wwd__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 46px;
+  }
+
+  .wwd-card {
+    background: $white;
+    border: 1.5px solid $mist;
+    border-radius: $r;
+    padding: 30px;
+    transition:
+      box-shadow 0.25s ease,
+      transform 0.25s ease;
+  }
+  .wwd-card:hover {
+    box-shadow: $sh-md;
+    transform: translateY(-3px);
+  }
+
+  .wwd-card__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+  .icon-bg-blue {
+    background: $blue-light;
+  }
+  .icon-bg-orange {
+    background: $orange-light;
+  }
+  .icon-bg-green {
+    background: $green-light;
+  }
+  .icon-bg-teal {
+    background: $teal-light;
+  }
+
+  .wwd-card h3 {
+    font-size: 19px;
+    font-weight: 700;
+    color: $charcoal;
+    margin-bottom: 10px;
+  }
+  .wwd-card p {
+    font-size: 13.5px;
+    line-height: 1.78;
+    color: $slate;
+  }
+
+  /* Featured card (dark bg) */
+  .wwd-card--featured {
+    background: $blue;
+    border-color: $blue;
+  }
+  .wwd-card--featured h3 {
+    color: #fff;
+  }
+  .wwd-card--featured p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .wwd-card--featured .wwd-card__icon {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  @media (max-width: 900px) {
+    .wwd__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 560px) {
+    .wwd__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

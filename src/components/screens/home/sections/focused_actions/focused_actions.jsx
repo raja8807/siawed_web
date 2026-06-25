@@ -46,7 +46,7 @@ const FocusedActionsSection = () => {
             <div className={styles.collageContainer}>
               {/* Top-Left Card */}
               <div className={styles.cardVolunteers}>
-                <h4 className={styles.cardTitle}>500+ Women Artisans</h4>
+                <h4 className={`${styles.cardTitle} ${FONTS.font2}`}>500+ Women Artisans</h4>
                 <div className={styles.avatarsRow}>
                   <Image
                     src="/images/testimonials/1.webp"
@@ -92,7 +92,7 @@ const FocusedActionsSection = () => {
                   <Grid className={styles.gridIcon} />
                 </div>
                 <div className={styles.projectsInfo}>
-                  <h4>1,000+</h4>
+                  <h4 className={FONTS.font2}>1,000+</h4>
                   <p>Products Listed</p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const FocusedActionsSection = () => {
               <span className={styles.dot} /> Discover WENBA
             </div>
 
-            <h2 className={`${styles.title} ${FONTS.font2}`} data-aos="fade-up">
+            <h2 className={`${`${styles.title} ${FONTS.font2}`} ${FONTS.font2}`} data-aos="fade-up">
               Empowering Native Business Artisans
             </h2>
             <p
@@ -157,7 +157,7 @@ const FocusedActionsSection = () => {
                 {tabsContent[activeTab].icon}
               </div>
               <div className={styles.contentText}>
-                <h3 className={styles.contentTitle}>
+                <h3 className={`${styles.contentTitle} ${FONTS.font2}`}>
                   {tabsContent[activeTab].title}
                 </h3>
                 <p className={styles.contentDescription}>

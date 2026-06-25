@@ -13,7 +13,7 @@ const CredibilityBanner = () => {
             <AwardFill className={styles.icon} />
           </div>
           <div className={styles.textContent}>
-            <h3 className={`${styles.title} ${FONTS.font2}`}>Built on Entrepreneurial Excellence</h3>
+            <h3 className={`${`${styles.title} ${FONTS.font2}`} ${FONTS.font2}`}>Built on Entrepreneurial Excellence</h3>
             <p className={styles.quote}>
               “Led by first-generation entrepreneurs with over 25 years of business leadership experience and a passion for empowering women-led enterprises.”
             </p>

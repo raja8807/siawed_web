@@ -20,28 +20,39 @@
 
 export const PAGES = [
   {
-    title: "About Us",
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "About",
     href: "/about",
-  },
-  {
-    title: "Membership",
-    href: "/membership",
-  },
-  {
-    title: "Corporate Solutions",
-    href: "/corporate-solutions",
   },
   {
     title: "Programs",
     href: "/programs",
   },
   {
+    title: "WENBA",
+    href: "/wenba",
+  },
+  {
+    title: "Membership",
+    href: "/membership",
+  },
+  {
+    title: "Corporate",
+    href: "/corporate",
+  },
+  {
     title: "Events",
     href: "/events",
   },
-
   {
-    title: "Contact us",
+    title: "Blog",
+    href: "/blog",
+  },
+  {
+    title: "Contact",
     href: "/contact",
   },
 ];
