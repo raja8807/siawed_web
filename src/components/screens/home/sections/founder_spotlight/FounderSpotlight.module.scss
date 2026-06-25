@@ -26,7 +26,7 @@
   .founderQuote {
     font-size: 22px;
     font-style: italic;
-    color: #fff;
+    color: $charcoal;
     line-height: 1.6;
     margin: 24px 0;
     padding-left: 20px;
@@ -56,12 +56,13 @@
   .timelineItemTitle {
     font-size: 14px;
     font-weight: 800;
-    color: #fff;
+
     margin-bottom: 4px;
   }
   .timelineItemDesc {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
+    // color: rgba(255, 255, 255, 0.6);
+    margin-left: 4px;
   }
 
   @media (max-width: 900px) {

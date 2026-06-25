@@ -44,7 +44,7 @@ const WenbaSection = () => {
             <p className="lead lead-inv">
               WENBA is SIAWED&#39;s dedicated platform connecting women entrepreneurs, rural artisans, and SHGs directly with consumers and corporate buyers across India.
             </p>
-
+{/* 
             <div className={styles.wenbaCats} role="group" aria-label="Filter by category">
               <button className={`${styles.wenbaCat} ${styles.isActive}`}>All</button>
               <button className={styles.wenbaCat}>Handicrafts</button>
@@ -52,7 +52,7 @@ const WenbaSection = () => {
               <button className={styles.wenbaCat}>Jewellery</button>
               <button className={styles.wenbaCat}>Textiles</button>
               <button className={styles.wenbaCat}>Home Decor</button>
-            </div>
+            </div> */}
           </div>
 
           {/* Right: CTAs + stats */}

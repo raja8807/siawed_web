@@ -58,14 +58,14 @@ const TeamSection = () => {
             <div key={index} className={styles.card} data-aos="fade-up" data-aos-delay={index * 100}>
               <div className={styles.imageWrapper}>
                 <img src={member.image} alt={member.name} className={styles.image} loading="lazy" />
-                <div className={styles.socialOverlay}>
+                {/* <div className={styles.socialOverlay}>
                   <a href={member.linkedin} aria-label={`${member.name} LinkedIn`} className={styles.socialLink}>
                     <Linkedin />
                   </a>
                   <a href={member.email} aria-label={`Email ${member.name}`} className={styles.socialLink}>
                     <EnvelopeFill />
                   </a>
-                </div>
+                </div> */}
               </div>
               <div className={styles.content}>
                 <h3 className={`${styles.name} ${FONTS.font2}`}>{member.name}</h3>
