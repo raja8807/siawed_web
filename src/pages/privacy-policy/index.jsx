@@ -6,7 +6,7 @@ export default function MyComponent() {
   const [html, setHtml] = useState("");
 
   useEffect(() => {
-    fetch("/privacy-policy.html")
+    fetch("/privacypolicy.html")
       .then((res) => res.text())
       .then(setHtml);
   }, []);

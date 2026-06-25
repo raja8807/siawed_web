@@ -6,7 +6,7 @@ export default function MyComponent() {
   const [html, setHtml] = useState("");
 
   useEffect(() => {
-    fetch("/refund-policy.html")
+    fetch("/refundpolicy.html")
       .then((res) => res.text())
       .then(setHtml);
   }, []);
