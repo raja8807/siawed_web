@@ -14,13 +14,19 @@ const CustomButton = ({
   className = "",
   ...props
 }) => {
-  // Map variant strings to actual SCSS class names
-  // e.g., variant="outline-white" -> styles['btn-outline-white']
-  const variantClass = styles[`btn-${variant}`] || styles["btn-blue"];
+  const variantMap = {
+    'blue': styles.btnBlue,
+    'orange': styles.btnOrange,
+    'teal': styles.btnTeal,
+    'outline-white': styles.btnOutlineWhite,
+    'outline-blue': styles.btnOutlineBlue,
+    'ghost': styles.btnGhost,
+  };
+  const variantClass = variantMap[variant] || styles.btnBlue;
   
   // Size classes
-  const sizeClass = size === "lg" ? styles["btn-lg"] : size === "sm" ? styles["btn-sm"] : "";
-  const fullClass = fullWidth ? styles["btn-full"] : "";
+  const sizeClass = size === "lg" ? styles.btnLg : size === "sm" ? styles.btnSm : "";
+  const fullClass = fullWidth ? styles.btnFull : "";
 
   const classes = `${styles.btn} ${variantClass} ${sizeClass} ${fullClass} ${className}`.trim();
 

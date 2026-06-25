@@ -2,44 +2,43 @@
   /* ============================================================
      18. CTA BANNER
      ============================================================ */
-  .cta-banner {
+
+  .ctaBanner {
     background: linear-gradient(
       132deg,
       $blue-deep 0%,
       $blue 55%,
       $blue-mid 100%
     );
-    padding: 76px 72px;
-    border-radius: 20px;
-    margin: 88px 0;
+    // padding: 76px 72px;
   }
 
-  .cta-banner__inner {
+  .ctaBannerInner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 40px;
   }
 
-  .cta-banner__heading {
+  .ctaBannerHeading {
     font-size: clamp(24px, 3.5vw, 40px);
     font-weight: 800;
     color: #fff;
     line-height: 1.2;
   }
-  .cta-banner__heading em {
+  .ctaBannerHeading em {
     font-style: italic;
     color: $orange-mid;
   }
 
-  .cta-banner__sub {
+  .ctaBannerSub {
     font-size: 15px;
     color: rgba(255, 255, 255, 0.76);
     margin-top: 10px;
     max-width: 460px;
   }
 
-  .cta-banner__btns {
+  .ctaBannerBtns {
     display: flex;
     gap: 12px;
     flex-shrink: 0;
@@ -47,10 +46,10 @@
   }
 
   @media (max-width: 900px) {
-    .cta-banner {
+    .ctaBanner {
       padding: 56px 22px;
     }
-    .cta-banner__inner {
+    .ctaBannerInner {
       flex-direction: column;
       align-items: flex-start;
     }

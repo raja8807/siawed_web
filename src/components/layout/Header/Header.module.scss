@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  :global {
+  
     /* ============================================================
        05. TOPBAR
        ============================================================ */
@@ -28,7 +28,7 @@
       color: #fff;
     }
 
-    .topbar__right {
+    .topbarRight {
       display: flex;
       gap: 22px;
       align-items: center;
@@ -50,19 +50,19 @@
     }
 
     /* Logo */
-    .nav__logo {
+    .navLogo {
       display: flex;
       align-items: center;
       margin-right: 16px;
       flex-shrink: 0;
     }
-    .nav__logo img {
+    .navLogo img {
       height: 75px;
       width: auto;
     }
 
     /* Menu list */
-    .nav__menu {
+    .navMenu {
       display: flex;
       align-items: center;
       margin-bottom: -6px;
@@ -70,11 +70,11 @@
     }
 
     /* Top-level item */
-    .nav__item {
+    .navItem {
       position: relative;
     }
 
-    .nav__link {
+    .navLink {
       display: flex;
       align-items: center;
       gap: 4px;
@@ -90,7 +90,7 @@
       white-space: nowrap;
     }
 
-    .nav__link-arrow {
+    .navLinkArrow {
       font-size: 9px;
       opacity: 0.45;
       transition:
@@ -98,21 +98,21 @@
         opacity $t-base;
     }
 
-    .nav__item:hover > .nav__link {
+    .navItem:hover > .navLink {
       color: $blue;
       border-bottom-color: $blue;
     }
-    .nav__item:hover > .nav__link .nav__link-arrow {
+    .navItem:hover > .navLink .navLinkArrow {
       transform: rotate(180deg);
       opacity: 1;
     }
 
     /* WENBA special item */
-    .nav__item--wenba > .nav__link {
+    .navItemWenba > .navLink {
       color: $teal;
       font-weight: 800;
     }
-    .nav__item--wenba:hover > .nav__link {
+    .navItemWenba:hover > .navLink {
       color: $teal-mid;
       border-bottom-color: $teal;
     }
@@ -137,35 +137,35 @@
       padding: 8px 0 12px;
     }
 
-    .nav__item:hover > .dropdown {
+    .navItem:hover > .dropdown {
       opacity: 1;
       pointer-events: all;
       transform: translateY(0);
     }
 
     /* WENBA mega */
-    .dropdown--mega {
+    .dropdownMega {
       min-width: 520px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       border-top-color: $teal;
     }
-    .dropdown--mega .dropdown__col:first-child {
+    .dropdownMega .dropdownCol:first-child {
       border-right: 1px solid $mist;
     }
-    .dropdown--mega .dropdown__col {
+    .dropdownMega .dropdownCol {
       padding: 8px 0;
     }
 
     /* WENBA items hover color */
-    .nav__item--wenba .dropdown__link:hover {
+    .navItemWenba .dropdownLink:hover {
       color: $teal;
     }
-    .nav__item--wenba .dropdown__label {
+    .navItemWenba .dropdownLabel {
       color: $teal-mid;
     }
 
-    .dropdown__label {
+    .dropdownLabel {
       display: block;
       font-size: 10px;
       font-weight: 800;
@@ -175,13 +175,13 @@
       padding: 10px 18px 4px;
     }
 
-    .dropdown__divider {
+    .dropdownDivider {
       border: none;
       border-top: 1px solid $mist;
       margin: 6px 0;
     }
 
-    .dropdown__link {
+    .dropdownLink {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -194,12 +194,12 @@
         color $t-fast;
       white-space: nowrap;
     }
-    .dropdown__link:hover {
+    .dropdownLink:hover {
       background: $ivory;
       color: $blue;
     }
 
-    .dropdown__icon {
+    .dropdownIcon {
       width: 28px;
       height: 28px;
       border-radius: 6px;
@@ -210,12 +210,12 @@
       font-size: 14px;
       flex-shrink: 0;
     }
-    .dropdown__link:hover .dropdown__icon {
+    .dropdownLink:hover .dropdownIcon {
       background: $blue-light;
     }
 
     /* Nav right CTAs */
-    .nav__ctas {
+    .navCtas {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -236,7 +236,7 @@
       margin-left: auto;
       cursor: pointer;
     }
-    .hamburger__line {
+    .hamburgerLine {
       display: block;
       width: 24px;
       height: 2px;
@@ -246,13 +246,13 @@
         transform 0.3s ease,
         opacity 0.3s ease;
     }
-    .hamburger.is-open .hamburger__line:nth-child(1) {
+    .hamburger.isOpen .hamburgerLine:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
-    .hamburger.is-open .hamburger__line:nth-child(2) {
+    .hamburger.isOpen .hamburgerLine:nth-child(2) {
       opacity: 0;
     }
-    .hamburger.is-open .hamburger__line:nth-child(3) {
+    .hamburger.isOpen .hamburgerLine:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
     }
 
@@ -265,17 +265,17 @@
       z-index: 999;
       display: none;
     }
-    .drawer.is-open {
+    .drawer.isOpen {
       display: block;
     }
 
-    .drawer__overlay {
+    .drawerOverlay {
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.52);
     }
 
-    .drawer__panel {
+    .drawerPanel {
       position: absolute;
       top: 0;
       left: 0;
@@ -288,11 +288,11 @@
       transition: transform $t-slow ease;
       overflow-y: auto;
     }
-    .drawer.is-open .drawer__panel {
+    .drawer.isOpen .drawerPanel {
       transform: translateX(0);
     }
 
-    .drawer__header {
+    .drawerHeader {
       background: $blue-deep;
       padding: 14px 18px;
       display: flex;
@@ -300,13 +300,13 @@
       justify-content: space-between;
       flex-shrink: 0;
     }
-    .drawer__header img {
+    .drawerHeader img {
       height: 44px;
       width: auto;
       filter: brightness(0) invert(1);
     }
 
-    .drawer__close {
+    .drawerClose {
       background: none;
       border: none;
       color: #fff;
@@ -316,18 +316,18 @@
       padding: 4px;
     }
 
-    .drawer__body {
+    .drawerBody {
       flex: 1;
       overflow-y: auto;
       padding-bottom: 130px;
     }
 
     /* Drawer menu item row */
-    .drawer-item {
+    .drawerItem {
       border-bottom: 1px solid $mist;
     }
 
-    .drawer-trigger {
+    .drawerTrigger {
       width: 100%;
       display: flex;
       align-items: center;
@@ -342,43 +342,43 @@
       color: $charcoal;
       transition: background $t-fast;
     }
-    .drawer-trigger:hover {
+    .drawerTrigger:hover {
       background: $ivory;
     }
-    .drawer-trigger--wenba {
+    .drawerTriggerWenba {
       color: $teal;
     }
-    .drawer-trigger.is-open {
+    .drawerTrigger.isOpen {
       color: $blue;
     }
-    .drawer-trigger--wenba.is-open {
+    .drawerTriggerWenba.isOpen {
       color: $teal-mid;
     }
 
-    .drawer-trigger__chevron {
+    .drawerTriggerChevron {
       font-size: 11px;
       color: #aaa;
       transition: transform $t-base;
     }
-    .drawer-trigger.is-open .drawer-trigger__chevron {
+    .drawerTrigger.isOpen .drawerTriggerChevron {
       transform: rotate(180deg);
       color: $blue;
     }
-    .drawer-trigger--wenba.is-open .drawer-trigger__chevron {
+    .drawerTriggerWenba.isOpen .drawerTriggerChevron {
       color: $teal;
     }
 
     /* Drawer submenu */
-    .drawer-sub {
+    .drawerSub {
       display: none;
       background: $ivory;
       padding: 6px 0 10px;
     }
-    .drawer-sub.is-open {
+    .drawerSub.isOpen {
       display: block;
     }
 
-    .drawer-sub__label {
+    .drawerSubLabel {
       display: block;
       font-size: 10px;
       font-weight: 800;
@@ -388,7 +388,7 @@
       padding: 10px 20px 4px 52px;
     }
 
-    .drawer-sub a {
+    .drawerSub a {
       display: block;
       padding: 9px 20px 9px 52px;
       font-size: 13px;
@@ -398,18 +398,18 @@
         color $t-fast,
         background $t-fast;
     }
-    .drawer-sub a::before {
+    .drawerSub a::before {
       content: "–";
       margin-right: 8px;
       color: $blue-mid;
     }
-    .drawer-sub a:hover {
+    .drawerSub a:hover {
       color: $blue;
       background: $parchment;
     }
 
     /* Drawer footer CTAs */
-    .drawer__footer {
+    .drawerFooter {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -421,7 +421,7 @@
       flex-direction: column;
       gap: 9px;
     }
-    .drawer__footer .btn {
+    .drawerFooter .btn {
       width: 100%;
       display: block;
       text-align: center;
@@ -432,7 +432,7 @@
     /* ============================================================
        09. MOBILE BOTTOM TAB BAR
        ============================================================ */
-    .bottom-tabs {
+    .bottomTabs {
       display: none;
       position: fixed;
       bottom: 0;
@@ -444,15 +444,15 @@
       z-index: 898;
       box-shadow: 0 -2px 14px rgba(0, 0, 0, 0.07);
     }
-    .bottom-tabs__list {
+    .bottomTabsList {
       display: flex;
       height: 100%;
     }
-    .bottom-tabs__item {
+    .bottomTabsItem {
       flex: 1;
     }
 
-    .bottom-tab {
+    .bottomTab {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -469,20 +469,20 @@
       text-decoration: none;
       transition: color $t-base;
     }
-    .bottom-tab__icon {
+    .bottomTabIcon {
       font-size: 20px;
       line-height: 1;
     }
-    .bottom-tab:hover,
-    .bottom-tab.is-active {
+    .bottomTab:hover,
+    .bottomTab.isActive {
       color: $blue;
     }
 
     /* WENBA floating tab */
-    .bottom-tab--wenba {
+    .bottomTabWenba {
       color: $teal;
     }
-    .bottom-tab--wenba .bottom-tab__icon {
+    .bottomTabWenba .bottomTabIcon {
       background: $teal;
       color: #fff;
       width: 42px;
@@ -497,8 +497,8 @@
     }
 
     @media (max-width: 1060px) {
-      .nav__menu,
-      .nav__ctas {
+      .navMenu,
+      .navCtas {
         display: none;
       }
       .hamburger {
@@ -507,7 +507,7 @@
       .nav {
         padding: 0 20px;
       }
-      .bottom-tabs {
+      .bottomTabs {
         display: block;
       }
     }
@@ -517,4 +517,4 @@
       }
     }
   }
-}
+

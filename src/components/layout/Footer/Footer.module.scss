@@ -1,7 +1,7 @@
 @import "../../styles/scss/variables";
 
 .footerContainer {
-  :global {
+  
     /* ============================================================
        19. FOOTER
        ============================================================ */
@@ -11,7 +11,7 @@
       padding: 68px 72px 0;
     }
 
-    .footer__grid {
+    .footerGrid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: 52px;
@@ -20,24 +20,24 @@
     }
 
     /* Brand column */
-    .footer__brand-logo {
+    .footerBrandLogo {
       display: block;
       height: 52px;
       width: auto;
       margin-bottom: 16px;
     }
-    .footer__brand-desc {
+    .footerBrandDesc {
       font-size: 13px;
       color: rgba(255, 255, 255, 0.45);
       line-height: 1.82;
       margin-bottom: 18px;
     }
 
-    .footer__social {
+    .footerSocial {
       display: flex;
       gap: 10px;
     }
-    .footer__social a {
+    .footerSocial a {
       width: 34px;
       height: 34px;
       border-radius: 8px;
@@ -48,12 +48,12 @@
       font-size: 15px;
       transition: background $t-base;
     }
-    .footer__social a:hover {
+    .footerSocial a:hover {
       background: $blue;
     }
 
     /* WENBA mini logo in footer */
-    .footer__wenba {
+    .footerWenba {
       display: flex;
       align-items: center;
       gap: 12px;
@@ -63,12 +63,12 @@
       border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 8px;
     }
-    .footer__wenba svg {
+    .footerWenba svg {
       height: 38px;
       width: auto;
       flex-shrink: 0;
     }
-    .footer__wenba-text {
+    .footerWenbaText {
       font-size: 11px;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.42);
@@ -76,7 +76,7 @@
     }
 
     /* Link columns */
-    .footer__col h4 {
+    .footerCol h4 {
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
@@ -84,48 +84,48 @@
       color: rgba(255, 255, 255, 0.3);
       margin-bottom: 15px;
     }
-    .footer__links {
+    .footerLinks {
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
-    .footer__links a {
+    .footerLinks a {
       font-size: 13px;
       font-weight: 600;
       color: rgba(255, 255, 255, 0.5);
       transition: color $t-fast;
     }
-    .footer__links a:hover {
+    .footerLinks a:hover {
       color: $orange-mid;
     }
 
     /* Contact items */
-    .footer__contact-item {
+    .footerContactItem {
       display: flex;
       gap: 10px;
       margin-bottom: 13px;
     }
-    .footer__contact-icon {
+    .footerContactIcon {
       font-size: 14px;
       opacity: 0.5;
       flex-shrink: 0;
       margin-top: 2px;
     }
-    .footer__contact-text {
+    .footerContactText {
       font-size: 13px;
       color: rgba(255, 255, 255, 0.46);
       line-height: 1.6;
     }
-    .footer__contact-text a {
+    .footerContactText a {
       color: rgba(255, 255, 255, 0.65);
       transition: color $t-fast;
     }
-    .footer__contact-text a:hover {
+    .footerContactText a:hover {
       color: $orange-mid;
     }
 
     /* Newsletter form */
-    .footer__newsletter-label {
+    .footerNewsletterLabel {
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
@@ -134,12 +134,12 @@
       display: block;
       margin: 20px 0 12px;
     }
-    .footer__newsletter {
+    .footerNewsletter {
       display: flex;
       border-radius: 6px;
       overflow: hidden;
     }
-    .footer__newsletter input {
+    .footerNewsletter input {
       flex: 1;
       background: rgba(255, 255, 255, 0.07);
       border: none;
@@ -148,10 +148,10 @@
       color: #fff;
       outline: none;
     }
-    .footer__newsletter input::placeholder {
+    .footerNewsletter input::placeholder {
       color: rgba(255, 255, 255, 0.3);
     }
-    .footer__newsletter button {
+    .footerNewsletter button {
       background: $orange;
       border: none;
       padding: 10px 14px;
@@ -162,12 +162,12 @@
       transition: background $t-fast;
       white-space: nowrap;
     }
-    .footer__newsletter button:hover {
+    .footerNewsletter button:hover {
       background: #c45c10;
     }
 
     /* Footer bottom bar */
-    .footer__bottom {
+    .footerBottom {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -175,11 +175,11 @@
       font-size: 12px;
       color: rgba(255, 255, 255, 0.28);
     }
-    .footer__bottom a {
+    .footerBottom a {
       color: rgba(255, 255, 255, 0.36);
       transition: color $t-fast;
     }
-    .footer__bottom a:hover {
+    .footerBottom a:hover {
       color: #fff;
     }
 
@@ -187,24 +187,24 @@
       footer {
         padding: 52px 22px 0;
       }
-      .footer__grid {
+      .footerGrid {
         grid-template-columns: 1fr 1fr;
         gap: 32px;
       }
-      .footer__grid > div:first-child {
+      .footerGrid > div:first-child {
         grid-column: 1/-1;
       }
     }
 
     @media (max-width: 540px) {
-      .footer__grid {
+      .footerGrid {
         grid-template-columns: 1fr;
       }
-      .footer__bottom {
+      .footerBottom {
         flex-direction: column;
         gap: 8px;
         text-align: center;
       }
     }
   }
-}
+

@@ -9,10 +9,10 @@ const WenbaSection = () => {
   return (
     <div className={styles.wenbaContainer}>
       <SectionWrapper id="wenba" bgColor="charcoal" aos="fade-up">
-        <div className={styles.wenba__top}>
+        <div className={styles.wenbaTop}>
           {/* Left: WENBA brand + info */}
           <div>
-            <div className={styles['wenba-brand-card']} role="img" aria-label="WENBA - Women Entrepreneurs Native Business Association">
+            <div className={styles.wenbaBrandCard} role="img" aria-label="WENBA - Women Entrepreneurs Native Business Association">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-label="WENBA Logo">
                 <defs>
                   <linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#22B8A8"/><stop offset="100%" stopColor="#0D7A6E"/></linearGradient>
@@ -34,8 +34,8 @@ const WenbaSection = () => {
                 <text x="120" y="220" fontFamily="Arial,sans-serif" fontSize="13" fontWeight="600" fill="#0D7A6E" textAnchor="middle">WE make IT Happen!</text>
               </svg>
               <div>
-                <span className={styles['wenba-brand-card__powered']}>Powered by SIAWED</span>
-                <span className={styles['wenba-brand-card__name']}>Women Entrepreneurs<br/>Native Business Association</span>
+                <span className={styles.wenbaBrandCardPowered}>Powered by SIAWED</span>
+                <span className={styles.wenbaBrandCardName}>Women Entrepreneurs<br/>Native Business Association</span>
               </div>
             </div>
 
@@ -45,50 +45,50 @@ const WenbaSection = () => {
               WENBA is SIAWED&#39;s dedicated platform connecting women entrepreneurs, rural artisans, and SHGs directly with consumers and corporate buyers across India.
             </p>
 
-            <div className={styles['wenba-cats']} role="group" aria-label="Filter by category">
-              <button className={`${styles['wenba-cat']} ${styles['is-active']}`}>All</button>
-              <button className={styles['wenba-cat']}>Handicrafts</button>
-              <button className={styles['wenba-cat']}>Organic Foods</button>
-              <button className={styles['wenba-cat']}>Jewellery</button>
-              <button className={styles['wenba-cat']}>Textiles</button>
-              <button className={styles['wenba-cat']}>Home Decor</button>
+            <div className={styles.wenbaCats} role="group" aria-label="Filter by category">
+              <button className={`${styles.wenbaCat} ${styles.isActive}`}>All</button>
+              <button className={styles.wenbaCat}>Handicrafts</button>
+              <button className={styles.wenbaCat}>Organic Foods</button>
+              <button className={styles.wenbaCat}>Jewellery</button>
+              <button className={styles.wenbaCat}>Textiles</button>
+              <button className={styles.wenbaCat}>Home Decor</button>
             </div>
           </div>
 
           {/* Right: CTAs + stats */}
-          <div className={styles.wenba__right}>
+          <div className={styles.wenbaRight}>
             <CustomButton href="#" variant="teal" size="lg">Register as Vendor</CustomButton>
             <CustomButton href="#" variant="outline-white" size="lg">Corporate Procurement &#8594;</CustomButton>
-            <div className={styles['wenba-stats']} role="list" aria-label="WENBA statistics">
+            <div className={styles.wenbaStats} role="list" aria-label="WENBA statistics">
               <div role="listitem">
-                <span className={styles['wenba-stat__number']}>1,000+</span>
-                <span className={styles['wenba-stat__label']}>Products Listed</span>
+                <span className={styles.wenbaStatNumber}>1,000+</span>
+                <span className={styles.wenbaStatLabel}>Products Listed</span>
               </div>
               <div role="listitem">
-                <span className={styles['wenba-stat__number']}>500+</span>
-                <span className={styles['wenba-stat__label']}>Women Artisans</span>
+                <span className={styles.wenbaStatNumber}>500+</span>
+                <span className={styles.wenbaStatLabel}>Women Artisans</span>
               </div>
               <div role="listitem">
-                <span className={styles['wenba-stat__number']}>50+</span>
-                <span className={styles['wenba-stat__label']}>Categories</span>
+                <span className={styles.wenbaStatNumber}>50+</span>
+                <span className={styles.wenbaStatLabel}>Categories</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Product image grid */}
-        <div className={styles['wenba-imgs']}>
-          <div className={styles['wenba-img-card']} data-category="handicrafts">
+        <div className={styles.wenbaImgs}>
+          <div className={styles.wenbaImgCard} data-category="handicrafts">
             <img src="https://siawed-demo.vercel.app/wenba_prod_1.webp" alt="Authentic Handicrafts on WENBA" loading="lazy"/>
-            <div className={styles['wenba-img-card__label']}>Authentic Handicrafts</div>
+            <div className={styles.wenbaImgCardLabel}>Authentic Handicrafts</div>
           </div>
-          <div className={styles['wenba-img-card']} data-category="textiles">
+          <div className={styles.wenbaImgCard} data-category="textiles">
             <img src="https://siawed-demo.vercel.app/wenba_2.webp" alt="Women Entrepreneurs on WENBA" loading="lazy"/>
-            <div className={styles['wenba-img-card__label']}>Women Entrepreneurs</div>
+            <div className={styles.wenbaImgCardLabel}>Women Entrepreneurs</div>
           </div>
-          <div className={styles['wenba-img-card']} data-category="all">
+          <div className={styles.wenbaImgCard} data-category="all">
             <img src="https://siawed-demo.vercel.app/impact-rally-1.png" alt="SIAWED Community Impact" loading="lazy"/>
-            <div className={styles['wenba-img-card__label']}>Community Impact</div>
+            <div className={styles.wenbaImgCardLabel}>Community Impact</div>
           </div>
         </div>
       </SectionWrapper>

@@ -2,14 +2,14 @@
   /* ============================================================
      17. TESTIMONIALS SECTION
      ============================================================ */
-  .testi__grid {
+  .testiGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin-top: 48px;
   }
 
-  .testi-card {
+  .testiCard {
     background: $ivory;
     border: 1px solid $mist;
     border-radius: $r;
@@ -19,14 +19,14 @@
     gap: 14px;
   }
 
-  .testi-card__quote {
+  .testiCardQuote {
     font-size: 15px;
     font-style: italic;
     line-height: 1.72;
     color: $charcoal;
     flex: 1;
   }
-  .testi-card__quote::before {
+  .testiCardQuote::before {
     content: "\201C";
     font-size: 46px;
     color: $blue;
@@ -36,14 +36,14 @@
     margin-right: 3px;
   }
 
-  .testi-card__author {
+  .testiCardAuthor {
     display: flex;
     align-items: center;
     gap: 12px;
     border-top: 1px solid $mist;
     padding-top: 14px;
   }
-  .testi-card__author img {
+  .testiCardAuthor img {
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -51,24 +51,24 @@
     flex-shrink: 0;
     border: 2px solid $mist;
   }
-  .testi-card__name {
+  .testiCardName {
     display: block;
     font-size: 13px;
     font-weight: 800;
     color: $charcoal;
   }
-  .testi-card__role {
+  .testiCardRole {
     font-size: 11.5px;
     color: $slate;
   }
 
   @media (max-width: 900px) {
-    .testi__grid {
+    .testiGrid {
       grid-template-columns: 1fr 1fr;
     }
   }
   @media (max-width: 768px) {
-    .testi__grid {
+    .testiGrid {
       grid-template-columns: 1fr;
     }
   }

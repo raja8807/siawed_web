@@ -2,7 +2,7 @@
   /* ============================================================
      16. MEMBERSHIP SECTION
      ============================================================ */
-  .membership__grid {
+  .membershipGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 14px;
@@ -10,7 +10,7 @@
     align-items: stretch;
   }
 
-  .plan-card {
+  .planCard {
     background: $white;
     border: 1.5px solid $mist;
     border-radius: $r;
@@ -21,18 +21,18 @@
       box-shadow 0.25s ease,
       transform 0.25s ease;
   }
-  .plan-card:hover {
+  .planCard:hover {
     box-shadow: $sh-md;
     transform: translateY(-4px);
   }
 
   /* Popular (blue) plan */
-  .plan-card--featured {
+  .planCardFeatured {
     background: $blue;
     border-color: $blue;
   }
 
-  .plan-card__badge {
+  .planCardBadge {
     font-size: 10px;
     font-weight: 800;
     text-transform: uppercase;
@@ -41,69 +41,69 @@
     display: block;
     margin-bottom: 12px;
   }
-  .plan-card--featured .plan-card__badge {
+  .planCardFeatured .planCardBadge {
     color: $orange-mid;
   }
 
-  .plan-card h3 {
+  .planCard h3 {
     font-size: 17px;
     font-weight: 700;
     color: $charcoal;
     margin-bottom: 5px;
     line-height: 1.2;
   }
-  .plan-card--featured h3 {
+  .planCardFeatured h3 {
     color: #fff;
   }
 
-  .plan-card__tagline {
+  .planCardTagline {
     font-size: 12px;
     color: $slate;
     margin-bottom: 16px;
     font-style: italic;
     line-height: 1.45;
   }
-  .plan-card--featured .plan-card__tagline {
+  .planCardFeatured .planCardTagline {
     color: rgba(255, 255, 255, 0.62);
   }
 
-  .plan-card__price {
+  .planCardPrice {
     font-size: 32px;
     font-weight: 800;
     color: $blue;
     line-height: 1;
     margin-bottom: 4px;
   }
-  .plan-card--featured .plan-card__price {
+  .planCardFeatured .planCardPrice {
     color: $orange-mid;
   }
 
-  .plan-card__period {
+  .planCardPeriod {
     font-size: 11px;
     color: $slate;
     margin-bottom: 16px;
   }
-  .plan-card--featured .plan-card__period {
+  .planCardFeatured .planCardPeriod {
     color: rgba(255, 255, 255, 0.5);
   }
 
-  .plan-card__divider {
+  .planCardDivider {
     border: none;
     border-top: 1px solid $mist;
     margin: 12px 0;
   }
-  .plan-card--featured .plan-card__divider {
+  .planCardFeatured .planCardDivider {
     border-top-color: rgba(255, 255, 255, 0.18);
   }
 
-  .plan-card__features {
+  .planCardFeatures {
     display: flex;
     flex-direction: column;
     gap: 9px;
     flex: 1;
     margin-bottom: 20px;
   }
-  .plan-card__features li {
+  .planCardFeatures li {
     font-size: 12.5px;
     color: $slate;
     display: flex;
@@ -111,7 +111,7 @@
     gap: 8px;
     line-height: 1.5;
   }
-  .plan-card__features li::before {
+  .planCardFeatures li::before {
     content: "✓";
     color: $blue;
     font-weight: 800;
@@ -119,29 +119,29 @@
     flex-shrink: 0;
     margin-top: 2px;
   }
-  .plan-card--featured .plan-card__features li {
+  .planCardFeatured .planCardFeatures li {
     color: rgba(255, 255, 255, 0.84);
   }
-  .plan-card--featured .plan-card__features li::before {
+  .planCardFeatured .planCardFeatures li::before {
     color: $orange-mid;
   }
 
   /* Teal plan */
-  .plan-card--teal .plan-card__badge {
+  .planCardTeal .planCardBadge {
     color: $teal;
   }
-  .plan-card--teal .plan-card__price {
+  .planCardTeal .planCardPrice {
     color: $teal;
     font-size: 26px;
   }
 
   @media (max-width: 1100px) {
-    .membership__grid {
+    .membershipGrid {
       grid-template-columns: repeat(3, 1fr);
     }
   }
   @media (max-width: 768px) {
-    .membership__grid {
+    .membershipGrid {
       grid-template-columns: 1fr;
     }
   }

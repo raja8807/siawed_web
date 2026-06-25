@@ -3,11 +3,12 @@
      11. IMPACT STATS BAND
      ============================================================ */
   /* Override default section padding for impact band */
-  .impact-wrapper {
-    padding: 52px 0 !important;
+
+  .impactWrapper {
+    padding: 0;
   }
 
-  .impact-grid {
+  .impactGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     border: 1px solid rgba(255, 255, 255, 0.07);
@@ -15,16 +16,16 @@
     overflow: hidden;
   }
 
-  .impact-cell {
+  .impactCell {
     padding: 36px 20px;
     text-align: center;
     border-right: 1px solid rgba(255, 255, 255, 0.07);
   }
-  .impact-cell:last-child {
+  .impactCell:last-child {
     border-right: none;
   }
 
-  .impact-cell__number {
+  .impactCellNumber {
     display: block;
 
     font-size: 46px;
@@ -32,7 +33,7 @@
     color: $orange-mid;
     line-height: 1;
   }
-  .impact-cell__label {
+  .impactCellLabel {
     display: block;
     font-size: 12px;
     font-weight: 700;
@@ -42,35 +43,32 @@
     margin-top: 8px;
   }
 
-  // @media (max-width: 900px) {
-  //   .impact-wrapper {
-  //     padding: 44px 0 !important;
-  //   }
-  //   .impact-grid {
-  //     grid-template-columns: repeat(3, 1fr);
-  //   }
-  //   .impact-cell:nth-child(3) {
-  //     border-right: none;
-  //   }
-  //   .impact-cell:nth-child(n + 4) {
-  //     border-top: 1px solid rgba(255, 255, 255, 0.07);
-  //   }
-  // }
+  @media (max-width: 900px) {
+    .impactGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .impactCell:nth-child(3) {
+      border-right: none;
+    }
+    .impactCell:nth-child(n + 4) {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+  }
 
-  // @media (max-width: 560px) {
-  //   .impact-grid {
-  //     grid-template-columns: 1fr 1fr;
-  //   }
-  //   .impact-cell:nth-child(2) {
-  //     border-right: none;
-  //   }
-  //   .impact-cell:nth-child(3) {
-  //     border-top: 1px solid rgba(255, 255, 255, 0.07);
-  //     border-right: 1px solid rgba(255, 255, 255, 0.07);
-  //   }
-  //   .impact-cell:nth-child(5) {
-  //     grid-column: 1/-1;
-  //     border-right: none;
-  //   }
-  // }
+  @media (max-width: 560px) {
+    .impactGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .impactCell:nth-child(2) {
+      border-right: none;
+    }
+    .impactCell:nth-child(3) {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-right: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .impactCell:nth-child(5) {
+      grid-column: 1/-1;
+      border-right: none;
+    }
+  }
 }

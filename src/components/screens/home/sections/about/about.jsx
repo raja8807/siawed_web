@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./About.module.scss";
+import styles from "./about.module.scss";
 
 import SectionWrapper from "../../../../ui/section_wrapper/section_wrapper";
 import CustomButton from "../../../../ui/custom_button/custom_button";
@@ -10,19 +10,19 @@ const AboutSection = () => {
   return (
     <div className={styles.aboutContainer}>
       <SectionWrapper id="about" bgColor="white" aos="fade-up">
-        <div className={styles.about__grid}>
+        <div className={styles.aboutGrid}>
           {/* Left Col: Overlapping Images */}
-          <div className={styles.about__images}>
-            <img src="https://siawed-demo.vercel.app/images/about/women-meeting.jpg" alt="Women collaborating" loading="lazy" className={styles['about__img-main']}/>
-            <img src="https://siawed-demo.vercel.app/images/about/women-workshop.jpg" alt="Workshop session" loading="lazy" className={styles['about__img-sec']}/>
-            <div className={styles.about__stamp}>
-              <span className={styles['about__stamp-num']}>14</span>
-              <span className={styles['about__stamp-lbl']}>Years of Impact</span>
+          <div className={styles.aboutImages}>
+            <img src="https://siawed-demo.vercel.app/images/about/women-meeting.jpg" alt="Women collaborating" loading="lazy" className={styles.aboutImgMain}/>
+            <img src="https://siawed-demo.vercel.app/images/about/women-workshop.jpg" alt="Workshop session" loading="lazy" className={styles.aboutImgAccent}/>
+            <div className={styles.aboutStamp}>
+              <span className={styles.aboutStampNum}>14</span>
+              <span className={styles.aboutStampLbl}>Years of Impact</span>
             </div>
           </div>
 
           {/* Right Col: Text & Pillars */}
-          <div className={styles.about__content}>
+          <div>
             <p className="eyebrow eyebrow-blue">About SIAWED</p>
             <h2 className={`section-heading ${FONTS.font2}`}>Empowering Women Through <em className="em-blue">Entrepreneurship</em></h2>
             <p className="lead">
@@ -31,31 +31,31 @@ const AboutSection = () => {
 
             <div className={styles.pillars}>
               <div className={styles.pillar}>
-                <div className={styles.pillar__icon}><RocketTakeoff /></div>
+                <div className={styles.pillarIcon}><RocketTakeoff /></div>
                 <div>
-                  <h4 className={`${styles.pillar__title} ${FONTS.font2}`}>Enterprise Support</h4>
-                  <p className={styles.pillar__desc}>Training, mentorship &amp; market access</p>
+                  <h4 className={`${styles.pillarTitle} ${FONTS.font2}`}>Enterprise Support</h4>
+                  <p className={styles.pillarDesc}>Training, mentorship &amp; market access</p>
                 </div>
               </div>
               <div className={styles.pillar}>
-                <div className={styles.pillar__icon}><People /></div>
+                <div className={styles.pillarIcon}><People /></div>
                 <div>
-                  <h4 className={`${styles.pillar__title} ${FONTS.font2}`}>Corporate Connect</h4>
-                  <p className={styles.pillar__desc}>Linking women-owned businesses to buyers</p>
+                  <h4 className={`${styles.pillarTitle} ${FONTS.font2}`}>Corporate Connect</h4>
+                  <p className={styles.pillarDesc}>Linking women-owned businesses to buyers</p>
                 </div>
               </div>
               <div className={styles.pillar}>
-                <div className={styles.pillar__icon}><Tree /></div>
+                <div className={styles.pillarIcon}><Tree /></div>
                 <div>
-                  <h4 className={`${styles.pillar__title} ${FONTS.font2}`}>Community Growth</h4>
-                  <p className={styles.pillar__desc}>SHG support &amp; artisan uplift</p>
+                  <h4 className={`${styles.pillarTitle} ${FONTS.font2}`}>Community Growth</h4>
+                  <p className={styles.pillarDesc}>SHG support &amp; artisan uplift</p>
                 </div>
               </div>
               <div className={styles.pillar}>
-                <div className={styles.pillar__icon}><Megaphone /></div>
+                <div className={styles.pillarIcon}><Megaphone /></div>
                 <div>
-                  <h4 className={`${styles.pillar__title} ${FONTS.font2}`}>Advocacy &amp; Policy</h4>
-                  <p className={styles.pillar__desc}>Human rights &amp; women&#39;s dignity</p>
+                  <h4 className={`${styles.pillarTitle} ${FONTS.font2}`}>Advocacy &amp; Policy</h4>
+                  <p className={styles.pillarDesc}>Human rights &amp; women&#39;s dignity</p>
                 </div>
               </div>
             </div>

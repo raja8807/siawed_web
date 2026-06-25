@@ -18,7 +18,7 @@
   letter-spacing: 0.01em;
 }
 
-.btn-blue {
+.btnBlue {
   background: $blue;
   color: #fff;
   border-color: $blue;
@@ -29,7 +29,7 @@
   }
 }
 
-.btn-orange {
+.btnOrange {
   background: $orange;
   color: #fff;
   border-color: $orange;
@@ -40,7 +40,7 @@
   }
 }
 
-.btn-teal {
+.btnTeal {
   background: $teal;
   color: #fff;
   border-color: $teal;
@@ -51,7 +51,7 @@
   }
 }
 
-.btn-ghost {
+.btnGhost {
   background: transparent;
   color: $slate;
   border-color: $mist;
@@ -63,7 +63,7 @@
 }
 
 /* White outline — on dark backgrounds */
-.btn-outline-white {
+.btnOutlineWhite {
   background: transparent;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.5);
@@ -74,7 +74,7 @@
 }
 
 /* Blue outline */
-.btn-outline-blue {
+.btnOutlineBlue {
   background: transparent;
   color: $blue;
   border-color: $blue;
@@ -86,16 +86,16 @@
 }
 
 /* Button sizes */
-.btn-lg {
+.btnLg {
   font-size: 14px;
   padding: 12px 28px;
 }
-.btn-sm {
+.btnSm {
   font-size: 12px;
   padding: 6px 14px;
 }
 
 /* Full width */
-.btn-full {
+.btnFull {
   width: 100%;
 }

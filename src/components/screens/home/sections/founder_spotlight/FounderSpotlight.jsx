@@ -9,10 +9,10 @@ const FounderSpotlightSection = () => {
   return (
     <div className={styles.founderContainer}>
       <SectionWrapper id="founder" bgColor="parchment" aos="fade-up">
-        <div className={styles.founder__grid}>
-          <div className={styles['founder__img-wrap']}>
+        <div className={styles.founderGrid}>
+          <div className={styles.founderImgWrap}>
             <img src="https://siawed-demo.vercel.app/founder.webp" alt="Ms T Vanadhi Devi &#8211; Founder &amp; President, SIAWED" loading="lazy" />
-            <blockquote className={styles.founder__quote}>
+            <blockquote className={styles.founderQuote}>
               <p>Empowering women to lead, build, and scale their dreams &#8212; one enterprise at a time.</p>
               <cite>&#8212; Ms T Vanadhi Devi, Founder &amp; President, SIAWED</cite>
             </blockquote>
@@ -27,25 +27,25 @@ const FounderSpotlightSection = () => {
             </p>
 
             <ol className={styles.timeline} aria-label="Founder milestones">
-              <li className={styles['timeline-item']}>
-                <div className={styles['timeline-item__dot']} aria-hidden="true"></div>
+              <li className={styles.timelineItem}>
+                <div className={styles.timelineItemDot} aria-hidden="true"></div>
                 <div>
-                  <span className={styles['timeline-item__title']}>Founded SIAWED in 2013</span>
-                  <span className={styles['timeline-item__desc']}>Started with a mission to empower women through entrepreneurship in Chennai</span>
+                  <span className={styles.timelineItemTitle}>Founded SIAWED in 2013</span>
+                  <span className={styles.timelineItemDesc}>Started with a mission to empower women through entrepreneurship in Chennai</span>
                 </div>
               </li>
-              <li className={styles['timeline-item']}>
-                <div className={styles['timeline-item__dot']} aria-hidden="true"></div>
+              <li className={styles.timelineItem}>
+                <div className={styles.timelineItemDot} aria-hidden="true"></div>
                 <div>
-                  <span className={styles['timeline-item__title']}>Launched WENBA Marketplace</span>
-                  <span className={styles['timeline-item__desc']}>Created India&#39;s dedicated platform for women-owned native businesses</span>
+                  <span className={styles.timelineItemTitle}>Launched WENBA Marketplace</span>
+                  <span className={styles.timelineItemDesc}>Created India&#39;s dedicated platform for women-owned native businesses</span>
                 </div>
               </li>
-              <li className={styles['timeline-item']}>
-                <div className={styles['timeline-item__dot']} aria-hidden="true"></div>
+              <li className={styles.timelineItem}>
+                <div className={styles.timelineItemDot} aria-hidden="true"></div>
                 <div>
-                  <span className={styles['timeline-item__title']}>1,000+ Beneficiaries Today</span>
-                  <span className={styles['timeline-item__desc']}>Network spanning Chennai and beyond, connecting women to corporate buyers</span>
+                  <span className={styles.timelineItemTitle}>1,000+ Beneficiaries Today</span>
+                  <span className={styles.timelineItemDesc}>Network spanning Chennai and beyond, connecting women to corporate buyers</span>
                 </div>
               </li>
             </ol>

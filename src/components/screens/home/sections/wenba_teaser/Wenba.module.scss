@@ -2,7 +2,7 @@
   /* ============================================================
      15. WENBA SECTION
      ============================================================ */
-  .wenba__top {
+  .wenbaTop {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
@@ -11,7 +11,7 @@
   }
 
   /* WENBA brand lockup card */
-  .wenba-brand-card {
+  .wenbaBrandCard {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -22,12 +22,12 @@
     margin-bottom: 26px;
     width: fit-content;
   }
-  .wenba-brand-card svg {
+  .wenbaBrandCard svg {
     height: 80px;
     width: auto;
     flex-shrink: 0;
   }
-  .wenba-brand-card__powered {
+  .wenbaBrandCardPowered {
     display: block;
     font-size: 10px;
     font-weight: 800;
@@ -36,7 +36,7 @@
     color: rgba(255, 255, 255, 0.35);
     margin-bottom: 5px;
   }
-  .wenba-brand-card__name {
+  .wenbaBrandCardName {
     font-size: 14px;
     font-weight: 700;
     color: rgba(255, 255, 255, 0.66);
@@ -44,13 +44,13 @@
   }
 
   /* Category filter pills */
-  .wenba-cats {
+  .wenbaCats {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 22px;
   }
-  .wenba-cat {
+  .wenbaCat {
     padding: 6px 16px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 100px;
@@ -61,15 +61,15 @@
     transition: all var(--t-base);
     background: none;
   }
-  .wenba-cat.is-active,
-  .wenba-cat:hover {
+  .wenbaCat.isActive,
+  .wenbaCat:hover {
     background: var(--teal);
     border-color: var(--teal);
     color: #fff;
   }
 
   /* Right column */
-  .wenba__right {
+  .wenbaRight {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -78,19 +78,19 @@
   }
 
   /* Stats row */
-  .wenba-stats {
+  .wenbaStats {
     display: flex;
     gap: 26px;
     margin-top: 26px;
     padding-top: 26px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
-  .wenba-stat__number {
+  .wenbaStatNumber {
     font-size: 30px;
     font-weight: 800;
     color: var(--teal-mid);
   }
-  .wenba-stat__label {
+  .wenbaStatLabel {
     display: block;
     font-size: 11px;
     font-weight: 700;
@@ -101,27 +101,27 @@
   }
 
   /* Product images grid */
-  .wenba-imgs {
+  .wenbaImgs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
   }
-  .wenba-img-card {
+  .wenbaImgCard {
     border-radius: var(--r);
     overflow: hidden;
     position: relative;
     aspect-ratio: 4/5;
   }
-  .wenba-img-card img {
+  .wenbaImgCard img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
   }
-  .wenba-img-card:hover img {
+  .wenbaImgCard:hover img {
     transform: scale(1.05);
   }
-  .wenba-img-card__label {
+  .wenbaImgCardLabel {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -134,11 +134,11 @@
   }
 
   @media (max-width: 900px) {
-    .wenba__top {
+    .wenbaTop {
       grid-template-columns: 1fr;
       gap: 28px;
     }
-    .wenba-imgs {
+    .wenbaImgs {
       grid-template-columns: 1fr;
     }
   }
