@@ -25,9 +25,10 @@
   /* Brand column */
   .footerBrandLogo {
     display: block;
-    height: 52px;
+    height: 70px;
     width: auto;
     margin-bottom: 16px;
+    filter: brightness(0) invert(1);
   }
   .footerBrandDesc {
     font-size: 13px;

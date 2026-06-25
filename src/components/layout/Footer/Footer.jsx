@@ -12,6 +12,7 @@ import {
   EnvelopeFill, 
   Globe 
 } from "react-bootstrap-icons";
+import { Image } from "react-bootstrap";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -33,7 +34,7 @@ const Footer = () => {
         <div className={styles.footerGrid}>
           {/* Col 1: Brand */}
           <div>
-            <img className={styles.footerBrandLogo} src="/assets/images/siawed-logo-footer.png" alt="SIAWED – Empower Elevate Enrich" />
+            <Image className={styles.footerBrandLogo} src="/logo/logo4.png" alt="SIAWED – Empower Elevate Enrich" />
             <p className={styles.footerBrandDesc}>
               Southern Industrial Academy for Women Entrepreneurs Development — creating pathways for women across India to build, grow, and scale successful enterprises through the SIAWED & WENBA ecosystem.
             </p>

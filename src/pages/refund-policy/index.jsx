@@ -1,15 +1,17 @@
-function MyComponent() {
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function MyComponent() {
+  const [html, setHtml] = useState("");
+
+  useEffect(() => {
+    fetch("/refund-policy.html")
+      .then((res) => res.text())
+      .then(setHtml);
+  }, []);
+
   return (
-    <iframe
-      src="/refund-policy.html"
-      title="Demo"
-      style={{
-        width: "100%",
-        height: "100vh",
-        border: "none",
-      }}
-    />
+    <div dangerouslySetInnerHTML={{ __html: html }} />
   );
 }
-
-export default MyComponent;
