@@ -26,7 +26,7 @@ const ImpactSectionx = () => {
             <span className={styles.impactCellLabel}>Beneficiaries</span>
           </div>
           <div className={styles.impactCell}>
-            <span className={`${styles.impactCellNumber} ${FONTS.font2}`}>3,500+</span>
+            <span className={`${styles.impactCellNumber} ${FONTS.font2}`}>100+</span>
             <span className={styles.impactCellLabel}>Active Volunteers</span>
           </div>
         </div>

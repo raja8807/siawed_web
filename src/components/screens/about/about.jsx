@@ -7,7 +7,12 @@ import FONTS from "@/styles/fonts";
 import WhyChooseUsSection from "../home/sections/why_choose_us/why_choose_us";
 import CredibilityBanner from "../home/sections/credibility_banner/credibility_banner";
 import VisionMissionSection from "../home/sections/vision_mission/vision_mission";
-import TestimonialsSection from "../home/sections/testimonials/Testimonials";
+import TestimonialsSection from "../home/sections/testimonials/testimonials";
+import TeamSection from "./sections/team/team";
+import AwardsSection from "./sections/awards/awards";
+import PartnersSection from "./sections/partners/partners";
+
+// import PartnersSection from "./sections/partners/partners";
 
 const AboutScreen = () => {
   return (
@@ -21,7 +26,7 @@ const AboutScreen = () => {
         bgImage="/impact-rally-1.png"
       />
 
-      <section className={styles.aboutContentSection}>
+      <section id="who-we-are" className={styles.aboutContentSection}>
         <CustomContainer>
           <div className={styles.wrap}>
             <div className={styles.left} data-aos="fade-right">
@@ -61,9 +66,15 @@ const AboutScreen = () => {
             </div>
           </div>
         </CustomContainer>
-        <VisionMissionSection/>
+        <div id="vision">
+          <VisionMissionSection/>
+        </div>
+        <TeamSection/>
         <WhyChooseUsSection/>
+        <PartnersSection/>
+        <AwardsSection/>
         <CredibilityBanner/>
+        
         <TestimonialsSection/>
         
       </section>

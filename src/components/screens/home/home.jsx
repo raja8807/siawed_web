@@ -6,9 +6,10 @@ import WhatWeDoSection from "./sections/what_we_do/WhatWeDo";
 import FounderSpotlightSection from "./sections/founder_spotlight/FounderSpotlight";
 import WenbaSection from "./sections/wenba_teaser/Wenba";
 import MembershipSection from "./sections/membership/Membership";
-import TestimonialsSection from "./sections/testimonials/Testimonials";
+
 import CtaBannerSection from "./sections/cta_banner/CtaBanner";
 import ImpactSectionx from "./sections/impact/impact";
+import TestimonialsSection from "./sections/testimonials/testimonials";
 
 const HomeScreen = () => {
   return (

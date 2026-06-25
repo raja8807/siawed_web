@@ -24,19 +24,19 @@ const HeroSection = () => {
           </div>
           
           <div className={styles.heroStats}>
-            <div className={styles['hero-stat']}>
+            <div className={styles.heroStat}>
               <span className={`${styles.heroStatNumber} ${FONTS.font2}`}>14+</span>
               <span className={styles.heroStatLabel}>Years Active</span>
             </div>
-            <div className={styles['hero-stat']}>
-              <span className={`${styles.heroStatNumber} ${FONTS.font2}`}>3,500+</span>
+            <div className={styles.heroStat}>
+              <span className={`${styles.heroStatNumber} ${FONTS.font2}`}>100+</span>
               <span className={styles.heroStatLabel}>Volunteers</span>
             </div>
-            <div className={styles['hero-stat']}>
+            <div className={styles.heroStat}>
               <span className={`${styles.heroStatNumber} ${FONTS.font2}`}>1,000+</span>
               <span className={styles.heroStatLabel}>Beneficiaries</span>
             </div>
-            <div className={styles['hero-stat']}>
+            <div className={styles.heroStat}>
               <span className={`${styles.heroStatNumber} ${FONTS.font2}`}>400+</span>
               <span className={styles.heroStatLabel}>Entrepreneurs</span>
             </div>
@@ -49,8 +49,8 @@ const HeroSection = () => {
           
           <div className={styles.heroBadge} data-aos="fade-up" data-aos-delay="300">
             <div className={styles.heroBadgeIcon}><Trophy /></div>
-            <div className={styles['hero__badge-content']}>
-              <span className={styles.heroBadgeTitle}>500+ Women Artisans</span>
+            <div className={styles.heroBadgeContent}>
+              <span className={styles.heroBadgeTitle}>100+ Women Artisans</span>
               <span className={styles.heroBadgeSub}>Empanelled on WENBA</span>
             </div>
           </div>

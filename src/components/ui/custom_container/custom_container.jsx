@@ -6,7 +6,7 @@ const CustomContainer = ({ children, lg }) => {
       style={{
         height: "100%",
         // maxWidth: lg && "1500px",
-        padding:'50px 0'
+        
       }}
     >
       {children}

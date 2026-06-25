@@ -5,7 +5,7 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 import { 
   GeoAltFill, TelephoneFill, EnvelopeFill, Globe, 
-  ChevronDown, HeartFill, House, Gear, Briefcase, People, List 
+  ChevronDown, HeartFill, House, Gear, Briefcase, People, List, Whatsapp 
 } from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
 import CustomButton from "@/components/ui/custom_button/custom_button";
@@ -46,6 +46,7 @@ const Header = () => {
         <span><GeoAltFill /> 601 &#8220;DEEPA&#8221;, Choolaimedu High Road, Chennai &#8211; 600094</span>
         <div className={styles.topbarRight}>
           <a href="tel:+914443514334"><TelephoneFill /> 044 4351 4334</a>
+          <a href="https://wa.me/916381814441" target="_blank" rel="noopener noreferrer"><Whatsapp /> +91 63818 14441</a>
           <a href="mailto:info@siawed.org"><EnvelopeFill /> info@siawed.org</a>
           <a href="http://www.siawed.org" target="_blank" rel="noopener noreferrer"><Globe /> www.siawed.org</a>
         </div>
@@ -54,6 +55,7 @@ const Header = () => {
       <nav className={styles.nav} role="navigation" aria-label="Main navigation">
         <Link href="/" className={styles.navLogo} aria-label="SIAWED Home">
           <Image src="/logo/logo4.png" alt="SIAWED" width={200} />
+          <div className={styles.floatingRibbon}>14 Years of Excellence</div>
         </Link>
 
         <ul className={styles.navMenu}>
@@ -67,13 +69,13 @@ const Header = () => {
             </Link>
             <div className={styles.dropdown}>
               <span className={styles.dropdownLabel}>Organisation</span>
-              <Link href="/about" className={styles.dropdownLink}>Who We Are</Link>
+              <Link href="/about#who-we-are" className={styles.dropdownLink}>Who We Are</Link>
               <Link href="/about#vision" className={styles.dropdownLink}>Vision & Mission</Link>
               <Link href="/about#team" className={styles.dropdownLink}>Our Team</Link>
               <hr className={styles.dropdownDivider}/>
               <span className={styles.dropdownLabel}>Recognition</span>
-              <Link href="/awards" className={styles.dropdownLink}>Awards</Link>
-              <Link href="/reports" className={styles.dropdownLink}>Annual Reports</Link>
+              <Link href="/about#awards" className={styles.dropdownLink}>Awards</Link>
+              
             </div>
           </li>
 
@@ -83,9 +85,9 @@ const Header = () => {
             </Link>
             <div className={styles.dropdown}>
               <span className={styles.dropdownLabel}>Skill & Enterprise</span>
-              <Link href="/programs/entrepreneurship" className={styles.dropdownLink}>Entrepreneurship</Link>
-              <Link href="/programs/training" className={styles.dropdownLink}>Training</Link>
-              <Link href="/programs/shg" className={styles.dropdownLink}>SHG</Link>
+              <Link href="/programs#entrepreneurship" className={styles.dropdownLink}>Entrepreneurship</Link>
+              <Link href="/programs#training" className={styles.dropdownLink}>Training</Link>
+              <Link href="/programs#shg" className={styles.dropdownLink}>SHG</Link>
             </div>
           </li>
 
@@ -96,15 +98,15 @@ const Header = () => {
             <div className={`${styles.dropdown} ${styles.dropdownMega}`}>
               <div className={styles.dropdownCol}>
                 <span className={styles.dropdownLabel}>For Vendors</span>
-                <Link href="/wenba/register" className={styles.dropdownLink}>Registration</Link>
-                <Link href="/wenba/catalogue" className={styles.dropdownLink}>Catalogue</Link>
-                <Link href="/wenba/empanelled" className={styles.dropdownLink}>Empanelled</Link>
+                <Link href="/wenba#register" className={styles.dropdownLink}>Registration</Link>
+                <Link href="/wenba#catalogue" className={styles.dropdownLink}>Catalogue</Link>
+                <Link href="/wenba#dashboard" className={styles.dropdownLink}>Dashboard</Link>
               </div>
               <div className={styles.dropdownCol}>
                 <span className={styles.dropdownLabel}>For Corporates</span>
-                <Link href="/wenba/procurement" className={styles.dropdownLink}>Procurement</Link>
-                <Link href="/wenba/raise-request" className={styles.dropdownLink}>Raise Request</Link>
-                <Link href="/wenba/csr" className={styles.dropdownLink}>CSR</Link>
+                <Link href="/wenba#procurement" className={styles.dropdownLink}>Procurement</Link>
+                <Link href="/wenba#raise-request" className={styles.dropdownLink}>Raise Request</Link>
+                <Link href="/wenba#csr" className={styles.dropdownLink}>CSR</Link>
               </div>
             </div>
           </li>
@@ -116,7 +118,6 @@ const Header = () => {
             <div className={styles.dropdown}>
               <Link href="/membership/join" className={styles.dropdownLink}>Become Member</Link>
               <Link href="/membership/benefits" className={styles.dropdownLink}>Benefits</Link>
-              <Link href="/login" className={styles.dropdownLink}>Member Login</Link>
             </div>
           </li>
 
@@ -130,7 +131,6 @@ const Header = () => {
         </ul>
 
         <div className={styles.navCtas}>
-          <CustomButton href="/login" variant="ghost" size="sm">Login</CustomButton>
           <CustomButton href="/donate" variant="orange" size="sm"><HeartFill /> Donate</CustomButton>
         </div>
 
@@ -175,14 +175,24 @@ const Header = () => {
               </button>
               <div className={`${styles.drawerSub} ${openSubmenu === 'wenba' ? styles.isOpen : ''}`}>
                 <span className={styles.drawerSubLabel}>Vendors</span>
-                <Link href="/wenba/register" onClick={closeDrawer}>Registration</Link>
-                <Link href="/wenba/catalogue" onClick={closeDrawer}>Catalogue</Link>
+                <Link href="/wenba#register" onClick={closeDrawer}>Registration</Link>
+                <Link href="/wenba#catalogue" onClick={closeDrawer}>Catalogue</Link>
+                <Link href="/wenba#dashboard" onClick={closeDrawer}>Dashboard</Link>
                 <span className={styles.drawerSubLabel}>Corporates</span>
-                <Link href="/wenba/procurement" onClick={closeDrawer}>Procurement</Link>
+                <Link href="/wenba#procurement" onClick={closeDrawer}>Procurement</Link>
+                <Link href="/wenba#raise-request" onClick={closeDrawer}>Raise Request</Link>
+                <Link href="/wenba#csr" onClick={closeDrawer}>CSR</Link>
               </div>
             </div>
             <div className={styles.drawerItem}>
-              <Link href="/programs" className={styles.drawerTrigger} onClick={closeDrawer}>Programs</Link>
+              <button className={`${styles.drawerTrigger} ${openSubmenu === 'programs' ? styles.isOpen : ''}`} onClick={() => toggleSubmenu('programs')}>
+                Programs <span className={styles.drawerTriggerChevron}><ChevronDown /></span>
+              </button>
+              <div className={`${styles.drawerSub} ${openSubmenu === 'programs' ? styles.isOpen : ''}`}>
+                <Link href="/programs#entrepreneurship" onClick={closeDrawer}>Entrepreneurship</Link>
+                <Link href="/programs#training" onClick={closeDrawer}>Training</Link>
+                <Link href="/programs#shg" onClick={closeDrawer}>SHG</Link>
+              </div>
             </div>
             <div className={styles.drawerItem}>
               <Link href="/membership" className={styles.drawerTrigger} onClick={closeDrawer}>Membership</Link>
@@ -193,7 +203,6 @@ const Header = () => {
           </div>
           <div className={styles.drawerFooter}>
             <CustomButton href="/donate" variant="orange" className={styles.btn} onClick={closeDrawer}><HeartFill /> Donate</CustomButton>
-            <CustomButton href="/login" variant="outline-blue" className={styles.btn} onClick={closeDrawer}>Member Login</CustomButton>
           </div>
         </div>
       </div>
