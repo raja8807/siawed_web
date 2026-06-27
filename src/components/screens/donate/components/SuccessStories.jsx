@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Carousel } from "react-bootstrap";
 import { Quote } from "react-bootstrap-icons";
 import styles from "../donate.module.scss";
@@ -26,10 +27,10 @@ const SuccessStories = () => {
           {stories.map((story, idx) => (
             <Carousel.Item key={idx}>
               <div className={styles.storyCard}>
-                <img src={story.img} alt={story.name} className={styles.storyImage} />
+                <Image src={story.img} alt={story.name} width={150} height={150} className={styles.storyImage} />
                 <div className={styles.storyContent}>
                   <Quote size={40} className="text-muted mb-3" opacity={0.3} />
-                  <blockquote>"{story.text}"</blockquote>
+                  <blockquote>&quot;{story.text}&quot;</blockquote>
                   <h5>{story.name}</h5>
                   <p className="text-muted">{story.location}</p>
                 </div>
