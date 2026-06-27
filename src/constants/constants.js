@@ -1,23 +1,3 @@
-// SERVICES
-
-// CLIENTS
-
-// CAREERS
-
-// TERMS AND CONDITION
-
-// BOOK ONLINE
-
-// CONTACT
-
-// CAR RENTAL
-
-// EMPLOYEE TRANPORTATION
-
-// EVENT MANAGEMENT
-
-// INBOUND AND OUTBOUND TOURS
-
 export const PAGES = [
   {
     title: "Home",
@@ -43,10 +23,7 @@ export const PAGES = [
     title: "Corporate",
     href: "/corporate",
   },
-  {
-    title: "Events",
-    href: "/events",
-  },
+
   {
     title: "Blog",
     href: "/blog",
@@ -54,42 +31,6 @@ export const PAGES = [
   {
     title: "Contact",
     href: "/contact",
-  },
-];
-
-export const POPULAR_DESTINATIONS = [
-  { name: "Your Reliable Ride" },
-  { name: "On Time Every Time" },
-  { name: "Travel in Style" },
-  { name: "City Transport" },
-  { name: "Business Transport" },
-  { name: "Online Booking" },
-];
-
-export const BLOG_POSTS = [
-  {
-    id: 1,
-    title: "Top 10 Essential Travel Tips for First-Time Travelers",
-    author: "touriza",
-    tags: ["Ocean", "Railway"],
-    image: "/blog/blog-1.jpg",
-    highlightTitle: false,
-  },
-  {
-    id: 2,
-    title: "International Travel Checklist What You Must Not Forget",
-    author: "touriza",
-    tags: ["Mountain", "Travel"],
-    image: "/blog/blog-2.jpg",
-    highlightTitle: false,
-  },
-  {
-    id: 3,
-    title: "Budget Travel Tips How to Explore More by Spending Less",
-    author: "touriza",
-    tags: ["Ocean", "River"],
-    image: "/blog/blog-3.jpg",
-    highlightTitle: true,
   },
 ];
 
@@ -138,5 +79,88 @@ export const TESTIMONIALS = [
     image: "/images/testimonials/6.webp",
     location: "Chennai SIAWED Member and Awardee - Budding Entrepreneur",
     text: "As a culinary expert and entrepreneur, I joined SIAWED in search of a dynamic women's business community. The guidance from Ms. T Vanadhi Devi and the recognition through the 'Budding Entrepreneur Award' motivated me greatly. SIAWED has helped me gain referrals, visibility, and valuable business support.",
+  },
+];
+
+export const NAV_ITEMS = [
+  {
+    title: "Home",
+    href: "/",
+  },
+  {
+    title: "About",
+    href: "/about",
+    id: "about",
+    dropdown: [
+      {
+        label: "Organisation",
+        links: [
+          { title: "Who We Are", href: "/about#who-we-are" },
+          { title: "Vision & Mission", href: "/about#vision" },
+          { title: "Our Team", href: "/about#team" },
+        ],
+      },
+      {
+        label: "Recognition",
+        links: [{ title: "Awards", href: "/about#awards" }],
+      },
+    ],
+  },
+  {
+    title: "Programs",
+    href: "/programs",
+    id: "programs",
+    dropdown: [
+      {
+        label: "Skill & Enterprise",
+        links: [
+          { title: "Entrepreneurship", href: "/programs#entrepreneurship" },
+          { title: "Training", href: "/programs#training" },
+          { title: "SHG", href: "/programs#shg" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "WENBA",
+    href: "/wenba",
+    id: "wenba",
+    isMega: true,
+    dropdown: [
+      {
+        label: "For Vendors",
+        links: [
+          { title: "Registration", href: "/wenba#register" },
+          { title: "Catalogue", href: "/wenba#catalogue" },
+          { title: "Dashboard", href: "/wenba#dashboard" },
+        ],
+      },
+      {
+        label: "For Corporates",
+        links: [
+          { title: "Procurement", href: "/wenba#procurement" },
+          { title: "Raise Request", href: "/wenba#raise-request" },
+          { title: "CSR", href: "/wenba#csr" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Membership",
+    href: "/membership",
+    id: "membership",
+    dropdown: [
+      {
+        links: [
+          { title: "Become Member", href: "/membership#become-member" },
+          { title: "Benefits", href: "/membership#benefits" },
+        ],
+      },
+    ],
+  },
+
+  {
+    title: "Contact",
+    href: "/contact",
   },
 ];

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import styles from "./Footer.module.scss";
 import { FONTS } from "@/styles/fonts";
+import { NAV_ITEMS } from "@/constants/constants";
 import { 
   Facebook, 
   Instagram, 
@@ -63,14 +64,10 @@ const Footer = () => {
           <div className={styles.footerCol}>
             <h4 className={FONTS.font2}>Quick Links</h4>
             <nav className={styles.footerLinks} aria-label="Footer quick links">
-              <Link href="/about">About Us</Link>
-              <Link href="/programs">Programs</Link>
-              <Link href="/wenba">WENBA Marketplace</Link>
-              <Link href="/membership">Membership</Link>
-              <Link href="/corporate-solutions">Corporate Solutions</Link>
-              <Link href="/events">Events</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="/careers">Careers</Link>
+              {NAV_ITEMS.map((item, index) => (
+                <Link key={index} href={item.href}>{item.title}</Link>
+              ))}
+        
             </nav>
           </div>
 
@@ -78,13 +75,12 @@ const Footer = () => {
           <div className={styles.footerCol}>
             <h4 className={FONTS.font2}>WENBA</h4>
             <nav className={styles.footerLinks} aria-label="WENBA links">
-              <Link href="/wenba/register">Register as Vendor</Link>
-              <Link href="/wenba/catalogue">Product Catalogue</Link>
-              <Link href="/wenba/procurement">Corporate Procurement</Link>
-              <Link href="/wenba/empanelled">Empanelled Vendors</Link>
-              <Link href="/wenba/raise-request">Raise a Request</Link>
-              <Link href="/wenba/dashboard">WENBA Dashboard</Link>
-              <Link href="/wenba/about">About WENBA</Link>
+              {NAV_ITEMS.find(item => item.id === 'wenba')?.dropdown?.map((section) => 
+                section.links.map((link, lIndex) => (
+                  <Link key={`${section.label}-${lIndex}`} href={link.href}>{link.title}</Link>
+                ))
+              )}
+
             </nav>
           </div>
 
@@ -104,10 +100,7 @@ const Footer = () => {
                 <span className={styles.footerContactIcon} aria-hidden="true"><EnvelopeFill /></span>
                 <span className={styles.footerContactText}><a href="mailto:info@siawed.org">info@siawed.org</a></span>
               </div>
-              <div className={styles.footerContactItem}>
-                <span className={styles.footerContactIcon} aria-hidden="true"><Globe /></span>
-                <span className={styles.footerContactText}><a href="http://www.siawed.org" target="_blank" rel="noopener noreferrer">www.siawed.org</a></span>
-              </div>
+            
             </address>
 
             <span className={styles.footerNewsletterLabel} id="newsletter-label">Newsletter</span>

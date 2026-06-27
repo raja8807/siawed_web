@@ -9,6 +9,7 @@ import {
 } from "react-bootstrap-icons";
 import { Image } from "react-bootstrap";
 import CustomButton from "@/components/ui/custom_button/custom_button";
+import { NAV_ITEMS } from "@/constants/constants";
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -48,7 +49,7 @@ const Header = () => {
           <a href="tel:+914443514334"><TelephoneFill /> 044 4351 4334</a>
           <a href="https://wa.me/916381814441" target="_blank" rel="noopener noreferrer"><Whatsapp /> +91 63818 14441</a>
           <a href="mailto:info@siawed.org"><EnvelopeFill /> info@siawed.org</a>
-          <a href="http://www.siawed.org" target="_blank" rel="noopener noreferrer"><Globe /> www.siawed.org</a>
+         
         </div>
       </div>
 
@@ -59,75 +60,45 @@ const Header = () => {
         </Link>
 
         <ul className={styles.navMenu}>
-          <li className={styles.navItem}>
-            <Link href="/" className={styles.navLink}>Home</Link>
-          </li>
-          
-          <li className={styles.navItem}>
-            <Link href="/about" className={styles.navLink}>
-              About <span className={styles.navLinkArrow}><ChevronDown /></span>
-            </Link>
-            <div className={styles.dropdown}>
-              <span className={styles.dropdownLabel}>Organisation</span>
-              <Link href="/about#who-we-are" className={styles.dropdownLink}>Who We Are</Link>
-              <Link href="/about#vision" className={styles.dropdownLink}>Vision & Mission</Link>
-              <Link href="/about#team" className={styles.dropdownLink}>Our Team</Link>
-              <hr className={styles.dropdownDivider}/>
-              <span className={styles.dropdownLabel}>Recognition</span>
-              <Link href="/about#awards" className={styles.dropdownLink}>Awards</Link>
-              
-            </div>
-          </li>
+          {NAV_ITEMS.map((item, index) => {
+            if (!item.dropdown) {
+              return (
+                <li key={index} className={styles.navItem}>
+                  <Link href={item.href} className={styles.navLink}>{item.title}</Link>
+                </li>
+              );
+            }
 
-          <li className={styles.navItem}>
-            <Link href="/programs" className={styles.navLink}>
-              Programs <span className={styles.navLinkArrow}><ChevronDown /></span>
-            </Link>
-            <div className={styles.dropdown}>
-              <span className={styles.dropdownLabel}>Skill & Enterprise</span>
-              <Link href="/programs#entrepreneurship" className={styles.dropdownLink}>Entrepreneurship</Link>
-              <Link href="/programs#training" className={styles.dropdownLink}>Training</Link>
-              <Link href="/programs#shg" className={styles.dropdownLink}>SHG</Link>
-            </div>
-          </li>
-
-          <li className={`${styles.navItem} ${styles.navItemWenba}`}>
-            <Link href="/wenba" className={styles.navLink}>
-              WENBA <span className={styles.navLinkArrow}><ChevronDown /></span>
-            </Link>
-            <div className={`${styles.dropdown} ${styles.dropdownMega}`}>
-              <div className={styles.dropdownCol}>
-                <span className={styles.dropdownLabel}>For Vendors</span>
-                <Link href="/wenba#register" className={styles.dropdownLink}>Registration</Link>
-                <Link href="/wenba#catalogue" className={styles.dropdownLink}>Catalogue</Link>
-                <Link href="/wenba#dashboard" className={styles.dropdownLink}>Dashboard</Link>
-              </div>
-              <div className={styles.dropdownCol}>
-                <span className={styles.dropdownLabel}>For Corporates</span>
-                <Link href="/wenba#procurement" className={styles.dropdownLink}>Procurement</Link>
-                <Link href="/wenba#raise-request" className={styles.dropdownLink}>Raise Request</Link>
-                <Link href="/wenba#csr" className={styles.dropdownLink}>CSR</Link>
-              </div>
-            </div>
-          </li>
-
-          <li className={styles.navItem}>
-            <Link href="/membership" className={styles.navLink}>
-              Membership <span className={styles.navLinkArrow}><ChevronDown /></span>
-            </Link>
-            <div className={styles.dropdown}>
-              <Link href="/membership/join" className={styles.dropdownLink}>Become Member</Link>
-              <Link href="/membership/benefits" className={styles.dropdownLink}>Benefits</Link>
-            </div>
-          </li>
-
-          <li className={styles.navItem}>
-            <Link href="/events" className={styles.navLink}>Events</Link>
-          </li>
-          
-          <li className={styles.navItem}>
-            <Link href="/contact" className={styles.navLink}>Contact</Link>
-          </li>
+            return (
+              <li key={index} className={`${styles.navItem} ${item.isMega ? styles.navItemWenba : ''}`}>
+                <Link href={item.href} className={styles.navLink}>
+                  {item.title} <span className={styles.navLinkArrow}><ChevronDown /></span>
+                </Link>
+                <div className={`${styles.dropdown} ${item.isMega ? styles.dropdownMega : ''}`}>
+                  {item.dropdown.map((section, sIndex) => (
+                    <React.Fragment key={sIndex}>
+                      {item.isMega ? (
+                        <div className={styles.dropdownCol}>
+                          {section.label && <span className={styles.dropdownLabel}>{section.label}</span>}
+                          {section.links.map((link, lIndex) => (
+                            <Link key={lIndex} href={link.href} className={styles.dropdownLink}>{link.title}</Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <>
+                          {sIndex > 0 && section.label && <hr className={styles.dropdownDivider} />}
+                          {section.label && <span className={styles.dropdownLabel}>{section.label}</span>}
+                          {section.links.map((link, lIndex) => (
+                            <Link key={lIndex} href={link.href} className={styles.dropdownLink}>{link.title}</Link>
+                          ))}
+                        </>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </li>
+            );
+          })}
         </ul>
 
         <div className={styles.navCtas}>
@@ -156,50 +127,36 @@ const Header = () => {
             <button className={styles.drawerClose} id="drawer-close" onClick={closeDrawer} aria-label="Close menu">&times;</button>
           </div>
           <div className={styles.drawerBody}>
-            <div className={styles.drawerItem}>
-              <Link href="/" className={styles.drawerTrigger} onClick={closeDrawer}>Home</Link>
-            </div>
-            <div className={styles.drawerItem}>
-              <button className={`${styles.drawerTrigger} ${openSubmenu === 'about' ? styles.isOpen : ''}`} onClick={() => toggleSubmenu('about')}>
-                About Us <span className={styles.drawerTriggerChevron}><ChevronDown /></span>
-              </button>
-              <div className={`${styles.drawerSub} ${openSubmenu === 'about' ? styles.isOpen : ''}`}>
-                <Link href="/about" onClick={closeDrawer}>Who We Are</Link>
-                <Link href="/about#vision" onClick={closeDrawer}>Vision & Mission</Link>
-                <Link href="/about#team" onClick={closeDrawer}>Our Team</Link>
-              </div>
-            </div>
-            <div className={styles.drawerItem}>
-              <button className={`${styles.drawerTrigger} ${styles.drawerTriggerWenba} ${openSubmenu === 'wenba' ? styles.isOpen : ''}`} onClick={() => toggleSubmenu('wenba')}>
-                WENBA Marketplace <span className={styles.drawerTriggerChevron}><ChevronDown /></span>
-              </button>
-              <div className={`${styles.drawerSub} ${openSubmenu === 'wenba' ? styles.isOpen : ''}`}>
-                <span className={styles.drawerSubLabel}>Vendors</span>
-                <Link href="/wenba#register" onClick={closeDrawer}>Registration</Link>
-                <Link href="/wenba#catalogue" onClick={closeDrawer}>Catalogue</Link>
-                <Link href="/wenba#dashboard" onClick={closeDrawer}>Dashboard</Link>
-                <span className={styles.drawerSubLabel}>Corporates</span>
-                <Link href="/wenba#procurement" onClick={closeDrawer}>Procurement</Link>
-                <Link href="/wenba#raise-request" onClick={closeDrawer}>Raise Request</Link>
-                <Link href="/wenba#csr" onClick={closeDrawer}>CSR</Link>
-              </div>
-            </div>
-            <div className={styles.drawerItem}>
-              <button className={`${styles.drawerTrigger} ${openSubmenu === 'programs' ? styles.isOpen : ''}`} onClick={() => toggleSubmenu('programs')}>
-                Programs <span className={styles.drawerTriggerChevron}><ChevronDown /></span>
-              </button>
-              <div className={`${styles.drawerSub} ${openSubmenu === 'programs' ? styles.isOpen : ''}`}>
-                <Link href="/programs#entrepreneurship" onClick={closeDrawer}>Entrepreneurship</Link>
-                <Link href="/programs#training" onClick={closeDrawer}>Training</Link>
-                <Link href="/programs#shg" onClick={closeDrawer}>SHG</Link>
-              </div>
-            </div>
-            <div className={styles.drawerItem}>
-              <Link href="/membership" className={styles.drawerTrigger} onClick={closeDrawer}>Membership</Link>
-            </div>
-            <div className={styles.drawerItem}>
-              <Link href="/contact" className={styles.drawerTrigger} onClick={closeDrawer}>Contact</Link>
-            </div>
+            {NAV_ITEMS.map((item, index) => {
+              if (!item.dropdown) {
+                return (
+                  <div key={index} className={styles.drawerItem}>
+                    <Link href={item.href} className={styles.drawerTrigger} onClick={closeDrawer}>{item.title}</Link>
+                  </div>
+                );
+              }
+
+              return (
+                <div key={index} className={styles.drawerItem}>
+                  <button 
+                    className={`${styles.drawerTrigger} ${item.isMega ? styles.drawerTriggerWenba : ''} ${openSubmenu === item.id ? styles.isOpen : ''}`} 
+                    onClick={() => toggleSubmenu(item.id)}
+                  >
+                    {item.title} <span className={styles.drawerTriggerChevron}><ChevronDown /></span>
+                  </button>
+                  <div className={`${styles.drawerSub} ${openSubmenu === item.id ? styles.isOpen : ''}`}>
+                    {item.dropdown.map((section, sIndex) => (
+                      <React.Fragment key={sIndex}>
+                        {section.label && <span className={styles.drawerSubLabel}>{section.label}</span>}
+                        {section.links.map((link, lIndex) => (
+                          <Link key={lIndex} href={link.href} onClick={closeDrawer}>{link.title}</Link>
+                        ))}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className={styles.drawerFooter}>
             <CustomButton href="/donate" variant="orange" className={styles.btn} onClick={closeDrawer}><HeartFill /> Donate</CustomButton>

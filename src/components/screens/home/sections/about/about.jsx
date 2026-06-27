@@ -5,6 +5,7 @@ import SectionWrapper from "../../../../ui/section_wrapper/section_wrapper";
 import CustomButton from "../../../../ui/custom_button/custom_button";
 import { FONTS } from "@/styles/fonts";
 import { RocketTakeoff, People, Tree, Megaphone } from "react-bootstrap-icons";
+import { Image } from "react-bootstrap";
 
 const AboutSection = () => {
   return (
@@ -13,8 +14,8 @@ const AboutSection = () => {
         <div className={styles.aboutGrid}>
           {/* Left Col: Overlapping Images */}
           <div className={styles.aboutImages}>
-            <img src="https://siawed-demo.vercel.app/images/about/women-meeting.jpg" alt="Women collaborating" loading="lazy" className={styles.aboutImgMain}/>
-            <img src="https://siawed-demo.vercel.app/images/about/women-workshop.jpg" alt="Workshop session" loading="lazy" className={styles.aboutImgAccent}/>
+            <Image src="/about-us-image-1.jpg" alt="Women collaborating" loading="lazy" className={styles.aboutImgMain}/>
+            <Image src="/wenba_2.webp" alt="Workshop session" loading="lazy" className={styles.aboutImgAccent}/>
             <div className={styles.aboutStamp}>
               <span className={styles.aboutStampNum}>14</span>
               <span className={styles.aboutStampLbl}>Years of Impact</span>
