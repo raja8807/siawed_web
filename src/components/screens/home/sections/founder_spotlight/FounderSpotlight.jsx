@@ -51,7 +51,7 @@ const FounderSpotlightSection = () => {
             </ol>
 
             <div style={{ marginTop: '36px' }}>
-              <CustomButton href="/about-founder" variant="blue" size="lg">Read Full Story &#8594;</CustomButton>
+              <CustomButton href="/about#team" variant="blue" size="lg">Read Full Story &#8594;</CustomButton>
             </div>
           </div>
         </div>

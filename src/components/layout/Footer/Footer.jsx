@@ -67,7 +67,6 @@ const Footer = () => {
               {NAV_ITEMS.map((item, index) => (
                 <Link key={index} href={item.href}>{item.title}</Link>
               ))}
-        
             </nav>
           </div>
 

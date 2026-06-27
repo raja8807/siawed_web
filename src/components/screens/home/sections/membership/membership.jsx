@@ -101,7 +101,7 @@ const MembershipSection = () => {
               <li>Vendor diversity sourcing support</li>
               <li>Women Empowerment Partner badge</li>
             </ul>
-            <CustomButton href="/corporate" variant="teal" fullWidth={true}>Enquire Now</CustomButton>
+            <CustomButton href="/contact" variant="teal" fullWidth={true}>Enquire Now</CustomButton>
           </article>
         </div>
       </SectionWrapper>

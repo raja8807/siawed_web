@@ -12,7 +12,7 @@ const CorporateCSR = () => {
           <p className="lead mb-4" style={{ maxWidth: '700px', margin: '0 auto' }}>
             Empower your organization's CSR goals by partnering with SIAWED. We facilitate bulk donations, corporate sponsorships, and employee giving programs to maximize social impact.
           </p>
-          <CustomButton href="/corporate" variant="teal" size="lg">
+          <CustomButton href="/contact" variant="teal" size="lg">
             Partner With Us
           </CustomButton>
         </div>

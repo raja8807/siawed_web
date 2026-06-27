@@ -40,7 +40,7 @@ const WhatWeDoSection = () => {
               Our goal is not merely to create entrepreneurs, but to nurture confident business leaders capable of creating lasting economic and social impact.
             </p>
             <div className={styles.btnWrap}>
-              <CustomButton href="/what-we-do">Read More &rarr;</CustomButton>
+              <CustomButton href="/programs">Read More &rarr;</CustomButton>
             </div>
           </div>
           <div className={styles.right} data-aos="fade-left">

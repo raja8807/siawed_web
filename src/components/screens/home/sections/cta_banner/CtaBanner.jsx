@@ -28,7 +28,7 @@ const CtaBannerSection = () => {
               <CustomButton href="/membership" variant="orange" size="lg">
                 Join SIAWED &#8594;
               </CustomButton>
-              <CustomButton href="/corporate" variant="outline-white" size="lg">
+              <CustomButton href="/contact" variant="outline-white" size="lg">
                 Corporate Catalogue
               </CustomButton>
               <CustomButton href="/donate" variant="outline-white">
