@@ -76,6 +76,8 @@ export default function App({ Component, pageProps }) {
       <main className={`${FONTS.font1} `}>
         {/* Loader is an overlay, layout renders behind it ensuring perfect SEO */}
         {isHome && loading && <LoadingScreen />}
+
+        
         
         <Layout>
           <Component {...pageProps} />

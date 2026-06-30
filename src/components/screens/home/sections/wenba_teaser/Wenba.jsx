@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Wenba.module.scss";
-
 import SectionWrapper from "../../../../ui/section_wrapper/section_wrapper";
 import CustomButton from "../../../../ui/custom_button/custom_button";
 import { FONTS } from "@/styles/fonts";
+import { Image } from "react-bootstrap";
 
 const WenbaSection = () => {
   return (
@@ -17,93 +17,7 @@ const WenbaSection = () => {
               role="img"
               aria-label="WENBA - Women Entrepreneurs Native Business Association"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 240 240"
-                aria-label="WENBA Logo"
-              >
-                <defs>
-                  <linearGradient id="wg1" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#22B8A8" />
-                    <stop offset="100%" stopColor="#0D7A6E" />
-                  </linearGradient>
-                  <linearGradient id="wg2" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#48CEBC" />
-                    <stop offset="100%" stopColor="#1BA090" />
-                  </linearGradient>
-                  <linearGradient id="wg3" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#9AE8DF" />
-                    <stop offset="100%" stopColor="#66D8CC" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M120 168 C82 134,20 122,2 146 C22 160,76 165,120 168Z"
-                  fill="url(#wg3)"
-                />
-                <path
-                  d="M120 168 C158 134,220 122,238 146 C218 160,164 165,120 168Z"
-                  fill="url(#wg3)"
-                />
-                <path
-                  d="M120 168 C95 122,50 100,36 122 C56 140,92 156,120 168Z"
-                  fill="url(#wg2)"
-                />
-                <path
-                  d="M120 168 C145 122,190 100,204 122 C184 140,148 156,120 168Z"
-                  fill="url(#wg2)"
-                />
-                <path
-                  d="M120 168 C96 96,98 36,120 12 C142 36,144 96,120 168Z"
-                  fill="url(#wg1)"
-                />
-                <circle cx="68" cy="84" r="10" fill="#CC2222" />
-                <path
-                  d="M68 94 L68 124 M68 106 L50 94 M68 106 L86 94 M68 124 L58 144 M68 124 L78 144"
-                  stroke="#0D7A6E"
-                  strokeWidth="5.5"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                <circle cx="120" cy="56" r="13" fill="#CC2222" />
-                <path
-                  d="M120 69 L120 108 M120 84 L96 66 M120 84 L144 66 M120 108 L106 132 M120 108 L134 132"
-                  stroke="#0D7A6E"
-                  strokeWidth="6.5"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                <circle cx="172" cy="84" r="10" fill="#CC2222" />
-                <path
-                  d="M172 94 L172 124 M172 106 L154 94 M172 106 L190 94 M172 124 L162 144 M172 124 L182 144"
-                  stroke="#0D7A6E"
-                  strokeWidth="5.5"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-                <text
-                  x="120"
-                  y="196"
-                  fontFamily="Georgia,'Times New Roman',serif"
-                  fontSize="34"
-                  fontWeight="800"
-                  fill="#CC2222"
-                  textAnchor="middle"
-                  letterSpacing="7"
-                >
-                  WENBA
-                </text>
-                <text
-                  x="120"
-                  y="220"
-                  fontFamily="Arial,sans-serif"
-                  fontSize="13"
-                  fontWeight="600"
-                  fill="#0D7A6E"
-                  textAnchor="middle"
-                >
-                  WE make IT Happen!
-                </text>
-              </svg>
+            <Image src="/logo/wenba_logo.png" width={90} alt="wenba_logo"/>
               <div>
                 <span className={styles.wenbaBrandCardPowered}>
                   Powered by SIAWED

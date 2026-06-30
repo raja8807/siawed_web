@@ -47,15 +47,7 @@ const Footer = () => {
             </div>
             {/* WENBA mini in footer */}
             <div className={styles.footerWenba}>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 54" aria-label="WENBA">
-                <path d="M36 38 C25 28,6 26,2 34 C9 39,24 40,36 38Z" fill="#66D8CC"/>
-                <path d="M36 38 C47 28,66 26,70 34 C63 39,48 40,36 38Z" fill="#66D8CC"/>
-                <path d="M36 38 C27 18,29 4,36 0 C43 4,45 18,36 38Z" fill="#0D7A6E"/>
-                <circle cx="36" cy="15" r="6.5" fill="#CC2222"/>
-                <path d="M36 22 L36 34 M36 27 L26 20 M36 27 L46 20 M36 34 L30 45 M36 34 L42 45" stroke="#0D7A6E" strokeWidth="3.5" strokeLinecap="round" fill="none"/>
-                <text x="86" y="26" fontFamily="Georgia,serif" fontSize="19" fontWeight="800" fill="#CC2222" letterSpacing="3">WENBA</text>
-                <text x="86" y="44" fontFamily="Arial,sans-serif" fontSize="11.5" fontWeight="600" fill="#1BA090">WE make IT Happen!</text>
-              </svg>
+           <Image src="/logo/wenba_logo.png" width={80} alt="wenba_logo"/>
               <span className={styles.footerWenbaText}>Vendor & procurement marketplace<br/>powered by SIAWED</span>
             </div>
           </div>
